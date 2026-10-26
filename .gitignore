@@ -17,17 +17,9 @@ dist/
 .DS_Store
 *.log
 
-# Data Room pesado e dados brutos locais
-# Publicar somente documentação, código, schemas e resultados agregados.
-documentos/data_room/*.parquet
-documentos/data_room/*.csv
-documentos/data_room/heatmaps_90d/
-**/heatmaps_90d/
-*.parquet
-
-# Exhibits M2: preserva apenas o README de governança.
-documentos/exhibits-m2/**
-!documentos/exhibits-m2/README.md
+# Exhibits M2: publica todos os 11 CSVs, o Parquet (19MB) e os 2 ZIPs de heatmaps (50MB e 52MB).
+# Ignora apenas o arquivo ZIP mestre duplicado (135MB, que excede o limite de 100MB por arquivo do GitHub).
+documentos/exhibits-m2/Exhibits - Módulo 2-*.zip
 
 # Proteção de Credenciais e Tokens
 *.token
