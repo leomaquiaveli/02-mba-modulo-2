@@ -1,0 +1,160 @@
+{
+  "status": "passed_with_warnings",
+  "data_dir": "/home/admin/Projects/02-inteli-mba-modulo-02/documentos/exhibits-m2",
+  "cutoff": "2026-09-30",
+  "inventory": [
+    {
+      "file": "usuarios.csv",
+      "expected": 64948,
+      "found": 64948
+    },
+    {
+      "file": "assinaturas.csv",
+      "expected": 32643,
+      "found": 32643
+    },
+    {
+      "file": "amizades.csv",
+      "expected": 113480,
+      "found": 113480
+    },
+    {
+      "file": "campanha_ago26.csv",
+      "expected": 14120,
+      "found": 14120
+    },
+    {
+      "file": "eventos_assinatura.csv",
+      "expected": 275565,
+      "found": 275565
+    },
+    {
+      "file": "pagamentos.csv",
+      "expected": 165548,
+      "found": 165548
+    },
+    {
+      "file": "uso_mensal.csv",
+      "expected": 591662,
+      "found": 591662
+    },
+    {
+      "file": "atividades.parquet",
+      "expected": 1254475,
+      "found": 1254475
+    },
+    {
+      "file": "onboarding.csv",
+      "expected": 63929,
+      "found": 63929
+    },
+    {
+      "file": "pesquisa_saida.csv",
+      "expected": 643,
+      "found": 643
+    },
+    {
+      "file": "feed_posts.csv",
+      "expected": 119309,
+      "found": 119309
+    },
+    {
+      "file": "tickets_suporte.csv",
+      "expected": 4422,
+      "found": 4422
+    }
+  ],
+  "count_mismatches": [],
+  "duplicate_primary_keys": {
+    "usuarios.csv": 0,
+    "assinaturas.csv": 0,
+    "campanha_ago26.csv": 0,
+    "pagamentos.csv": 0,
+    "onboarding.csv": 0,
+    "pesquisa_saida.csv": 0,
+    "feed_posts.csv": 0,
+    "tickets_suporte.csv": 0,
+    "atividades.parquet": 0
+  },
+  "active_subscriptions": {
+    "active_total": 14813,
+    "active_paid": 14753,
+    "active_courtesy": 60
+  },
+  "post_cutoff_rows": {
+    "usuarios.csv": 119,
+    "feed_posts.csv": 122,
+    "amizades.csv": 273,
+    "atividades.parquet": 34
+  },
+  "category_quality": {
+    "sistema": [
+      {
+        "sistema": "android",
+        "rows": 28027
+      },
+      {
+        "sistema": "ios",
+        "rows": 20854
+      },
+      {
+        "sistema": "iOS",
+        "rows": 7463
+      },
+      {
+        "sistema": "Android",
+        "rows": 7124
+      },
+      {
+        "sistema": "IOS",
+        "rows": 1480
+      }
+    ],
+    "atividade_tipo": [
+      {
+        "tipo": "corrida",
+        "rows": 223818
+      },
+      {
+        "tipo": "run",
+        "rows": 162108
+      },
+      {
+        "tipo": "funcional",
+        "rows": 145476
+      },
+      {
+        "tipo": "caminhada",
+        "rows": 118024
+      },
+      {
+        "tipo": "yoga",
+        "rows": 113849
+      },
+      {
+        "tipo": "forca",
+        "rows": 112704
+      },
+      {
+        "tipo": "hiit",
+        "rows": 109934
+      },
+      {
+        "tipo": "walk",
+        "rows": 88509
+      },
+      {
+        "tipo": "strength",
+        "rows": 85548
+      },
+      {
+        "tipo": "pedal",
+        "rows": 53740
+      },
+      {
+        "tipo": "ride",
+        "rows": 40765
+      }
+    ]
+  }
+}

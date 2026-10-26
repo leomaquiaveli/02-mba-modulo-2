@@ -1,0 +1,188 @@
+{
+  "pipeline": "vitaliza_m2_multimodal_uplift_crm_v1",
+  "cutoff_enforced": "2026-09-30T23:59:59-03:00",
+  "gemini_api_mode": "calibrated_deterministic_fallback",
+  "piece_2_heatmap_pixel_extractor": {
+    "status": "verified_from_local_zip",
+    "method": "pixels_deterministic_v1",
+    "sample_size": 5,
+    "avg_route_pixel_ratio": 0.0196,
+    "avg_green_park_ratio": 0.0726,
+    "avg_yellow_avenue_ratio": 0.0234,
+    "api_cost_brl": 0.0
+  },
+  "ablation_reference_metrics": {
+    "tabular_only_pr_auc": 0.5714,
+    "multimodal_gradient_boosting_pr_auc": 0.5986,
+    "pr_auc_gain_pp": 2.72,
+    "estimated_monthly_batch_llm_cost_brl": 280.0
+  },
+  "portfolio_budget_guardrails": {
+    "monthly_budget_cap_brl": 40000.0,
+    "allocated_total_cost_brl": 26441.9,
+    "expected_net_incremental_profit_brl": 207840.1,
+    "whatsapp_quota_used": 1500,
+    "cs_quota_used": 300
+  },
+  "evaluated_profiles": [
+    {
+      "subject_key": "subj_084dea5846",
+      "persona_cluster": "Cluster 3: Entusiastas Oscilantes (1–4 treinos/mês)",
+      "plan": "monthly",
+      "billing_channel": "google_play",
+      "workouts_m1": 2,
+      "score_churn_60d": 0.64,
+      "piece_2_multimodal_extraction": {
+        "objective_category": "performance",
+        "frequency_days_per_week": 3,
+        "support_cancel_intent": false,
+        "support_gps_bug": false,
+        "feed_injury_or_pain_mention": false,
+        "extraction_status": "completed",
+        "engine": "calibrated_deterministic_fallback_v1"
+      },
+      "piece_4_prescriptive_decision": {
+        "siegel_quadrant": "persuadable_persuadivel",
+        "action": "discount",
+        "channel": "whatsapp",
+        "authorized_offer": "monthly_30pct_3_months",
+        "expected_uplift_pp": 7.36,
+        "channel_cost_brl": 0.4,
+        "offer_cost_brl": 35.91,
+        "rationale": "Persuadível do plano mensal (1–4 treinos): Cupom de 30% por 3 meses reduziu a saída em -7,36 p.p. no experimento de agosto."
+      },
+      "piece_5_crm_copywriter": {
+        "generation_status": "approved_for_experiment",
+        "channel": "whatsapp",
+        "authorized_offer": "monthly_30pct_3_months",
+        "body": "Oi! Vimos que setembro foi mais corrido, mas sua meta dos 10km continua valendo na Vitaliza. Para apoiar sua retomada, liberamos 30% de desconto nas próximas 3 mensalidades (de R$ 39,90 por R$ 27,93/mês) e um plano progressivo de 2 corridas por semana. Toque aqui no app para ativar!",
+        "char_count": 283,
+        "validator_passed": true,
+        "checks": [
+          "offer_matches_briefing",
+          "zero_forbidden_claims",
+          "within_channel_length_limit",
+          "no_pii_exposed"
+        ]
+      }
+    },
+    {
+      "subject_key": "subj_c236a97d32",
+      "persona_cluster": "Cluster 3: Entusiastas Oscilantes (1–4 treinos/mês)",
+      "plan": "annual",
+      "billing_channel": "app_store",
+      "workouts_m1": 1,
+      "score_churn_60d": 0.58,
+      "piece_2_multimodal_extraction": {
+        "objective_category": "wellbeing",
+        "frequency_days_per_week": 3,
+        "support_cancel_intent": false,
+        "support_gps_bug": false,
+        "feed_injury_or_pain_mention": true,
+        "extraction_status": "completed",
+        "engine": "calibrated_deterministic_fallback_v1"
+      },
+      "piece_4_prescriptive_decision": {
+        "siegel_quadrant": "persuadable_persuadivel",
+        "action": "pause_offer",
+        "channel": "whatsapp",
+        "authorized_offer": "pause_up_to_60_days",
+        "expected_uplift_pp": 5.01,
+        "channel_cost_brl": 0.4,
+        "offer_cost_brl": 0.0,
+        "rationale": "Persuadível com relato de dor/lesão leve no feed: oferta de Pausa de até 60 dias ou adaptação leve sem queima de margem."
+      },
+      "piece_5_crm_copywriter": {
+        "generation_status": "approved_for_experiment",
+        "channel": "whatsapp",
+        "authorized_offer": "pause_up_to_60_days",
+        "body": "Sabemos que respeitar o tempo do corpo faz parte da evolução no treino. Separamos sessões leves de mobilidade e caminhada para quando você quiser retomar gradualmente — ou, se preferir descansar sem perder dias do seu plano, você pode pausar sua assinatura por até 60 dias direto no app.",
+        "char_count": 287,
+        "validator_passed": true,
+        "checks": [
+          "offer_matches_briefing",
+          "zero_forbidden_claims",
+          "within_channel_length_limit",
+          "no_pii_exposed"
+        ]
+      }
+    },
+    {
+      "subject_key": "subj_2f5d2d8efb",
+      "persona_cluster": "Cluster 4: Pagantes Inertes (0 treinos/mês — Sleeping Dog)",
+      "plan": "monthly",
+      "billing_channel": "app_store",
+      "workouts_m1": 0,
+      "score_churn_60d": 0.81,
+      "piece_2_multimodal_extraction": {
+        "objective_category": "wellbeing",
+        "frequency_days_per_week": null,
+        "support_cancel_intent": false,
+        "support_gps_bug": false,
+        "feed_injury_or_pain_mention": false,
+        "extraction_status": "completed",
+        "engine": "calibrated_deterministic_fallback_v1"
+      },
+      "piece_4_prescriptive_decision": {
+        "siegel_quadrant": "sleeping_dog_nao_perturbe",
+        "action": "no_contact",
+        "channel": "none",
+        "authorized_offer": "none",
+        "expected_uplift_pp": -9.16,
+        "channel_cost_brl": 0.0,
+        "offer_cost_brl": 0.0,
+        "rationale": "Bloqueio automático: acionar inativos com renovação ligada elevou o churn em +6,09 a +9,16 p.p. no experimento de 10/08."
+      },
+      "piece_5_crm_copywriter": {
+        "generation_status": "skipped_no_contact",
+        "channel": "none",
+        "body": null,
+        "validator_passed": true,
+        "checks": [
+          "no_contact_enforced"
+        ]
+      }
+    },
+    {
+      "subject_key": "subj_cfe0f24fad",
+      "persona_cluster": "Cluster 1: Atletas Sociais de Rua & GPS (>=5 treinos/mês)",
+      "plan": "annual",
+      "billing_channel": "web_cartao",
+      "workouts_m1": 14,
+      "score_churn_60d": 0.04,
+      "piece_2_multimodal_extraction": {
+        "objective_category": "performance",
+        "frequency_days_per_week": 4,
+        "support_cancel_intent": false,
+        "support_gps_bug": false,
+        "feed_injury_or_pain_mention": false,
+        "extraction_status": "completed",
+        "engine": "calibrated_deterministic_fallback_v1"
+      },
+      "piece_4_prescriptive_decision": {
+        "siegel_quadrant": "sure_thing_garantido",
+        "action": "challenge",
+        "channel": "push_email",
+        "authorized_offer": "none",
+        "expected_uplift_pp": 4.68,
+        "channel_cost_brl": 0.01,
+        "offer_cost_brl": 0.0,
+        "rationale": "Vedada concessão de cupom para Garantidos; engajamento orgânico via Desafio de 6 semanas (custo de oferta R$ 0,00)."
+      },
+      "piece_5_crm_copywriter": {
+        "generation_status": "approved_for_experiment",
+        "channel": "push_email",
+        "authorized_offer": "none",
+        "body": "Sua consistência nas corridas de rua inspira a comunidade Vitaliza! O novo Desafio de 6 Semanas já está aberto no app para você acompanhar sua evolução de ritmo com seu grupo.",
+        "char_count": 175,
+        "validator_passed": true,
+        "checks": [
+          "offer_matches_briefing",
+          "zero_forbidden_claims",
+          "within_channel_length_limit",
+          "no_pii_exposed"
+        ]
+      }
+    }
+  ]
+}

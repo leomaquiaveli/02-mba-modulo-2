@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title desc">
+<title id="title">Mapa das trilhas do Módulo 2 — Case Vitaliza</title>
+<desc id="desc">Uma leitura comum apresenta o case e os dados. Três trilhas aprofundam Negócios e CRM, Ciência de Dados e ML e IA Generativa. As frentes integram diagnóstico e baseline na A1 e decisão, retorno e mensagem na A2. Gestão e qualidade acompanham todo o percurso.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#94a3b8" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="1080" rx="24" fill="#f4f7fb"/>
+<path d="M24 0 H1416 Q1440 0 1440 24 V196 H0 V24 Q0 0 24 0" fill="#12233d"/>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="52" y="49" font-size="17" fill="#a9c6e8" font-weight="600">INTELI MBA  /  MÓDULO 2  /  CASE VITALIZA</text>
+<text x="52" y="108" font-size="40" fill="#ffffff" font-weight="700">Da pergunta de negócio à retenção</text>
+<text x="52" y="155" font-size="23" fill="#d2deee" font-weight="400">Um percurso comum. Três trilhas. Uma entrega integrada.</text>
+<rect x="44" y="224" width="1352" height="118" rx="16" fill="#ffffff" stroke="#dbe3ee"/>
+<text x="70" y="258" font-size="16" fill="#47627f" font-weight="700">01  LEITURA COMUM</text>
+<text x="70" y="302" font-size="24" fill="#233650" font-weight="600">Resumo do case</text>
+<text x="430" y="302" font-size="24" fill="#233650" font-weight="600">Aula 1 + Exhibits</text>
+<text x="844" y="302" font-size="24" fill="#233650" font-weight="600">Objetivos e entregas A1 / A2</text>
+<path d="M323 294 L391 294" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M683 294 L800 294" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M720 342 L720 374" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M266 374 L1174 374" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M266 374 L266 401" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M720 374 L720 401" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1174 374 L1174 401" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="44" y="409" width="432" height="352" rx="16" fill="#ffffff" stroke="#dbe3ee"/>
+<rect x="62" y="427" width="396" height="98" rx="10" fill="#e7f5f1" stroke="none"/>
+<text x="79" y="452" font-size="15" fill="#087f74" font-weight="700">02A</text>
+<text x="79" y="487" font-size="28" fill="#087f74" font-weight="700">Negócios e CRM</text>
+<text x="79" y="512" font-size="18" fill="#087f74" font-weight="400">Entender e decidir</text>
+<text x="75" y="562" font-size="20" fill="#233650" font-weight="400">Diagnóstico do churn</text>
+<text x="75" y="598" font-size="20" fill="#233650" font-weight="400">Hipóteses e personas</text>
+<text x="75" y="634" font-size="20" fill="#233650" font-weight="400">Uplift e retorno financeiro</text>
+<path d="M74 657 L446 657" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<text x="75" y="697" font-size="19" fill="#47627f" font-weight="400">Entrega: prioridades, política</text>
+<text x="75" y="725" font-size="19" fill="#47627f" font-weight="400">de contato e briefing.</text>
+<rect x="504" y="409" width="432" height="352" rx="16" fill="#ffffff" stroke="#dbe3ee"/>
+<rect x="522" y="427" width="396" height="98" rx="10" fill="#eaf2fc" stroke="none"/>
+<text x="539" y="452" font-size="15" fill="#2563a6" font-weight="700">02B</text>
+<text x="539" y="487" font-size="28" fill="#2563a6" font-weight="700">Dados e ML</text>
+<text x="539" y="512" font-size="18" fill="#2563a6" font-weight="400">Preparar e prever</text>
+<text x="535" y="562" font-size="20" fill="#233650" font-weight="400">Reconstrução histórica</text>
+<text x="535" y="598" font-size="20" fill="#233650" font-weight="400">Clusterização de assinantes</text>
+<text x="535" y="634" font-size="20" fill="#233650" font-weight="400">Previsão validada no tempo</text>
+<path d="M534 657 L906 657" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<text x="535" y="697" font-size="19" fill="#47627f" font-weight="400">Entrega: base, segmentos</text>
+<text x="535" y="725" font-size="19" fill="#47627f" font-weight="400">e probabilidades avaliadas.</text>
+<rect x="964" y="409" width="432" height="352" rx="16" fill="#ffffff" stroke="#dbe3ee"/>
+<rect x="982" y="427" width="396" height="98" rx="10" fill="#f2ecf8" stroke="none"/>
+<text x="999" y="452" font-size="15" fill="#8859a3" font-weight="700">02C</text>
+<text x="999" y="487" font-size="28" fill="#8859a3" font-weight="700">IA Generativa</text>
+<text x="999" y="512" font-size="18" fill="#8859a3" font-weight="400">Extrair e comunicar</text>
+<text x="995" y="562" font-size="20" fill="#233650" font-weight="400">Texto e imagem em variáveis</text>
+<text x="995" y="598" font-size="20" fill="#233650" font-weight="400">Qualidade, custo e ganho</text>
+<text x="995" y="634" font-size="20" fill="#233650" font-weight="400">Mensagens conforme a política</text>
+<path d="M994 657 L1366 657" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<text x="995" y="697" font-size="19" fill="#47627f" font-weight="400">Entrega: sinais avaliados</text>
+<text x="995" y="725" font-size="19" fill="#47627f" font-weight="400">e comunicação revisável.</text>
+<path d="M260 761 L260 795" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M720 761 L720 795" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M1180 761 L1180 795" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M260 795 L1180 795" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<path d="M720 795 L720 823" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="44" y="834" width="656" height="122" rx="16" fill="#e7f0fb" stroke="#ccdaed"/>
+<rect x="724" y="834" width="672" height="122" rx="16" fill="#e2f2ed" stroke="#c7e1d8"/>
+<text x="70" y="868" font-size="17" fill="#2563a6" font-weight="700">03  A1 · SEMANA 5</text>
+<text x="70" y="906" font-size="24" fill="#183d6c" font-weight="600">Diagnóstico, personas e baseline</text>
+<text x="70" y="936" font-size="18" fill="#47627f" font-weight="400">Base confiável e primeiro ciclo analítico</text>
+<text x="750" y="868" font-size="17" fill="#087f74" font-weight="700">04  A2 · SEMANA 10</text>
+<text x="750" y="906" font-size="24" fill="#075e55" font-weight="600">Previsão, decisão e mensagem</text>
+<text x="750" y="936" font-size="18" fill="#47627f" font-weight="400">Efeito, custo e retorno conectados</text>
+<rect x="44" y="981" width="1352" height="58" rx="12" fill="#12233d" stroke="none"/>
+<text x="69" y="1017" font-size="15" fill="#9bb5d5" font-weight="700">EM TODO O PERCURSO</text>
+<text x="324" y="1017" font-size="21" fill="#ffffff" font-weight="400">Gestão · Integração · Evidência · Revisão entre trilhas</text>
+</g></svg>
