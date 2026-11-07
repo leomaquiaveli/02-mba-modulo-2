@@ -50,12 +50,12 @@ flowchart TD
 
 ## 📊 2. Matriz Consolidada das Frentes, Objetivos e Entregáveis
 
-| Frente de Atuação | Objetivos do Case | Perfil Recomendado | Principais Entregáveis Tangíveis |
+| Frente de Atuação | Objetivos do Case | Principais Entregáveis Tangíveis | Responsáveis (Equipe) |
 | :--- | :--- | :--- | :--- |
-| **Frente 1** | **Objetivos 1 e 2** | Dados / BI / Negócios | Base unificada no corte `30/09/2026`, série histórica de churn conciliada e teste de hipóteses da alta de 2026. |
-| **Frente 2** | **Objetivos 3 e 4** | Ciência de Dados / ML | Segmentação de personas acionáveis e lista ordenada de probabilidade de churn em 60 dias sem *Data Leakage*. |
-| **Frente 3** | **Objetivos 5 e 8** | Engenharia de IA / GenAI | Features extraídas de texto e imagem validadas, cálculo de custo de tokens e gerador de mensagens de retenção. |
-| **Frente 4** | **Objetivos 6 e 7** | Growth / Finanças / CRM | Cálculo de Uplift da campanha de agosto, regra prescritiva de contato e DRE do lucro incremental líquido. |
+| **Frente 1** | **Objetivos 1 e 2** | Base unificada no corte `30/09/2026`, série histórica de churn conciliada e teste de hipóteses da alta de 2026. | |
+| **Frente 2** | **Objetivos 3 e 4** | Segmentação de personas acionáveis e lista ordenada de probabilidade de churn em 60 dias sem *Data Leakage*. | |
+| **Frente 3** | **Objetivos 5 e 8** | Features extraídas de texto e imagem validadas, cálculo de custo de tokens e gerador de mensagens de retenção. | |
+| **Frente 4** | **Objetivos 6 e 7** | Cálculo de Uplift da campanha de agosto, regra prescritiva de contato e DRE do lucro incremental líquido. | |
 
 ---
 
