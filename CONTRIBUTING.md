@@ -1,36 +1,8 @@
 # Guia de contribuição
 
-## Antes de começar
+Branches, padrão de commit, comandos e pull request estão no guia de Git do grupo: [`01_gerenciamento_de_tarefas/roteiro_execucao_pratica/03_GUIA_GIT.md`](./01_gerenciamento_de_tarefas/roteiro_execucao_pratica/03_GUIA_GIT.md).
 
-1. Leia o [README principal](./README.md).
-2. Escolha uma tarefa em [`01_gerenciamento_de_tarefas/`](./01_gerenciamento_de_tarefas/).
-3. Confirme a fonte oficial e a data de corte.
-4. Abra uma branch curta e descritiva.
-
-Exemplos:
-
-```bash
-git switch -c docs/aula-01
-git switch -c feat/auditoria-coorte
-git switch -c analysis/hipotese-preco
-```
-
-## O que pode entrar no Git
-
-- Markdown e diagramas Mermaid;
-- scripts e notebooks sem dados pessoais embutidos;
-- schemas e contratos;
-- testes;
-- gráficos e tabelas agregadas;
-- relatórios de auditoria sem registros individuais.
-
-## O que não pode entrar
-
-- CSVs e Parquet brutos;
-- ZIPs dos heatmaps;
-- e-mails, textos de clientes ou identificadores completos;
-- credenciais, tokens e arquivos `.env`;
-- resultados inventados ou ainda não executados.
+Este arquivo guarda só o padrão das entregas analíticas.
 
 ## Padrão de análise
 
@@ -45,28 +17,6 @@ Toda entrega analítica deve declarar:
 - resultado;
 - limitação;
 - comando para reprodução.
-
-## Commits
-
-Prefira um commit por mudança coerente.
-
-```text
-docs(aula-01): integrar CREATE e CRISP-DM ao case Vitaliza
-feat(auditoria): validar coorte ativa e registros pós-corte
-analysis(churn): testar hipótese de reajuste do plano mensal
-```
-
-Evite mensagens como `update`, `ajustes`, `final` ou `coisas novas`.
-
-## Pull request
-
-A descrição deve responder:
-
-1. O que mudou?
-2. Por que mudou?
-3. Como foi validado?
-4. Que arquivos ou dados não foram incluídos?
-5. Existe decisão pendente da equipe?
 
 ## Checklist
 
