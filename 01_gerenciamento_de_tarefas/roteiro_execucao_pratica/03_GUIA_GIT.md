@@ -88,7 +88,7 @@ Por que funciona: o primeiro comando guarda os seus commits numa branch com o se
 ```bash
 git status                                    # 1. o que mudou?
 git add membros/<sua_pasta>/                  # 2. separa só a sua pasta para o commit
-git commit -m "docs(membros): escreve passo 01 do A1 de <seu_nome>"   # 3. registra
+git commit -m "docs(membros): escreve as secoes 1 e 1.1 do A1" -m "- tabela plano x canal com subtotais" -m "- callout dos 2.250 com renovacao desligada"   # 3. registra
 git push origin membros/<seu_nome>            # 4. envia a sua branch para o GitHub
 ```
 
@@ -96,7 +96,7 @@ O que observar em cada comando:
 
 1. **`git status`:** só devem aparecer arquivos dentro de `membros/<sua_pasta>/`. Se aparecer algo de `artefatos_negocios/`, `artefatos_tecnologia/` ou de outro lugar, veja a seção 8.
 2. **`git add`:** adicione só a sua pasta. Não use `git add .` nem `git add -A`, porque eles incluem tudo o que mudou no repositório, inclusive o que você alterou sem querer.
-3. **`git commit`:** um commit por passo do playbook. O prompt da Ação 3 de cada passo já pede esse commit ao agente, com a mensagem `docs(membros): passo 0N do A1 de <seu_nome>`. Assim o histórico da sua branch mostra o avanço passo a passo. O padrão da mensagem está na seção 6.
+3. **`git commit`:** um commit por passo do playbook. O prompt da Ação 3 de cada passo já pede esse commit ao agente, com título e descrição no padrão da seção 6. Assim o histórico da sua branch mostra o avanço passo a passo.
 4. **`git push`:** envia para a sua branch no GitHub. Na primeira vez, use `git push -u origin membros/<seu_nome>`; depois, `git push` basta. Se aparecer `Permission denied` ou erro 403, você ainda não foi adicionado como colaborador do repositório: avise quem coordena o grupo.
 
 ---
@@ -125,24 +125,28 @@ Este guia usa `merge`, e não `rebase`, de propósito: o `merge` não reescreve 
 
 ## 6. Padrão de commit
 
-O grupo usa o padrão *Conventional Commits*: `tipo(escopo): resumo`.
+O grupo usa o padrão *Conventional Commits*. Todo commit tem **título** e **descrição**:
+
+- **Título:** `tipo(escopo): o que foi feito`.
+- **Descrição:** um tópico (linha começando com `-`) para cada alteração feita nos arquivos. Pode ser um só.
 
 | Tipo | Quando usar | Exemplo |
 | :--- | :--- | :--- |
-| `feat` | Conteúdo ou funcionalidade nova | `feat(membros): cria pasta e artefatos iniciais de fulano` |
-| `fix` | Correção de erro (número, link, fórmula) | `fix(membros): corrige receita do cluster 3 no A1 de fulano` |
-| `docs` | Texto e documentação | `docs(membros): escreve passo 03 do A1 de fulano` |
-| `chore` | Organização sem mudar conteúdo (renomear, mover, limpar) | `chore(membros): renomeia arquivos da pasta de fulano` |
+| `feat` | Conteúdo ou funcionalidade nova | `feat(membros): cria a pasta e os artefatos iniciais` |
+| `fix` | Correção de erro (número, link, fórmula) | `fix(membros): corrige a receita do cluster 3 no A1` |
+| `docs` | Texto e documentação | `docs(membros): escreve o diagnostico das 5 hipoteses do A1` |
+| `chore` | Organização sem mudar conteúdo (renomear, mover, limpar) | `chore(membros): renomeia os arquivos da pasta` |
 | `refactor` | Reestruturar código ou documento sem mudar o resultado | `refactor(src): separa a extração de pixels em uma função` |
 
 Regras:
 
 - **Escopo** é a parte do repositório afetada: `membros`, `playbook`, `artefatos`, `src`, `data-room`.
-- **Resumo** no presente, em minúsculas, sem ponto final e com até 72 caracteres: diz o que o commit faz.
-- **Corpo** (opcional) em linhas que começam com `-`, quando o resumo não basta:
+- **Título** no presente, em minúsculas, sem ponto final e com até 72 caracteres.
+- **Não coloque o seu nome** no título nem na descrição: o Git já registra quem fez o commit (autor).
+- **Descrição** com um `-m` por tópico:
 
   ```bash
-  git commit -m "docs(membros): escreve passo 04 do A1 de fulano" \
+  git commit -m "docs(membros): escreve segmentos, personas e valor em risco do A1" \
     -m "- tabela dos 4 clusters com centroides" \
     -m "- personas com numero e coluna de origem"
   ```
