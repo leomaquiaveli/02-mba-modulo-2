@@ -22,7 +22,7 @@
 | **Passo 02** | Engenharia de IA Generativa & Visão: Extração com Schema JSON tipado, Contagem de Pixels por Cor vs. VLM em `25.473` PNGs, *Tokenomics* e **Teste de Ablação**. | Insumos de personalização e custo de IA (`R$ 420/mês` no orçamento global). | **Seção 2 Completa (Peça 2 / Obj. 5):** Contratos JSON de Extração, Comparação Pixels (R$ 0) vs. VLM em `heatmaps_90d/` e **Teste de Ablação** (`PR-AUC 0,5714 ➔ 0,5986`, `+2,72 p.p.`). |
 | **Passo 03** | Ciência de Dados Supervisionada: comparação *Out-of-Time* entre modelos lineares e ensembles de árvores (**Logística, Árvore, Bagging/RF e Boosting**). | Base preditiva que alimenta a priorização de risco nos Slides 3 e 4. | **Seção 3 Completa (Peça 3 / Obj. 4):** Tabela comparativa das **4 Famílias Supervisionadas (60d)** (`ROC-AUC = 0,7858`, `PR-AUC = 0,5986`, `Lift@10% = 2,96x`). |
 | **Passo 04** | Inferência Causal e **Uplift Modeling (Eric Siegel)**: análise de Teste A/B controlado (`campanha_ago26.csv`), isolando *Persuadíveis* e provando os *Sleeping Dogs*. | **Slide 4 Completo:** Prova Causal do Experimento de `10/08/2026` (`14.120` sorteados) — **Tabela 4.1** (Por Plano) e **Tabela 4.2** (Prova Empírica dos *Sleeping Dogs*: `+9,16 p.p.` de churn induzido). | **Seção 4.1 (Peça 4 / Obj. 6):** Algoritmo da Regra Prescritiva de Contato em 5 Regras determinísticas. |
-| **Passo 05** | *Profit-Driven Analytics* (Verbeke et al.) e GenAI com Guardrails: alocação ótima de **R$ 40k/mês** (`300 CS` + `1.500 WA`), DRE de **Lucro Líquido (`+R$ 207,8k`)** e **Copywriting com Briefing Fechado**. | **Slide 5 Completo:** Matriz Prescritiva de Alocação Mensal e ROI (`+686%`);<br>**Slide 6 Completo:** Matriz de Riscos, Gatilhos (*Kill-Switch*) e Contingência. | **Seção 4.2 Completa (Peça 5 / Obj. 8):** Exemplos Reais de Saída do Redator Generativo com Briefing Fechado (Exemplos A e B). |
+| **Passo 05** | *Profit-Driven Analytics* (Verbeke et al.) e GenAI com Guardrails: alocação ótima de **R$ 40k/mês** (`300 CS` + `1.500 WA`), DRE de **Lucro Líquido (`+R$ 207,8k`)** e **Copywriting com Briefing Fechado**. | **Slide 5 Completo:** Matriz Prescritiva de Alocação Mensal e ROI (`+786%`);<br>**Slide 6 Completo:** Matriz de Riscos, Gatilhos (*Kill-Switch*) e Contingência. | **Seção 4.2 Completa (Peça 5 / Obj. 8):** Exemplos Reais de Saída do Redator Generativo com Briefing Fechado (Exemplos A e B). |
 
 ---
 
@@ -32,7 +32,7 @@
 Na Semana 10, você não está apresentando um relatório acadêmico: você está no papel da **Camila Ferraz (VP de Crescimento e Retenção)** diante do **Conselho de Administração da Vitaliza**, que precisa decidir onde investir para defender o valuation da **Série B** após o anúncio do **Strava Premium** no Brasil.
 Existem duas propostas rivais na mesa da diretoria:
 * **Caminho A (*Win-Back Reativo* — "O Bombeiro"):** Colocar uma oferta automática quando o cliente clica em *"Cancelar"* no site. **Por que falha sozinho?** Porque **70,22% da base (`10.359` clientes)** assina via App Store ou Google Play e cancela nas configurações do celular, sem passar pelo site da Vitaliza.
-* **Caminho B Puro (*Engagement Forecasting* — "O Detector de Fumaça"):** Calcular um score diário de risco de churn e disparar mensagens para todo mundo com risco alto. **Por que é perigoso sozinho?** Porque existem **`995` clientes inativos (`0` treinos) que ainda estão com a renovação ligada pagando `R$ 27,6 mil/mês` por esquecimento (*Sleeping Dogs*)**. Se o Caminho B mandar um alerta para eles, eles se lembram da assinatura e cancelam.
+* **Caminho B Puro (*Engagement Forecasting* — "O Detector de Fumaça"):** Calcular um score diário de risco de churn e disparar mensagens para todo mundo com risco alto. **Por que é perigoso sozinho?** Porque existem **`995` clientes inativos (`0` treinos) que ainda estão com a renovação ligada pagando `R$ 24,0 mil/mês` por esquecimento (*Sleeping Dogs*)**. Se o Caminho B mandar um alerta para eles, eles se lembram da assinatura e cancelam.
 * **Nossa Recomendação (Arquitetura Prescritiva de Uplift):** Une a capacidade preditiva do Caminho B com o **Filtro Causal de Uplift (Siegel)**, agindo nos **Persuadíveis** e mantendo silêncio absoluto nos **Sleeping Dogs**.
 
 ---
@@ -98,7 +98,7 @@ Existem duas propostas rivais na mesa da diretoria:
 ### Ação 2: Conferir o resultado
 * **Estoque de Perda Contratada:** `14.753` pagantes ativos (`R$ 409.941/mês` ou `R$ 4,92 milhões/ano`), com **`2.250` (`15,25%`)** já com renovação desligada (`2.082` no anual e `168` no mensal).
 * **Fato Vital 1 (Cegueira das Lojas):** **`10.359` pagantes (`70,22%`)** estão na App Store ou Google Play (o Caminho A só enxerga os `29,78%` do site).
-* **Fato Vital 2 (*Sleeping Dogs*):** **`995` inativos (`0` treinos)** ainda estão com renovação ligada pagando **`R$ 27,6 mil/mês`** por esquecimento.
+* **Fato Vital 2 (*Sleeping Dogs*):** **`995` inativos (`0` treinos)** ainda estão com renovação ligada pagando **`R$ 24,0 mil/mês`** por esquecimento.
 
 ---
 
@@ -128,10 +128,11 @@ Meu rascunho de título, número principal e decisão pedida para cada slide:
 [COLE AQUI O SEU RASCUNHO]
 """
 
-Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
+Trabalhe em quatro etapas e pare ao final de cada uma para eu confirmar:
 1. EXPLIQUE DE VOLTA: em linguagem de negócio, diga o que o meu resultado mostra (tamanho da perda contratada, os 4 segmentos, os 2 fatos vitais) e por que esses fatos enfraquecem o Caminho A e o Caminho B quando usados sozinhos. Aponte qualquer número que não feche, por exemplo segmentos que não somam 14.753 ou percentuais que não fecham a base inteira.
 2. REDIJA NA MINHA PASTA: a partir do meu resultado e do meu rascunho, escreva os Slides 1, 2 e 3 no meu `ARTEFATO_NEGOCIOS_SEMANA10_A2.md` e a Seção 1 (diagrama Mermaid das 5 peças) no meu `ARTEFATO_TECH_SEMANA10_A2.md`. Cada slide deve ter título em forma de conclusão, o número principal, uma tabela de apoio e a decisão pedida ao Conselho. Preserve o meu texto quando ele estiver correto e indique a fonte (tabela, query ou documento) de cada número.
 3. COMPARE NO FINAL: só agora leia os Slides 1 a 3 de `artefatos_negocios/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md` e a Seção 1 de `artefatos_tecnologia/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md`. Liste as diferenças em três grupos: números divergentes, argumentos que faltam no meu e pontos em que o meu está mais claro. Não copie trechos do artefato oficial para o meu arquivo; eu decido o que ajustar.
+4. COMMIT: quando eu aprovar o texto, confira se estou na branch `membros/<meu_nome>` (se não estiver, pare e me avise). Adicione só a minha pasta (`git add membros/<minha_pasta>/semana_10_A2/`, nunca `git add .`), faça o commit com a mensagem `docs(membros): passo 01 do A2 de <meu_nome>` e me mostre o hash. Depois rode `git push origin membros/<meu_nome>`; se o push for recusado por falta de permissão, me avise e siga sem ele. Nunca use `git push --force`.
 ```
 
 ---
@@ -222,7 +223,7 @@ Aqui você aprende 3 conceitos modernos de IA Generativa aplicada a Ciência de 
 ---
 
 ### Ação 2: Conferir o resultado
-* **Volumes até o corte:** `onboarding` (`63.929`), `tickets_suporte` (`4.422`), `feed_posts` (`119.309`) e `heatmaps_90d/` (`12.426` PNGs em `31/07` + `13.047` PNGs em `30/09`).
+* **Volumes até o corte:** `onboarding` (`63.929`), `tickets_suporte` (`4.422`), `feed_posts` (`119.187`) e `heatmaps_90d/` (`12.426` PNGs em `31/07` + `13.047` PNGs em `30/09`).
 * **Resultado do Teste de Ablação (Gradient Boosting 150 árvores):**
   * **Modelo A (Somente Tabelas e Logs):** `ROC-AUC = 0,7798` | `PR-AUC = 0,5714` | `Brier = 0,1352` | Custo = `R$ 0,00`.
   * **Modelo B (Tabelas + Features Extraídas de Texto/Suporte/Feed + Pixels):** **`ROC-AUC = 0,7858`** | **`PR-AUC = 0,5986` (`+2,72 p.p.`)** | **`Brier = 0,1330`** | Custo = **`R$ 280,00 / mês`**.
@@ -256,10 +257,11 @@ Meu rascunho da frase de conclusão e dos campos que eu extrairia, com a hipóte
 [COLE AQUI O SEU RASCUNHO]
 """
 
-Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
+Trabalhe em quatro etapas e pare ao final de cada uma para eu confirmar:
 1. EXPLIQUE DE VOLTA: em linguagem simples, diga o que o meu resultado mostra sobre as três fontes de texto, por que cada campo do meu rascunho poderia ajudar a prever a saída, e o que o teste de ablação (Modelo A: PR-AUC 0,5714; Modelo B: PR-AUC 0,5986; custo R$ 280/mês) permite e não permite concluir. Leia `src/02_pipeline_gemini_multimodal_crm.py` e me diga em qual modo ele roda sem `GEMINI_API_KEY` e quantos PNGs ele lê na amostra.
 2. REDIJA NA MINHA PASTA: escreva a Seção 2 (2.1 contrato JSON, 2.2 pixels vs. VLM, 2.3 ablação, limitações) no meu `ARTEFATO_TECH_SEMANA10_A2.md`, usando o meu resultado e o meu rascunho. Indique a fonte de cada número (query, script, relatório JSON ou documento do case).
 3. COMPARE NO FINAL: só agora leia a Seção 2 de `artefatos_tecnologia/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md` e liste as diferenças: números divergentes, campos ou argumentos que faltam no meu, e pontos em que o meu está mais claro ou mais honesto sobre limitações. Não copie trechos do artefato oficial; eu decido o que ajustar.
+4. COMMIT: quando eu aprovar o texto, confira se estou na branch `membros/<meu_nome>` (se não estiver, pare e me avise). Adicione só a minha pasta (`git add membros/<minha_pasta>/semana_10_A2/`, nunca `git add .`), faça o commit com a mensagem `docs(membros): passo 02 do A2 de <meu_nome>` e me mostre o hash. Depois rode `git push origin membros/<meu_nome>`; se o push for recusado por falta de permissão, me avise e siga sem ele. Nunca use `git push --force`.
 ```
 
 ---
@@ -379,10 +381,11 @@ Minha escolha de modelo e o motivo, em poucas frases:
 [COLE AQUI O SEU RASCUNHO]
 """
 
-Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
+Trabalhe em quatro etapas e pare ao final de cada uma para eu confirmar:
 1. EXPLIQUE DE VOLTA: sem jargão matemático, diga o que a minha query mostra sobre combinações de risco, o que significam ROC-AUC, PR-AUC, Brier e Lift@10% para a cota de 1.500 WhatsApps, e se a minha escolha de modelo se sustenta. Aponte onde o campeão (Gradient Boosting + Multimodal) não é o melhor e se a comparação com o Random Forest é justa, já que só o campeão usa variáveis de texto e imagem.
 2. REDIJA NA MINHA PASTA: escreva a Seção 3 no meu `ARTEFATO_TECH_SEMANA10_A2.md` com título em forma de conclusão, contrato temporal, tabela das 4 famílias, uma evidência da minha query e um parágrafo de decisão e limites. Indique a fonte de cada número.
 3. COMPARE NO FINAL: só agora leia a Seção 3 de `artefatos_tecnologia/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md` e liste as diferenças: números divergentes, argumentos que faltam no meu e pontos em que o meu está mais claro. Não copie trechos do artefato oficial; eu decido o que ajustar.
+4. COMMIT: quando eu aprovar o texto, confira se estou na branch `membros/<meu_nome>` (se não estiver, pare e me avise). Adicione só a minha pasta (`git add membros/<minha_pasta>/semana_10_A2/`, nunca `git add .`), faça o commit com a mensagem `docs(membros): passo 03 do A2 de <meu_nome>` e me mostre o hash. Depois rode `git push origin membros/<meu_nome>`; se o push for recusado por falta de permissão, me avise e siga sem ele. Nunca use `git push --force`.
 ```
 
 ---
@@ -511,10 +514,11 @@ Minha frase-resumo do experimento e as minhas 5 regras de contato:
 [COLE AQUI O SEU RASCUNHO]
 """
 
-Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
+Trabalhe em quatro etapas e pare ao final de cada uma para eu confirmar:
 1. EXPLIQUE DE VOLTA: em linguagem de negócio, diga o que as minhas duas tabelas mostram, calcule o uplift de cada tratamento contra o controle (controle menos tratamento, positivo = retenção ganha) e diga quais diferenças são grandes o bastante para sustentar uma regra e quais podem ser acaso. Se possível, calcule um intervalo de confiança aproximado para as diferenças da Tabela 4.2. Confira se as minhas 5 regras decorrem dos números.
 2. REDIJA NA MINHA PASTA: escreva o Slide 4 (Tabelas 4.1 e 4.2, ressalvas e decisão pedida) no meu `ARTEFATO_NEGOCIOS_SEMANA10_A2.md` e a Seção 4.1 (as 5 regras, cada uma com a evidência correspondente) no meu `ARTEFATO_TECH_SEMANA10_A2.md`. Compare as minhas regras com a função `apply_prescriptive_uplift_policy` em `src/02_pipeline_gemini_multimodal_crm.py` e me avise se houver diferença de lógica. Indique a fonte de cada número.
 3. COMPARE NO FINAL: só agora leia o Slide 4 de `artefatos_negocios/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md` e a Seção 4.1 de `artefatos_tecnologia/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md` e liste as diferenças: números divergentes, regras ou ressalvas que faltam no meu e pontos em que o meu está mais claro. Não copie trechos do artefato oficial; eu decido o que ajustar.
+4. COMMIT: quando eu aprovar o texto, confira se estou na branch `membros/<meu_nome>` (se não estiver, pare e me avise). Adicione só a minha pasta (`git add membros/<minha_pasta>/semana_10_A2/`, nunca `git add .`), faça o commit com a mensagem `docs(membros): passo 04 do A2 de <meu_nome>` e me mostre o hash. Depois rode `git push origin membros/<meu_nome>`; se o push for recusado por falta de permissão, me avise e siga sem ele. Nunca use `git push --force`.
 ```
 
 ---
@@ -587,7 +591,7 @@ No último passo do módulo, você conecta a decisão matemática ao mundo real 
 * Clientes salvos por linha (volume × uplift): 300 × 14% ≈ 42; 750 × 7,36% ≈ 55; 750 × 5,01% ≈ 38; 4.191 × 3,5% ≈ 146; mais 90 Garantidos preservados = 371.
 * Receita retida: R$ 49.450 + R$ 30.899 + R$ 21.348 + R$ 82.023 + R$ 50.562 = R$ 234.282; menos R$ 26.441,90 = R$ 207.840,10.
 * *Sleeping Dogs* protegidos: 995 × 8,53% (efeito do Conteúdo nos inativos) ≈ 85, que é o número do Slide 5. Confirme com o grupo como foram calculados os R$ 15.800/mês preservados nessa linha.
-* **ROI: refaça a conta.** Lucro ÷ desembolso = R$ 207.840,10 ÷ R$ 26.441,90 ≈ 7,86, ou seja, cerca de +786%. O Slide 5 e este playbook mostram +686%. Leve a divergência ao grupo antes de apresentar e use no seu artefato o valor que vocês confirmarem.
+* **ROI:** lucro ÷ desembolso = R$ 207.840,10 ÷ R$ 26.441,90 ≈ 7,86, ou seja, +786%. Uma versão anterior do Slide 5 mostrava +686% por erro de conta; confira sempre o ROI refazendo a divisão.
 * **Volume: some a coluna da Matriz 5.1.** As linhas 1 a 6 somam 14.035 (300 + 750 + 750 + 4.191 + 7.049 + 995), enquanto a linha consolidada mostra 14.753. A diferença é de 718 clientes. Uma leitura coerente com os números: a linha 4 inclui 600 dos 1.318 inertes com renovação desligada (janela das lojas), e os outros 718 não recebem ação. Confirme com o grupo e escreva isso no slide.
 * **Receita por cliente salvo.** Divida a receita retida de cada linha pelos clientes salvos e compare com o que um cliente paga no horizonte declarado (por exemplo, R$ 33,92/mês líquidos no mensal pelas lojas, menos R$ 4,20 de custo de servir). Se o valor por cliente salvo for maior do que esse teto, o horizonte usado precisa ser explicado no slide.
 * Mensagem do Exemplo A: R$ 39,90 × 0,70 = R$ 27,93. A oferta do texto deve ser igual à oferta autorizada, e o texto deve caber em 420 caracteres.
@@ -613,7 +617,7 @@ No último passo do módulo, você conecta a decisão matemática ao mundo real 
 * **Custo de Canais + IA:** `R$ 6.532,40` (`R$ 5.400` de 300 CS + `R$ 600` de 1.500 WhatsApps + `R$ 112,40` E-mail/Push + `R$ 420` Tokens LLM).
 * **Custo de Descontos Concedidos:** `R$ 19.909,50` (`R$ 3.750` anual + `R$ 16.159,50` mensal).
 * **Desembolso Mensal Total:** **`R$ 26.441,90 / mês`** (respeitando com folga o teto de **`R$ 40.000,00 / mês`**).
-* **Retorno Financeiro (Objetivo 7):** `~371` saídas evitadas/mês + `85` *Sleeping Dogs* protegidos = **`R$ 234.282,00`** de receita preservada $\rightarrow$ **Lucro Líquido Incremental de `+R$ 207.840,10` (ROI de `+686%`)**.
+* **Retorno Financeiro (Objetivo 7):** `~371` saídas evitadas/mês + `85` *Sleeping Dogs* protegidos = **`R$ 234.282,00`** de receita preservada $\rightarrow$ **Lucro Líquido Incremental de `+R$ 207.840,10` (ROI de `+786%`)**.
 
 ---
 
@@ -644,10 +648,11 @@ Minha conta do Slide 5, meus riscos do Slide 6 e meus dois briefings, com o que 
 [COLE AQUI O SEU RASCUNHO]
 """
 
-Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
+Trabalhe em quatro etapas e pare ao final de cada uma para eu confirmar:
 1. EXPLIQUE DE VOLTA: refaça a minha conta com as regras da seção 4 de `00_comece_por_aqui/01_RESUMO_EXECUTIVO_DO_CASE.md` e diga, linha por linha, se custo, desconto e clientes salvos estão certos. Confira: soma dos custos menor ou igual a R$ 40.000; 1.500 WhatsApps; 300 CS; soma dos volumes contra 14.753; ROI = lucro ÷ desembolso. Explique por que a alocação segue o lucro incremental e não o risco, e me diga se algum risco do meu Slide 6 está sem gatilho mensurável.
 2. REDIJA NA MINHA PASTA: escreva o Slide 5 (matriz, consolidado, ressalvas e decisão pedida) e o Slide 6 (riscos, gatilhos e contingências) no meu `ARTEFATO_NEGOCIOS_SEMANA10_A2.md`, e a Seção 4.2 (dois exemplos com briefing fechado, mensagem e validação) no meu `ARTEFATO_TECH_SEMANA10_A2.md`. Use a função `generate_and_validate_crm_message` de `src/02_pipeline_gemini_multimodal_crm.py` para checar cada mensagem: oferta igual à autorizada, nenhum termo proibido, até 420 caracteres. Não publique nome real de cliente além do que já consta no artefato oficial. Indique a fonte de cada número.
 3. COMPARE NO FINAL: só agora leia os Slides 5 e 6 de `artefatos_negocios/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md` e a Seção 4.2 de `artefatos_tecnologia/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md`. Liste as diferenças: números divergentes (inclusive ROI e soma dos volumes), riscos ou ressalvas que faltam no meu e pontos em que o meu está mais claro. Não copie trechos do artefato oficial; eu decido o que ajustar. Por fim, revise os meus dois arquivos de `semana_10_A2/` e diga se algum número aparece diferente entre eles.
+4. COMMIT: quando eu aprovar o texto, confira se estou na branch `membros/<meu_nome>` (se não estiver, pare e me avise). Adicione só a minha pasta (`git add membros/<minha_pasta>/semana_10_A2/`, nunca `git add .`), faça o commit com a mensagem `docs(membros): passo 05 do A2 de <meu_nome>` e me mostre o hash. Depois rode `git push origin membros/<meu_nome>`; se o push for recusado por falta de permissão, me avise e siga sem ele. Nunca use `git push --force`.
 ```
 
 ---
@@ -675,7 +680,7 @@ Ao final dos cinco passos, você tem dois arquivos na sua pasta. Antes de salvar
 - [ ] Os números que aparecem nos dois arquivos são idênticos: 14.753 pagantes; 70,22% nas lojas; 995 *Sleeping Dogs*; PR-AUC 0,5986 e ganho de +2,72 p.p.; R$ 280/mês de extração e R$ 420/mês de IA no orçamento; +9,16 p.p. de dano nos inativos; R$ 26.441,90/mês de desembolso; lucro incremental e ROI.
 - [ ] Os números são coerentes com a A1: os 4 segmentos têm os mesmos tamanhos de `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md` e do seu próprio A1 (4.089, 2.960, 5.391, 2.313), e os inertes se dividem em 1.318 e 995.
 - [ ] Todas as somas do bloco "Como conferir sozinho" de cada passo fecham.
-- [ ] As duas pendências do Passo 05 estão resolvidas ou explicadas no slide: o ROI e a diferença entre a soma dos volumes e 14.753.
+- [ ] O ROI confere com lucro ÷ desembolso (+786%), e a diferença entre a soma dos volumes da Matriz 5.1 e 14.753 está explicada no slide.
 
 **Rastreabilidade**
 
@@ -719,13 +724,13 @@ Ao final dos cinco passos, você tem dois arquivos na sua pasta. Antes de salvar
 | 2 | "O teste foi por push e e-mail. Por que o WhatsApp e o CS teriam o mesmo efeito?" | Rita Fontes, Patrícia | Slide 6, risco 3; documento de estratégia, seção 5.3 | Não sabemos ainda. Por isso há *holdout* de 10% nos envios de novembro e recalibração na semana 3. O uplift de CS está marcado como estimativa. |
 | 3 | "De onde vem o lucro e em qual horizonte?" | Rita Fontes | Matriz 5.1; resumo do case, seção 4 | Mostre a conta: volume × uplift = salvos; receita retida menos desembolso = lucro. Declare o horizonte e apresente o ROI que o grupo confirmou. |
 | 4 | "Vale pagar IA para ler textos e imagens?" | Diego Almeida, Rita Fontes | Tech Seção 2.3; `relatorios/simulacao_gemini_crm.json` | PR-AUC sobe de 0,5714 para 0,5986 por R$ 280/mês; mapas de calor por contagem de pixels custam R$ 0. Diga a limitação: texto e imagem foram medidos juntos. |
-| 5 | "Se deixarmos 995 clientes em silêncio, não estamos desistindo deles?" | Patrícia, Marcelo | Tabela 4.2, linha de 0 treinos; Slide 2 | Os três tratamentos aumentaram a saída nesse grupo (+6,09 a +9,16 p.p.). Eles pagam cerca de R$ 27,6 mil/mês. O silêncio preserva essa receita; o *kill-switch* garante que ninguém os acione por engano. |
+| 5 | "Se deixarmos 995 clientes em silêncio, não estamos desistindo deles?" | Patrícia, Marcelo | Tabela 4.2, linha de 0 treinos; Slide 2 | Os três tratamentos aumentaram a saída nesse grupo (+6,09 a +9,16 p.p.). Eles pagam cerca de R$ 24,0 mil/mês. O silêncio preserva essa receita; o *kill-switch* garante que ninguém os acione por engano. |
 
 Para ensaiar, use o prompt 2 da Ação 4 do Passo 05 e peça ao agente que faça também estas cinco perguntas, uma de cada vez, avaliando a sua resposta.
 
 ### 3. Salvar no GitHub
 
-O passo a passo completo (branch, commit, push e pull request) está no [`03_GUIA_GIT.md`](./03_GUIA_GIT.md). O resumo para este fechamento:
+Cada passo já termina com um commit (última etapa do prompt da Ação 3), então o histórico da sua branch mostra o seu avanço passo a passo. No fechamento, confira se sobrou algo sem commit e envie. O passo a passo completo (branch, commit, push e pull request) está no [`03_GUIA_GIT.md`](./03_GUIA_GIT.md).
 
 ```bash
 git status                                         # só devem aparecer arquivos da sua pasta em membros/

@@ -63,7 +63,7 @@ Em qualquer projeto real de Ciência de Dados e Negócios, o erro mais comum é 
 9. **Calcular a participação das lojas (`70,22%`).** Por quê: é o dado que limita o Caminho A. Nas lojas, o cliente desliga a renovação nas configurações do celular, fora do alcance da Vitaliza.
 
 **Armadilhas comuns:**
-- **Contar todas as linhas de `assinaturas`.** A tabela tem uma linha por assinatura, e a mesma pessoa pode ter várias ao longo do tempo (assina, cancela, volta). Sinal: um total muito acima de `14.813`.
+- **Contar todas as linhas de `assinaturas`.** A tabela tem uma linha por cliente (`32.643`), com a situação em `01/10/2026`, inclusive de quem já saiu. Sinal: um total muito acima de `14.813`.
 - **Esquecer as cortesias.** No arquivo, as 60 cortesias estão com renovação desligada. Se ficarem na conta, o total de ativos e a contagem de saída contratada sobem juntos. Sinal: total de `14.813` em vez de `14.753`.
 - **Filtro de renovação que não encontra nada.** `renovacao_automatica` é texto, com os valores `'sim'` e `'nao'`. Se o agente do BigQuery filtrar por `0` ou `false`, a contagem de renovação desligada vem zerada. Sinal: zero clientes com renovação desligada.
 - **Somar preço anual com mensal sem mensalizar.** Sinal: a receita do plano anual aparece muito maior que a do mensal.
@@ -141,6 +141,7 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 2. Redija no meu `ARTEFATO_NEGOCIOS_SEMANA5_A1.md` a Seção 1 (resumo executivo de três a cinco frases) e a Seção 1.1 (tabela plano × canal com subtotais e total, mais um callout sobre os clientes com renovação desligada). Use apenas os números do meu resultado e indique abaixo da tabela a fonte e o filtro usados.
 3. Redija no meu `ARTEFATO_TECH_SEMANA5_A1.md` a Seção 1: um diagrama Mermaid do pipeline em quatro camadas (ingestão das 13 fontes, saneamento, tabela analítica, modelos) e a regra de reconciliação das ativas em pagantes e cortesias.
 4. Só depois, leia `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md` e `artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md` e liste em uma tabela as diferenças entre o meu rascunho e o oficial: números divergentes (com a causa provável), itens que faltam no meu e afirmações do oficial que não têm fonte indicada. Não copie texto do oficial para o meu arquivo. Se eu quiser incorporar algo, eu peço.
+5. COMMIT: quando eu aprovar o texto, confira se estou na branch `membros/<meu_nome>` (se não estiver, pare e me avise). Adicione só a minha pasta (`git add membros/<minha_pasta>/semana_5_A1/`, nunca `git add .`), faça o commit com a mensagem `docs(membros): passo 01 do A1 de <meu_nome>` e me mostre o hash. Depois rode `git push origin membros/<meu_nome>`; se o push for recusado por falta de permissão, me avise e siga sem ele. Nunca use `git push --force`.
 ```
 
 **Depois do agente:** confira cada número do rascunho contra a sua saída do BigQuery. Se um número seu divergir do oficial, descubra a causa antes de trocar (filtro, arredondamento ou nome de coluna). A decisão sobre o que ajustar é sua.
@@ -271,6 +272,7 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 2. Redija a Seção 2 do meu `ARTEFATO_TECH_SEMANA5_A1.md`: uma frase de abertura e uma tabela com número, anomalia, volume afetado e regra de tratamento executável.
 3. Redija a parte 1 da Seção 5.2 (Limitações) do meu `ARTEFATO_NEGOCIOS_SEMANA5_A1.md`: lista numerada dizendo, em linguagem de negócio, o que cada problema dos dados impede de afirmar.
 4. Só depois, leia a Seção 2 de `artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md` e a Seção 5.2 de `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md` e liste em uma tabela as diferenças entre o meu rascunho e o oficial: volumes divergentes, anomalias que faltam no meu e regras que no oficial não estão escritas de forma executável. Não copie texto do oficial para o meu arquivo.
+5. COMMIT: quando eu aprovar o texto, confira se estou na branch `membros/<meu_nome>` (se não estiver, pare e me avise). Adicione só a minha pasta (`git add membros/<minha_pasta>/semana_5_A1/`, nunca `git add .`), faça o commit com a mensagem `docs(membros): passo 02 do A1 de <meu_nome>` e me mostre o hash. Depois rode `git push origin membros/<meu_nome>`; se o push for recusado por falta de permissão, me avise e siga sem ele. Nunca use `git push --force`.
 ```
 
 **Depois do agente:** confira se cada volume do rascunho aparece na sua saída do BigQuery. Se você não conseguiu medir uma anomalia (por exemplo, a contagem de eventos em UTC), escreva isso na seção em vez de copiar o número de outro lugar.
@@ -324,7 +326,7 @@ Aqui você aprende o **teste estruturado de hipóteses (`Dado vs. Hipótese + Li
 - **Comparar mensal e anual sem considerar o calendário.** O anual só renova a cada 12 meses. Ele pode parecer mais fiel apenas porque teve menos ocasiões de sair.
 - **Misturar duas contagens de saída.** O dicionário distingue os `3.389` fins de assinatura de junho a setembro das `3.362` perdas da série mensal. A série conta só quem estava ativo no início do mês.
 - **Ler H3 como causa.** A relação pode ter o sentido inverso: quem já decidiu sair para de treinar.
-- **Ignorar o confundimento em H4** (quando um terceiro fator explica as duas coisas). Relógio e amigos acompanham motivação prévia. Sinal: na própria consulta, o percentual com relógio cresce junto com a faixa de treino.
+- **Ignorar o confundimento em H4** (quando um terceiro fator explica as duas coisas). No Data Room, ter relógio está ligado à faixa de treino: `8,00%` de quem treina 5 ou mais vezes tem relógio, contra `71,53%` de quem treina 1 a 4 vezes. Comparar relógio sem separar por faixa de treino mistura os dois efeitos.
 - **Contar linhas de `pagamentos` como clientes.** Cada linha é uma tentativa de cobrança; o mesmo cliente pode ter várias recusas.
 
 **Como conferir sozinho:**
@@ -354,7 +356,7 @@ Aqui você aprende o **teste estruturado de hipóteses (`Dado vs. Hipótese + Li
 * **H1 (Preço/Reajuste):** Pico de **8,1% em abril/2026** (`1.154` saídas); na `pesquisa_saida.csv`, **`preco` = `41,06%` (`264` de `643` respostas)**.
 * **H2 (Assimetria Lojas):** **`70,22%` (`10.359`)** nas lojas (`app_store` + `google_play`).
 * **H3 (Frequência):** `≥5` treinos = apenas **`1,60%`** de renovação desligada; `1 a 4` treinos = **`15,19%`**; `0` treinos = **`56,98%`**.
-* **H4 (Social/Relógio):** `113.480` relações em `amizades.csv` e ~40% com relógio conectado protegendo a retenção.
+* **H4 (Social/Relógio):** `113.207` relações até 30/09/2026 (`113.480` no arquivo). `38,20%` dos pagantes têm relógio, com `15,49%` de renovação desligada, contra `15,10%` sem relógio: não há efeito protetor. Número de amigos também não separa o risco (`11,55%` com 0 amigos, `16,61%` com 1 a 5, `11,15%` com 6 ou mais). Treinar acompanhado ao menos uma vez: `12,55%` contra `15,59%`.
 * **H5 (Suporte/Pagamentos):** Dos `4.422` tickets, **`65,97%` resolvidos**, **`22,18%` abertos** e **`11,85%` sem resposta** (`34,03%` pendentes).
 
 ---
@@ -391,6 +393,7 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 2. Redija a Seção 2 do meu `ARTEFATO_NEGOCIOS_SEMANA5_A1.md`: frase de abertura, tabela das 5 hipóteses (hipótese / evidência com número, tabela e população / conclusão com limite e papel da hipótese) e um parágrafo de fechamento ligando H2 ao Caminho A e H3 ao Caminho B. Marque como hipótese tudo o que não for medido.
 3. Acrescente na Seção 5.2 do mesmo arquivo as limitações da pesquisa de saída e da leitura causal dos cruzamentos.
 4. Só depois, leia a Seção 2 de `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md` e liste em uma tabela as diferenças entre o meu rascunho e o oficial: números divergentes, hipóteses com conclusão diferente, evidências do oficial que eu não medi (como o resultado da campanha de agosto) e afirmações do oficial sem número. Não copie texto do oficial para o meu arquivo.
+5. COMMIT: quando eu aprovar o texto, confira se estou na branch `membros/<meu_nome>` (se não estiver, pare e me avise). Adicione só a minha pasta (`git add membros/<minha_pasta>/semana_5_A1/`, nunca `git add .`), faça o commit com a mensagem `docs(membros): passo 03 do A1 de <meu_nome>` e me mostre o hash. Depois rode `git push origin membros/<meu_nome>`; se o push for recusado por falta de permissão, me avise e siga sem ele. Nunca use `git push --force`.
 ```
 
 **Depois do agente:** se o oficial cita uma evidência que você não mediu, você tem duas opções: rodar a consulta e incluir o número com a fonte, ou deixar de fora. Não inclua números sem consulta.
@@ -415,7 +418,7 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 Este passo cobre os **3 Pilares Obrigatórios da Entrega A1 de Negócios** e o **Objetivo 3 de Tecnologia**:
 1. **Regra de Ouro da Clusterização (Sem Vazamento):** Você nunca coloca a coluna `churn` / `renovacao_automatica` dentro das variáveis que formam os grupos. Os grupos são formados exclusivamente pelo **comportamento no produto** (quantas vezes treina, quantos minutos, se treina ao ar livre com GPS ou em casa por vídeo). Só depois que os 4 grupos estão prontos é que olhamos a taxa de saída de cada um.
 2. **Os 5 Critérios de Kotler (Aula 3):** Todo segmento precisa ser *Mensurável, Substancial, Diferenciável, Acessível e Acionável*.
-3. **A Divisão Crítica do Cluster 4 (`4A` vs. `4B`):** Entre os `2.313` inativos (`0` treinos em setembro), `1.318` (`4A`) já desligaram a renovação automática, mas **`995` (`4B`) ainda estão com a renovação ligada pagando R$ 27.607/mês por esquecimento**. Esses `995` são os **Sleeping Dogs**: se você mandar um WhatsApp dizendo *"Sentimos sua falta!"*, você lembra o cliente de que ele está pagando sem usar, e ele tende a cancelar.
+3. **A Divisão Crítica do Cluster 4 (`4A` vs. `4B`):** Entre os `2.313` inativos (`0` treinos em setembro), `1.318` (`4A`) já desligaram a renovação automática, mas **`995` (`4B`) ainda estão com a renovação ligada pagando R$ 23.983/mês por esquecimento**. Esses `995` são os **Sleeping Dogs**: se você mandar um WhatsApp dizendo *"Sentimos sua falta!"*, você lembra o cliente de que ele está pagando sem usar, e ele tende a cancelar.
 
 ---
 
@@ -452,15 +455,15 @@ Este passo cobre os **3 Pilares Obrigatórios da Entrega A1 de Negócios** e o *
 - **Persona de dados** começa pelo grupo medido. O nome descreve o comportamento que diferencia o grupo. Cada frase aponta para uma coluna e um número. A persona termina com a ação de negócio que se propõe para ela. Se uma frase não tem número por trás, ela é retirada ou marcada como hipótese.
 
 **Do centróide à persona, em quatro passos:**
-1. **Comparar o centróide com a média da base.** A linha de total da tabela oficial mostra `6,7` treinos/mês. O que diferencia o grupo é o que fica muito acima ou muito abaixo dessa média.
+1. **Comparar o centróide com a média da base.** A média da base é `6,6` treinos/mês. O que diferencia o grupo é o que fica muito acima ou muito abaixo dessa média.
 2. **Dar o nome pelo comportamento dominante.** "Corredor Conectado de Parque" vem de 5 ou mais treinos no mês, com metade ou mais ao ar livre. Evite nomes que atribuem efeito não medido. O documento de diagnóstico A1 adverte que rótulos como "persuadível" ou "sleeping dog" exigem evidência específica. No artefato do grupo, o rótulo *Sleeping Dog* se apoia no resultado da campanha de agosto. Cite essa evidência quando usar o rótulo.
 3. **Anexar os números:** N, % da base, treinos e minutos médios, taxa de renovação desligada observada depois, receita líquida mensal.
 4. **Escrever o motivo provável de saída como hipótese marcada e a ação com canal e custo.**
 
 Exemplo com o Cluster 3:
-- Centróide: `2,2` treinos e `99,3` minutos por mês, bem abaixo da média de `6,7` treinos. Leitura: treina, mas sem regularidade.
+- Centróide: `2,2` treinos e `99,3` minutos por mês, bem abaixo da média de `6,6` treinos. Leitura: treina, mas sem regularidade.
 - Nome: "Entusiasta Oscilante".
-- Números: `5.391` clientes (`36,54%`), `15,19%` com renovação desligada, R$ 149.816/mês de receita líquida e R$ 22.757/mês em risco direto.
+- Números: `5.391` clientes (`36,54%`), `15,19%` com renovação desligada, R$ 151.968/mês de receita líquida e R$ 19.303/mês em risco direto.
 - Motivo provável (hipótese): sensibilidade ao preço depois do reajuste, somada à quebra de hábito.
 - Ação: primeiro público dos testes de CRM do A2. Como o grupo é maior que a cota de 1.500 WhatsApps, será preciso priorizar dentro dele.
 
@@ -469,18 +472,18 @@ Exemplo com o Cluster 3:
 - **Escolher os pontos de corte olhando a taxa de saída.** Se o corte de 5 treinos foi escolhido porque a taxa muda ali, a separação observada depois fica otimista. Justifique o corte por critério de produto ou declare isso como limitação.
 - **Usar `JOIN` em vez de `LEFT JOIN` com `uso_mensal`.** Cliente sem linha em setembro precisa entrar com zero treinos. Sinal: o Cluster 4 encolhe e o total não chega a `14.753`.
 - **Nomes genéricos** ("Cluster 0") ou que prometem efeito sem evidência.
-- **Atributo de persona sem número.** O artefato oficial descreve o Cluster 1 com relógio Garmin ou Apple Watch e rede de amigos, mas o prompt deste passo não pede % com relógio nem média de amigos por cluster. Se você mantiver a frase, rode essa consulta. Se não rodar, retire a frase.
+- **Atributo de persona sem número.** Uma versão anterior do artefato oficial descrevia o Cluster 1 como usuário de relógio Garmin ou Apple Watch. A consulta mostrou que só `8,46%` do grupo tem relógio. Toda frase de persona precisa de uma consulta por trás; se você não rodar, retire a frase.
 - **Escrever o motivo de saída como fato.** Ele é hipótese até ser testado.
 - **Tratar o 4B como perda certa.** É um risco condicional ao contato.
 - **Anualizar sem declarar a premissa.** Multiplicar por 12 supõe que o cliente ficaria 12 meses. No anual com renovação desligada, a perda só acontece no fim do ciclo.
 
 **Como conferir sozinho:**
 - `4.089` + `2.960` + `5.391` + `2.313` = `14.753`.
-- Receita: R$ 113.633 + R$ 82.258 + R$ 149.816 + R$ 64.234 = R$ 409.941, o mesmo total do Passo 01.
-- Cluster 4: `1.318` + `995` = `2.313`; R$ 36.627 + R$ 27.607 = R$ 64.234.
+- Receita: R$ 117.682 + R$ 86.795 + R$ 151.968 + R$ 53.496 = R$ 409.941, o mesmo total do Passo 01.
+- Cluster 4: `1.318` + `995` = `2.313`; R$ 29.513 + R$ 23.983 = R$ 53.496.
 - Renovação desligada: `113` (Clusters 1 e 2) + `819` (Cluster 3) + `1.318` (4A) = `2.250`, o mesmo total do Passo 01.
-- Anualização: R$ 22.757 × 12 = R$ 273.084; R$ 36.627 × 12 = R$ 439.524; R$ 27.607 × 12 = R$ 331.284.
-- Faça a média dos centróides ponderada pelo tamanho de cada grupo e compare com a linha de total da tabela. Se não fechar, descubra de onde veio o total antes de usá-lo.
+- Anualização (mensal × 12; diferenças de poucos reais vêm dos centavos): R$ 19.303 → R$ 231.640; R$ 29.513 → R$ 354.151; R$ 23.983 → R$ 287.792.
+- Média dos centróides ponderada pelo tamanho de cada grupo: `6,6` treinos e `293,8` minutos por mês, que deve ser a linha de total da sua tabela.
 - Para verificar atributos de persona, peça ao agente do BigQuery: "Para cada um dos 4 clusters deste passo, mostre o % com relógio conectado (excluindo `nenhum`), a média de amigos até 30/09/2026 e a distribuição por plano e canal."
 
 ---
@@ -506,12 +509,12 @@ Exemplo com o Cluster 3:
 ---
 
 ### Ação 2: Conferir o resultado
-* **Cluster 1 (`4.089` | `27,72%`):** `12,4` treinos/mês, `615,4` min, **`1,61%`** renovação desligada, Receita Líquida = **`R$ 113.633 / mês`**.
-* **Cluster 2 (`2.960` | `20,06%`):** `11,9` treinos/mês, `433,5` min, **`1,59%`** renovação desligada, Receita Líquida = **`R$ 82.258 / mês`**.
-* **Cluster 3 (`5.391` | `36,54%`):** `2,2` treinos/mês, `99,3` min, **`15,19%` (`819` clientes)** renovação desligada, Receita Líquida = **`R$ 149.816 / mês`** (Receita em risco direto = **`R$ 22.757/mês` ou `R$ 273.084/ano`**).
-* **Cluster 4 (`2.313` | `15,68%`):** `0,0` treinos/mês, **`56,98%`** renovação desligada, Receita Líquida = **`R$ 64.234 / mês`**, dividido em:
-  * **Cluster 4A (`1.318` com renovação desligada):** **`R$ 36.627/mês` (`R$ 439.524/ano`)**;
-  * **Cluster 4B (`995` *Sleeping Dogs* com renovação ligada):** **`R$ 27.607/mês` (`R$ 331.284/ano`)**.
+* **Cluster 1 (`4.089` | `27,72%`):** `12,4` treinos/mês, `615,4` min, **`1,61%`** renovação desligada, Receita Líquida = **`R$ 117.682 / mês`**.
+* **Cluster 2 (`2.960` | `20,06%`):** `11,9` treinos/mês, `433,5` min, **`1,59%`** renovação desligada, Receita Líquida = **`R$ 86.795 / mês`**.
+* **Cluster 3 (`5.391` | `36,54%`):** `2,2` treinos/mês, `99,3` min, **`15,19%` (`819` clientes)** renovação desligada, Receita Líquida = **`R$ 151.968 / mês`** (Receita em risco direto = **`R$ 19.303/mês` ou `R$ 231.640/ano`**).
+* **Cluster 4 (`2.313` | `15,68%`):** `0,0` treinos/mês, **`56,98%`** renovação desligada, Receita Líquida = **`R$ 53.496 / mês`**, dividido em:
+  * **Cluster 4A (`1.318` com renovação desligada):** **`R$ 29.513/mês` (`R$ 354.151/ano`)**;
+  * **Cluster 4B (`995` *Sleeping Dogs* com renovação ligada):** **`R$ 23.983/mês` (`R$ 287.792/ano`)**.
 
 ---
 
@@ -547,6 +550,7 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 2. Redija no meu `ARTEFATO_NEGOCIOS_SEMANA5_A1.md` a Seção 3 (método, diagrama e tabela consolidada com total), a Seção 4 (personas de dados: cada atributo com o número e a coluna correspondente, motivo de saída marcado como hipótese, ação proposta) e a Seção 5.1 (valor em risco mensal e anualizado, prioridade, nota sobre a premissa da anualização e callout sobre o 4B). Se alguma frase de persona não tiver número no meu resultado, deixe-a marcada como [A VERIFICAR] em vez de inventar.
 3. Redija no meu `ARTEFATO_TECH_SEMANA5_A1.md` a Seção 3: protocolo contra vazamento e tabela de centróides. Escreva qual método eu executei (regras de corte ou algoritmo de clusterização).
 4. Só depois, leia as Seções 3, 4 e 5.1 de `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md` e a Seção 3 de `artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md`. Liste em uma tabela as diferenças entre o meu rascunho e o oficial: números divergentes, atributos de persona do oficial que não têm número na consulta, diferenças de método e de nome. Não copie texto do oficial para o meu arquivo.
+5. COMMIT: quando eu aprovar o texto, confira se estou na branch `membros/<meu_nome>` (se não estiver, pare e me avise). Adicione só a minha pasta (`git add membros/<minha_pasta>/semana_5_A1/`, nunca `git add .`), faça o commit com a mensagem `docs(membros): passo 04 do A1 de <meu_nome>` e me mostre o hash. Depois rode `git push origin membros/<meu_nome>`; se o push for recusado por falta de permissão, me avise e siga sem ele. Nunca use `git push --force`.
 ```
 
 **Depois do agente:** resolva cada item marcado como [A VERIFICAR]. Rode a consulta de verificação sugerida em "Como conferir sozinho" ou retire a frase. Uma persona com menos atributos e todos medidos vale mais do que uma persona completa com atributos sem fonte.
@@ -679,6 +683,7 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 2. Redija a Seção 4 do meu `ARTEFATO_TECH_SEMANA5_A1.md`: contrato temporal, Seção 4.1 com cada variável (definição e tabela de origem), Seção 4.2 com a tabela de métricas e uma frase de negócio por métrica, parágrafo sobre os pesos e uma lista de limitações (incluindo a campanha de 10/08/2026 dentro da janela do alvo).
 3. Revise os meus dois arquivos de `semana_5_A1/`: liste todo número que aparece nos dois e aponte qualquer divergência entre eles. Liste também afirmações sem fonte indicada.
 4. Só depois, leia a Seção 4 de `artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md` e liste em uma tabela as diferenças entre o meu rascunho e o oficial: variáveis, definições, leitura dos pesos e limitações que um tem e o outro não. Não copie texto do oficial para o meu arquivo.
+5. COMMIT: quando eu aprovar o texto, confira se estou na branch `membros/<meu_nome>` (se não estiver, pare e me avise). Adicione só a minha pasta (`git add membros/<minha_pasta>/semana_5_A1/`, nunca `git add .`), faça o commit com a mensagem `docs(membros): passo 05 do A1 de <meu_nome>` e me mostre o hash. Depois rode `git push origin membros/<meu_nome>`; se o push for recusado por falta de permissão, me avise e siga sem ele. Nunca use `git push --force`.
 ```
 
 **Depois do agente:** corrija as divergências entre os seus dois arquivos antes de qualquer outra coisa. Em seguida, passe pelo checklist da seção "Fechamento da Semana 5".
@@ -740,7 +745,7 @@ Repita o exercício com Patrícia (Head de CS) e com Marcelo (Head de Produto). 
 
 ### Salvar no GitHub
 
-O passo a passo completo (branch, commit, push e pull request) está no [`03_GUIA_GIT.md`](./03_GUIA_GIT.md). O resumo:
+Cada passo já termina com um commit (última etapa do prompt da Ação 3), então o histórico da sua branch mostra o seu avanço passo a passo. No fechamento, confira se sobrou algo sem commit e envie. O passo a passo completo (branch, commit, push e pull request) está no [`03_GUIA_GIT.md`](./03_GUIA_GIT.md).
 
 ```bash
 git status                                         # só devem aparecer arquivos da sua pasta em membros/

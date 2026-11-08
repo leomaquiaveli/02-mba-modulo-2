@@ -96,7 +96,7 @@ O que observar em cada comando:
 
 1. **`git status`:** só devem aparecer arquivos dentro de `membros/<sua_pasta>/`. Se aparecer algo de `artefatos_negocios/`, `artefatos_tecnologia/` ou de outro lugar, veja a seção 8.
 2. **`git add`:** adicione só a sua pasta. Não use `git add .` nem `git add -A`, porque eles incluem tudo o que mudou no repositório, inclusive o que você alterou sem querer.
-3. **`git commit`:** um commit por bloco de trabalho que faça sentido sozinho (por exemplo, um passo do playbook). O padrão da mensagem está na seção 6.
+3. **`git commit`:** um commit por passo do playbook. O prompt da Ação 3 de cada passo já pede esse commit ao agente, com a mensagem `docs(membros): passo 0N do A1 de <seu_nome>`. Assim o histórico da sua branch mostra o avanço passo a passo. O padrão da mensagem está na seção 6.
 4. **`git push`:** envia para a sua branch no GitHub. Na primeira vez, use `git push -u origin membros/<seu_nome>`; depois, `git push` basta. Se aparecer `Permission denied` ou erro 403, você ainda não foi adicionado como colaborador do repositório: avise quem coordena o grupo.
 
 ---
