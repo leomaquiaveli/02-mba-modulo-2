@@ -1,18 +1,18 @@
-# 00 · Guia Mestre de Aprendizado Prático & Setup de Ambiente — Case Vitaliza (Módulo 2)
+# 00 · Cronograma e preparação do ambiente — Case Vitaliza (Módulo 2)
 
-> **Propósito deste Guia:** Este não é um manual de divisão burocrática de tarefas. O objetivo aqui é que **cada integrante do grupo (independentemente da sua área de origem)** consiga percorrer **100% da jornada técnica e estratégica de ponta a ponta**, aprendendo na prática a operar Bancos de Dados em Nuvem (**Google BigQuery**), **SQL Analítico**, **Machine Learning Supervisionado e Não-Supervisionado**, **Extração Multimodal com IA Generativa (Gemini)** e **Engenharia Assistida por Agentes de Código (Claude Code / Codex / VS Code)** até construir, com as próprias mãos, os seus próprios entregáveis completos da **Semana 5 (A1)** e da **Semana 10 (A2)**.
+> **Objetivo:** cada integrante do grupo, de qualquer área de origem, refaz sozinho a análise da **Semana 5 (A1)** e da **Semana 10 (A2)** e escreve os próprios artefatos de Negócios e Tecnologia. No caminho, aprende a usar **Google BigQuery**, **SQL analítico**, **Machine Learning supervisionado e não supervisionado**, **extração multimodal com IA generativa (Gemini)** e **agentes de código (Claude Code / Codex / VS Code)**.
 
 ---
 
-## 🎯 1. A Filosofia do Nosso Método: Aprender Fazendo de Ponta a Ponta
+## 1. Como o grupo vai trabalhar
 
-No modelo tradicional de trabalhos em grupo, cada pessoa faz apenas a parte que já sabe (quem é de negócios escreve texto, quem é de tecnologia roda código) e ninguém desenvolve habilidades novas. **Neste Módulo 2, invertemos essa lógica:**
+Os quatro entregáveis oficiais já estão prontos. Cada integrante refaz, na própria pasta, o caminho que levou a eles, para entender de onde vem cada número e por que cada decisão foi tomada:
 
-1. **O Gabarito Oficial já está pronto e garantido (`artefatos_negocios/` e `artefatos_tecnologia/`):**
-   * Os 4 entregáveis oficiais do módulo já estão construídos, auditados e salvos na raiz do repositório como **Ponto de Chegada / Referência Executiva**. Isso tira 100% da pressão de prazo das costas do grupo.
-2. **A Jornada Individual de Construção (`membros/nome_membro_1/`):**
-   * Com o resultado final garantido, cada integrante usa os nossos **2 Playbooks de Aprendizado Prático** para **reconstruir toda a solução passo a passo dentro da sua própria pasta individual (`membros/`)**:
-   * Você vai conversar com as 13 bases de dados no **BigQuery**, rodar consultas SQL reais, inspecionar scripts Python, interagir com o seu **Agente de Código** e ver nascer, seção por seção, os seus próprios documentos de Negócios e Tecnologia.
+1. **Entregáveis oficiais (`artefatos_negocios/` e `artefatos_tecnologia/`):**
+   * Os 4 entregáveis do módulo, revisados pelo grupo. Use-os para comparar o seu resultado ao fim de cada passo, não como ponto de partida.
+2. **Sua pasta individual (`membros/nome_membro_1/`):**
+   * Cada integrante segue os 2 playbooks e escreve os próprios artefatos dentro da sua pasta em `membros/`.
+   * Em cada passo você consulta as tabelas no BigQuery, roda o SQL, lê os scripts Python e usa o agente de código para montar as seções dos documentos.
 
 ```mermaid
 flowchart TD
@@ -28,35 +28,35 @@ flowchart TD
         BQ --> Code --> Deep
     end
 
-    subgraph MeuWorkspace ["3. SEU WORKSPACE INDIVIDUAL (ZERO CONFLITO DE GIT)"]
+    subgraph MeuWorkspace ["3. SUA PASTA INDIVIDUAL EM membros/"]
         MyA1["membros/nome_membro_1/semana_5_A1/<br/>• ARTEFATO_NEGOCIOS_SEMANA5_A1.md<br/>• ARTEFATO_TECH_SEMANA5_A1.md"]
         MyA2["membros/nome_membro_1/semana_10_A2/<br/>• ARTEFATO_NEGOCIOS_SEMANA10_A2.md<br/>• ARTEFATO_TECH_SEMANA10_A2.md"]
     end
 
-    Oficial -. "Serve como Gabarito / Padrão de Qualidade" .-> Code
+    Oficial -. "Comparação ao fim de cada passo" .-> Code
     Ciclo --> MeuWorkspace
 ```
 
 ---
 
-## 🛠️ 2. O Ecossistema de Ferramentas (O Que Vamos Aprender a Usar)
+## 2. Ferramentas
 
-Ao seguir este roteiro, você desenvolverá fluência prática em **4 ferramentas fundamentais de IA e Dados**:
+Os playbooks usam quatro ferramentas:
 
-| Ferramenta | O Que É na Prática (Sem Jargão) | Como Usamos no Case Vitaliza | Link / Onde Acessar |
+| Ferramenta | O que é | Como Usamos no Case Vitaliza | Link / Onde Acessar |
 | :--- | :--- | :--- | :--- |
-| **1. Google BigQuery + Agente Gemini** | Um "Super Excel em Nuvem" do Google que armazena as 13 tabelas do case (incluindo `atividades.parquet` com 1,25 milhão de treinos) e permite conversar com os dados em linguagem natural ou rodar SQL em segundos. | Para auditar os dados, limpar pegadinhas, calcular churn, segmentar clientes e analisar o experimento A/B de agosto sem travar o computador. | [**Abrir Dataset `vitaliza_inteli_modulo_2` no BigQuery**](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sthermal-origin-470820-e7!2svitaliza_inteli_modulo_2) |
+| **1. Google BigQuery + Agente Gemini** | Banco de dados analítico do Google que guarda as 13 tabelas do case (incluindo `atividades.parquet` com 1,25 milhão de treinos) e permite conversar com os dados em linguagem natural ou rodar SQL em segundos. | Para auditar os dados, limpar pegadinhas, calcular churn, segmentar clientes e analisar o experimento A/B de agosto sem travar o computador. | [**Abrir Dataset `vitaliza_inteli_modulo_2` no BigQuery**](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sthermal-origin-470820-e7!2svitaliza_inteli_modulo_2) |
 | **2. Agente de Código (`Claude Code`, `Codex`, `Cursor` ou `VS Code`)** | Um assistente que lê todas as pastas e documentos do nosso repositório, conversa com você sobre o case e preenche os seus relatórios. | Para transformar as respostas do BigQuery nas seções estruturadas dos seus artefatos dentro de `membros/` e debater os documentos das trilhas de estudo. | No seu computador (Desktop App ou VS Code). |
 | **3. NotebookLM do Case** | Caderno de IA alimentado exclusivamente com os PDFs oficiais (Enunciado, Dicionário de Dados e Slides das Aulas) e dossiês do projeto. | Para tirar dúvidas conceituais sobre regras do case, preços, taxas de canal e teoria das aulas (Siegel, Kotler, CRISP-DM). | [**Abrir Caderno Oficial no NotebookLM**](https://notebook.google.com/notebook/7201a470-3cf5-42e0-b859-7036086280ac) |
 | **4. Git & GitHub (`main` e `develop`)** | Sistema de controle de versão onde o repositório do grupo vive na nuvem. | Para você aprender na prática a clonar o projeto, puxar atualizações (`git pull`), salvar seus artefatos na sua pasta individual (`git commit`) e compartilhar na branch `develop` (`git push` / `git merge`). | [**Repositório `02-mba-modulo-2` no GitHub**](https://github.com/leomaquiaveli/02-mba-modulo-2) |
 
 ---
 
-## 👥 3. Como Funciona a Estrutura da Pasta `membros/` (Zero Conflito de Git)
+## 3. A pasta `membros/` e por que ela evita conflitos no Git
 
 Se 5 pessoas editarem ao mesmo tempo o arquivo `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md`, quando a segunda pessoa tentar subir para o GitHub vai ocorrer **conflito de merge** (porque dois computadores mexeram na mesma linha do mesmo arquivo).
 
-Para que **todo mundo possa construir os 4 artefatos completos do início ao fim** sem nunca travar em conflito de Git, cada integrante trabalha na sua própria subpasta dentro de [`membros/`](../../membros/):
+Para que cada pessoa escreva os 4 artefatos sem conflito no Git, cada integrante trabalha na sua própria subpasta dentro de [`membros/`](../../membros/):
 
 ```text
 membros/
@@ -76,7 +76,7 @@ membros/
 Abra o projeto no seu **Claude Code / Codex / VS Code** e mande este primeiro comando para preparar o seu espaço pessoal:
 
 ```text
-Quero iniciar minha jornada prática no repositório da Vitaliza.
+Vou começar os playbooks do case Vitaliza.
 1. Verifique se estou na branch `develop` (e faça `git pull origin develop` para garantir que tenho a versão mais recente).
 2. Duplique a pasta-modelo `membros/nome_membro_1/` criando uma nova pasta chamada `membros/<coloque_seu_identificador_aqui>/` (mantendo a subpasta `semana_5_A1/` e `semana_10_A2/` lá dentro).
 3. Me confirme a árvore de arquivos criada na minha pasta individual e me diga que estamos prontos para o Passo 01 do Playbook 1.
@@ -84,7 +84,7 @@ Quero iniciar minha jornada prática no repositório da Vitaliza.
 
 ---
 
-## 🗄️ 4. Como Usar o Google BigQuery no Dia a Dia (Três Formas de Interagir)
+## 4. Três formas de consultar o BigQuery
 
 Ao abrir o nosso dataset [**`vitaliza_inteli_modulo_2` no BigQuery**](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sthermal-origin-470820-e7!2svitaliza_inteli_modulo_2), você verá no painel esquerdo todas as **13 tabelas** do case (`amizades`, `assinaturas`, `atividades`, `campanha_ago26`, `eventos_assinatura`, `feed_posts`, `gym_churn_us`, `onboarding`, `pagamentos`, `pesquisa_saida`, `tickets_suporte`, `uso_mensal`, `usuarios`).
 
@@ -92,7 +92,7 @@ Você pode explorar essas tabelas de **3 formas diferentes** em cada Passo dos P
 
 1. **Forma 1 — Pelo Agente Conversacional (`Conversations` / `Ask a question`):**
    * Clique em uma tabela (ex.: `assinaturas`) ou clique em **`Conversations`** no menu esquerdo para selecionar **várias tabelas ao mesmo tempo** (ex.: `assinaturas` + `uso_mensal` + `usuarios`).
-   * Cole o **💬 Prompt para o Agente do BigQuery** do Playbook: o próprio Agente gera a consulta interna, calcula a tabela e desenha o gráfico na tela!
+   * Cole o **💬 Prompt para o Agente do BigQuery** do Playbook: o Agente gera a consulta, calcula a tabela e desenha o gráfico.
 2. **Forma 2 — Pelo `Data canvases` (Cruzamento Visual + Gráficos):**
    * Clique em **`Data canvases`** no menu esquerdo, adicione duas ou mais tabelas na tela, clique em **Join** (unindo por `user_id` ou `assinatura_id`) e peça análises ou gráficos comparativos na caixa de prompt.
 3. **Forma 3 — Pelo Editor SQL (`Queries`):**
@@ -100,11 +100,11 @@ Você pode explorar essas tabelas de **3 formas diferentes** em cada Passo dos P
 
 ---
 
-## 📅 5. Roteiro de Estudo e Construção (10 Passos em 2 Playbooks)
+## 5. Roteiro: 10 passos em 2 playbooks
 
-Você pode avançar no seu ritmo (por exemplo, **1 Passo por dia** em ~25 minutos, ou fazer uma imersão no fim de semana). Cada Passo tem começo, meio e fim e deixa uma seção inteira do seu entregável pronta:
+Você pode avançar no seu ritmo (por exemplo, **1 Passo por dia** em ~25 minutos, ou fazer tudo num fim de semana). Cada Passo tem começo, meio e fim e deixa uma seção inteira do seu entregável pronta:
 
-### 📘 Fase 1: Construindo os Entregáveis da Semana 5 (A1)
+### Fase 1: Construindo os Entregáveis da Semana 5 (A1)
 👉 **Abra o arquivo:** [**`01_PLAYBOOK_SEMANA_05_A1.md`**](./01_PLAYBOOK_SEMANA_05_A1.md)
 
 | Passo | O Que Você Vai Aprender a Fazer | Quais Tabelas Você Vai Dominar | O Que Fica Pronto na Sua Pasta `semana_5_A1/` |
@@ -117,7 +117,7 @@ Você pode avançar no seu ritmo (por exemplo, **1 Passo por dia** em ~25 minuto
 
 ---
 
-### 📙 Fase 2: Construindo os Entregáveis da Semana 10 (A2)
+### Fase 2: Construindo os Entregáveis da Semana 10 (A2)
 👉 **Abra o arquivo:** [**`02_PLAYBOOK_SEMANA_10_A2.md`**](./02_PLAYBOOK_SEMANA_10_A2.md)
 
 | Passo | O Que Você Vai Aprender a Fazer | Quais Tabelas / Scripts Você Vai Dominar | O Que Fica Pronto na Sua Pasta `semana_10_A2/` |
@@ -130,7 +130,7 @@ Você pode avançar no seu ritmo (por exemplo, **1 Passo por dia** em ~25 minuto
 
 ---
 
-## 🔄 6. Guia Rápido de Git para Salvar e Sincronizar Seu Aprendizado
+## 6. Git: atualizar e salvar o seu trabalho
 
 Sempre que você quiser atualizar seu computador com as novidades da branch `develop` ou salvar o que construiu na sua pasta em `membros/`, você pode pedir direto para o seu **Agente de Código** ou rodar estes comandos:
 

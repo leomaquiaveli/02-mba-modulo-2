@@ -1,10 +1,10 @@
-# 📙 Playbook 2 — Aprendizado Prático e Construção Guiada da Semana 10 (A2)
+# Playbook 2 — Semana 10 (A2)
 
 > **Projeto:** MBA Inteli Módulo 2 — Case Vitaliza (2º Movimento: AGIR — Submissão 60d `08/12`, Revelação `10/12`, Entrega Final `18/12/2026`)  
 > **Ambiente de Dados:** Google BigQuery ([`thermal-origin-470820-e7.vitaliza_inteli_modulo_2`](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sthermal-origin-470820-e7!2svitaliza_inteli_modulo_2))  
-> **Propósito deste Playbook:** Guiar qualquer integrante do grupo na **construção completa dos seus próprios entregáveis de Negócios (6 Slides do Conselho) e de Tecnologia da Semana 10**, aprendendo na prática como funcionam a **Extração Multimodal com IA Generativa (Texto + Imagens de Mapas de Calor)**, o **Teste de Ablação**, a **Comparação de 4 Algoritmos Supervisionados (Logística, Árvores, Random Forest e Gradient Boosting)**, a **Modelagem Causal de Uplift (Siegel)**, a **Alocação Financeira de Orçamento (Profit Analytics)** e o **Redator Generativo de CRM com Briefing Fechado**.
+> **Objetivo:** conduzir qualquer integrante do grupo na **construção completa dos seus próprios entregáveis de Negócios (6 Slides do Conselho) e de Tecnologia da Semana 10**, aprendendo na prática como funcionam a **Extração Multimodal com IA Generativa (Texto + Imagens de Mapas de Calor)**, o **Teste de Ablação**, a **Comparação de 4 Algoritmos Supervisionados (Logística, Árvores, Random Forest e Gradient Boosting)**, a **Modelagem Causal de Uplift (Siegel)**, a **Alocação Financeira de Orçamento (Profit Analytics)** e o **Redator Generativo de CRM com Briefing Fechado**.
 >
-> **Seus Arquivos de Construção (no seu workspace isolado sem conflito de Git):**
+> **Seus arquivos (na sua pasta em `membros/`):**
 > * 📊 Negócios A2 (Os 6 Slides do Conselho): `membros/nome_membro_1/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md`
 > * 💻 Tecnologia A2 (Multimodal, 4 Modelos 60d, Uplift & Copywriter): `membros/nome_membro_1/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md`
 >
@@ -14,7 +14,7 @@
 
 ---
 
-## 🗺️ Mapa de Coerência 1:1 — O Que Você Aprende e Constrói em Cada Passo
+## O que cada passo produz
 
 | Passo | Habilidade Técnica & de Negócio Desenvolvida | O Que Constrói no Seu `ARTEFATO_NEGOCIOS_SEMANA10_A2.md` (6 Slides do Conselho) | O Que Constrói no Seu `ARTEFATO_TECH_SEMANA10_A2.md` (Seções 1 a 4) |
 | :--- | :--- | :--- | :--- |
@@ -26,9 +26,9 @@
 
 ---
 
-## 🟠 PASSO 01 — Diagnóstico para o Board (Slides 1 e 2) e Comparação Estratégica Caminho A vs. B (Slide 3 + Arquitetura Tech Seção 1)
+## PASSO 01 — Diagnóstico para o Board (Slides 1 e 2) e Comparação Estratégica Caminho A vs. B (Slide 3 + Arquitetura Tech Seção 1)
 
-### 🧠 O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
 Na Semana 10, você não está apresentando um relatório acadêmico: você está no papel da **Camila Ferraz (Head de Dados e IA)** diante do **Conselho de Administração da Vitaliza**, que precisa decidir onde investir para defender o valuation da **Série B** após o anúncio do **Strava Premium** no Brasil.
 Existem duas propostas rivais na mesa da diretoria:
 * **Caminho A (*Win-Back Reativo* — "O Bombeiro"):** Colocar uma oferta automática quando o cliente clica em *"Cancelar"* no site. **Por que falha sozinho?** Porque **70,22% da base (`10.359` clientes)** assina via App Store ou Google Play e cancela nas configurações do celular, sem nunca passar pelo site da Vitaliza!
@@ -37,7 +37,7 @@ Existem duas propostas rivais na mesa da diretoria:
 
 ---
 
-### 🔹 Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
 * **Tabelas no BigQuery:** `assinaturas`, `uso_mensal` e `usuarios`
 
 * **💬 Prompt Principal para colar no Agente do BigQuery:**
@@ -81,14 +81,14 @@ Existem duas propostas rivais na mesa da diretoria:
 
 ---
 
-### 🔹 Ação 2: Conferir o Output na Tela (Gabarito)
+### Ação 2: Conferir o Output na Tela (Gabarito)
 * **Estoque de Perda Contratada:** `14.753` pagantes ativos (`R$ 409.941/mês` ou `R$ 4,92 milhões/ano`), com **`2.250` (`15,25%`)** já com renovação desligada (`2.082` no anual e `168` no mensal).
 * **Fato Vital 1 (Cegueira das Lojas):** **`10.359` pagantes (`70,22%`)** estão na App Store ou Google Play (o Caminho A só enxerga os `29,78%` do site).
 * **Fato Vital 2 (*Sleeping Dogs*):** **`995` inativos (`0` treinos)** ainda estão com renovação ligada pagando **`R$ 27,6 mil/mês`** por esquecimento.
 
 ---
 
-### 🔹 Ação 3: Montar os Slides 1, 2 e 3 + Arquitetura Tech no Seu Agente de Código
+### Ação 3: Montar os Slides 1, 2 e 3 + Arquitetura Tech no Seu Agente de Código
 ```text
 Estou construindo os meus entregáveis da Semana 10 (A2) na minha pasta individual `membros/nome_membro_1/semana_10_A2/` (ou na minha pasta personalizada em `membros/`).
 Consulte como referência os arquivos oficiais `artefatos_negocios/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md` e `artefatos_tecnologia/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md`, mas NÃO altere os arquivos da raiz — edite APENAS os arquivos dentro da minha pasta em `membros/`.
@@ -108,7 +108,7 @@ Com base nessa resposta:
 
 ---
 
-### 💡 Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
+### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
 1. **No Agente do BigQuery (Quem São os *Sleeping Dogs* por Plano e Canal?):**
    ```text
    Dentro dos 995 assinantes ativos que tiveram 0 treinos em setembro ('2026-09') mas ainda estão com a renovacao_automatica ligada (os nossos Sleeping Dogs), quantos são do plano anual e quantos são do plano mensal? E qual é a distribuição deles entre App Store, Google Play e Site?
@@ -120,9 +120,9 @@ Com base nessa resposta:
 
 ---
 
-## 🟠 PASSO 02 — Peça 2 (Objetivo 5): Extração Multimodal de Texto e Imagem (`heatmaps_90d/`), Tokenomics e Teste de Ablação
+## PASSO 02 — Peça 2 (Objetivo 5): Extração Multimodal de Texto e Imagem (`heatmaps_90d/`), Tokenomics e Teste de Ablação
 
-### 🧠 O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
 O Objetivo 5 do case faz uma pergunta muito prática de engenharia de IA: **"Processar textos livres (`onboarding`, `tickets_suporte`, `feed_posts`) e `25.473` imagens de mapas de calor (`heatmaps_90d/`) melhora a previsão de churn o suficiente para pagar o custo dos tokens?"**
 Aqui você aprende 3 conceitos modernos de IA Generativa aplicada a Ciência de Dados:
 1. **Extração com Schema JSON Fixo (*Structured Outputs*):** Em vez de pedir um resumo aberto ao Gemini, exigimos que ele devolva um JSON tipado com variáveis booleanas e categóricas (`motivacao_onboarding`, `suporte_falha_tecnica_gps`, `feed_mencao_lesao_ou_dor`) que entram direto como colunas na tabela de Machine Learning!
@@ -131,7 +131,7 @@ Aqui você aprende 3 conceitos modernos de IA Generativa aplicada a Ciência de 
 
 ---
 
-### 🔹 Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
 * **Tabelas no BigQuery:** `onboarding`, `tickets_suporte` e `feed_posts`
 
 * **💬 Prompt Principal para colar no Agente do BigQuery:**
@@ -162,7 +162,7 @@ Aqui você aprende 3 conceitos modernos de IA Generativa aplicada a Ciência de 
 
 ---
 
-### 🔹 Ação 2: Conferir o Output e a Tabela do Teste de Ablação
+### Ação 2: Conferir o Output e a Tabela do Teste de Ablação
 * **Volumes até o corte:** `onboarding` (`63.929`), `tickets_suporte` (`4.422`), `feed_posts` (`119.309`) e `heatmaps_90d/` (`12.426` PNGs em `31/07` + `13.047` PNGs em `30/09`).
 * **Resultado do Teste de Ablação (Gradient Boosting 150 árvores):**
   * **Modelo A (Somente Tabelas e Logs):** `ROC-AUC = 0,7798` | `PR-AUC = 0,5714` | `Brier = 0,1352` | Custo = `R$ 0,00`.
@@ -170,7 +170,7 @@ Aqui você aprende 3 conceitos modernos de IA Generativa aplicada a Ciência de 
 
 ---
 
-### 🔹 Ação 3: Montar a Seção 2 no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Montar a Seção 2 no Seu Agente de Código (Claude Code / Codex / VS Code)
 ```text
 Acabei de rodar o Passo 02 no BigQuery analisando as fontes de texto livre (onboarding, suporte e feed):
 """
@@ -185,7 +185,7 @@ Consultando como referência a Seção 2 completa do arquivo oficial `artefatos_
 
 ---
 
-### 💡 Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
+### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
 1. **No Agente do BigQuery (Lendo o Que os Clientes Escrevem Antes de Sair):**
    ```text
    Cruze assinaturas (clientes com renovacao_automatica desligada) com tickets_suporte e feed_posts. Mostre 5 histórias reais de clientes que desligaram a renovação, exibindo o que eles postaram no feed e o que reclamaram no suporte antes de decidir sair.
@@ -197,9 +197,9 @@ Consultando como referência a Seção 2 completa do arquivo oficial `artefatos_
 
 ---
 
-## 🟠 PASSO 03 — Peça 3 (Objetivo 4): Comparação das 4 Famílias de Modelos Supervisionados em 60 Dias
+## PASSO 03 — Peça 3 (Objetivo 4): Comparação das 4 Famílias de Modelos Supervisionados em 60 Dias
 
-### 🧠 O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
 No Objetivo 4 completo, o case pede para comparar **4 famílias clássicas de Machine Learning Supervisionado**:
 1. **Regressão Logística (Linear):** Soma pesos lineares para cada variável. É fácil de explicar, mas não captura sozinha quando **duas coisas combinadas** explodem o risco (ex.: ser do *Plano Mensal* **E** cair para *1 treino* **E** ter *ticket sem resposta*).
 2. **Árvore de Decisão (`max_depth=5`):** Cria regras do tipo `SE treinos < 3 E plano = mensal ENTÃO risco = alto`. Concentra muito bem o topo 10% (`Lift = 2,97x`), mas uma árvore sozinha é instável.
@@ -208,7 +208,7 @@ No Objetivo 4 completo, o case pede para comparar **4 famílias clássicas de Ma
 
 ---
 
-### 🔹 Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
 * **Tabelas no BigQuery:** `assinaturas`, `uso_mensal` e `tickets_suporte`
 
 * **💬 Prompt Principal para colar no Agente do BigQuery:**
@@ -245,7 +245,7 @@ No Objetivo 4 completo, o case pede para comparar **4 famílias clássicas de Ma
 
 ---
 
-### 🔹 Ação 2: Conferir as Métricas Auditadas das 4 Famílias Supervisionadas
+### Ação 2: Conferir as Métricas Auditadas das 4 Famílias Supervisionadas
 | Família Supervisionada | ROC-AUC | PR-AUC | Brier Score | Lift @ Topo 10% (`1.500` WA) | Papel |
 | :--- | ---: | ---: | ---: | ---: | :--- |
 | **1. Regressão Logística (Baseline)** | `0,7522` | `0,5079` | `0,1504` | `2,55x` | Referência linear interpretável. |
@@ -255,7 +255,7 @@ No Objetivo 4 completo, o case pede para comparar **4 famílias clássicas de Ma
 
 ---
 
-### 🔹 Ação 3: Montar a Seção 3 no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Montar a Seção 3 no Seu Agente de Código (Claude Code / Codex / VS Code)
 ```text
 Acabei de rodar o Passo 03 no BigQuery verificando as interações não-lineares de risco:
 """
@@ -267,7 +267,7 @@ Consultando como referência a Seção 3 do arquivo oficial `artefatos_tecnologi
 
 ---
 
-### 💡 Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
+### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
 1. **No Agente do BigQuery (Encontrando o Perfil de Maior Risco da Base Inteira):**
    ```text
    Cruze assinaturas (14.753 pagantes ativos) com uso_mensal ('2026-09'), pagamentos e tickets_suporte. Quais combinações de plano_atual, faixa de treino e problemas de pagamento/suporte têm mais de 40% de renovacao_automatica desligada?
@@ -279,9 +279,9 @@ Consultando como referência a Seção 3 do arquivo oficial `artefatos_tecnologi
 
 ---
 
-## 🟠 PASSO 04 — Peça 4 (Objetivo 6): O Experimento de `10/08/2026` (`campanha_ago26`) e a Prova dos *Sleeping Dogs* vs. *Persuadíveis*
+## PASSO 04 — Peça 4 (Objetivo 6): O Experimento de `10/08/2026` (`campanha_ago26`) e a Prova dos *Sleeping Dogs* vs. *Persuadíveis*
 
-### 🧠 O Que Você Vai Aprender Neste Passo (A Descoberta Mais Importante do Case!)
+### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
 Este é o ponto alto da teoria de **Uplift Modeling (Eric Siegel)**:
 * Prever que alguém tem **alto risco de sair** não significa que mandar uma mensagem vai salvar essa pessoa!
 * Em `10/08/2026`, a Vitaliza sorteou **`14.120` pagantes** em 4 grupos (`controle`, `desafio`, `cupom`, `conteudo`). Quando cruzamos esse experimento no BigQuery com a frequência de treino no mês anterior ao sorteio (**julho/2026**), descobrimos **a prova matemática dos 4 Quadrantes de Siegel**:
@@ -290,7 +290,7 @@ Este é o ponto alto da teoria de **Uplift Modeling (Eric Siegel)**:
 
 ---
 
-### 🔹 Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
 * **Tabelas no BigQuery:** `campanha_ago26`, `assinaturas` e `uso_mensal`
 
 * **💬 Prompt Principal para colar no Agente do BigQuery:**
@@ -343,7 +343,7 @@ Este é o ponto alto da teoria de **Uplift Modeling (Eric Siegel)**:
 
 ---
 
-### 🔹 Ação 2: Conferir o Output na Tela (Gabarito Slide 4)
+### Ação 2: Conferir o Output na Tela (Gabarito Slide 4)
 * **Tabela 4.1 (No Plano Mensal):**
   * `Controle` (`1.440`): `14,58%` churn efetivo | `17,99%` saída + desligamento.
   * `Cupom` (`1.420`): **`8,94%` churn efetivo | `10,63%` saída + desligamento (`+7,36 p.p.` de Uplift!)**.
@@ -356,7 +356,7 @@ Este é o ponto alto da teoria de **Uplift Modeling (Eric Siegel)**:
 
 ---
 
-### 🔹 Ação 3: Montar o Slide 4 e a Seção 4.1 no Seu Agente de Código
+### Ação 3: Montar o Slide 4 e a Seção 4.1 no Seu Agente de Código
 ```text
 Acabei de rodar o Passo 04 no BigQuery e obtive as duas tabelas causais do experimento de 10/08/2026 (Tabela 4.1 por Plano e Tabela 4.2 por Faixa de Uso em Julho):
 """
@@ -370,7 +370,7 @@ Consultando como referência o Slide 4 de `artefatos_negocios/semana_10_A2/ARTEF
 
 ---
 
-### 💡 Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
+### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
 1. **No Agente do BigQuery (Clicar na Mensagem Significa Ficar na Vitaliza?):**
    ```text
    Na tabela campanha_ago26 cruzada com assinaturas, compare a taxa de clique (clicou = 1) com a taxa real de retenção nos grupos Cupom e Desafio. Por que olhar apenas para a taxa de clique da campanha enganaria a diretoria de marketing?
@@ -382,16 +382,16 @@ Consultando como referência o Slide 4 de `artefatos_negocios/semana_10_A2/ARTEF
 
 ---
 
-## 🟠 PASSO 05 — Peças 4 e 5 (Objetivos 7 e 8): Alocação do Orçamento de R$ 40k (`300 CS` + `1.500 WA`), Lucro Líquido (`+R$ 207,8k`), Copywriter CRM e Contingência
+## PASSO 05 — Peças 4 e 5 (Objetivos 7 e 8): Alocação do Orçamento de R$ 40k (`300 CS` + `1.500 WA`), Lucro Líquido (`+R$ 207,8k`), Copywriter CRM e Contingência
 
-### 🧠 O Que Você Vai Aprender Neste Passo (Fechando o Sistema de Ponta a Ponta)
+### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
 No último passo do módulo, você conecta a decisão matemática ao mundo real das operações de Growth e CRM:
 1. **Otimização sob Restrições Físicas e Financeiras (Objetivo 7):** Temos no máximo **300 atendimentos humanos de CS** (R$ 18/un = R$ 5.400), **1.500 mensagens de WhatsApp** (R$ 0,40/un = R$ 600), E-mail (R$ 0,01) e Push (R$ 0,00), e a soma de tudo (incluindo os descontos de R$ 35,91 no mensal e R$ 25,00 no anual + R$ 420 de tokens de IA) não pode passar de **R$ 40.000/mês**. Nossa regra gasta **R$ 26.441,90/mês** e gera **+R$ 207.840,10 de Lucro Líquido Incremental**!
 2. **Copywriting Generativo com Briefing Fechado (Objetivo 8):** O modelo de linguagem (Gemini) **nunca decide se o cliente ganha desconto**. Quem decide o canal e a oferta é a regra determinística da Peça 4. O Gemini recebe um briefing fechado com o nome real do cliente, a meta que ele escreveu no `onboarding.csv`, a modalidade favorita e a oferta exata autorizada, redigindo a mensagem individual sem risco de alucinar promoções!
 
 ---
 
-### 🔹 Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
 * **Tabelas no BigQuery:** `assinaturas`, `uso_mensal`, `usuarios`, `onboarding`, `tickets_suporte` e `feed_posts`
 
 * **💬 Prompt Principal para colar no Agente do BigQuery:**
@@ -427,7 +427,7 @@ No último passo do módulo, você conecta a decisão matemática ao mundo real 
 
 ---
 
-### 🔹 Ação 2: Conferir os Números Finais (Slide 5 e Seção 4.2)
+### Ação 2: Conferir os Números Finais (Slide 5 e Seção 4.2)
 * **Custo de Canais + IA:** `R$ 6.532,40` (`R$ 5.400` de 300 CS + `R$ 600` de 1.500 WhatsApps + `R$ 112,40` E-mail/Push + `R$ 420` Tokens LLM).
 * **Custo de Descontos Concedidos:** `R$ 19.909,50` (`R$ 3.750` anual + `R$ 16.159,50` mensal).
 * **Desembolso Mensal Total:** **`R$ 26.441,90 / mês`** (respeitando com folga o teto de **`R$ 40.000,00 / mês`**).
@@ -435,7 +435,7 @@ No último passo do módulo, você conecta a decisão matemática ao mundo real 
 
 ---
 
-### 🔹 Ação 3: Fechar os Seus 2 Artefatos da Semana 10 no Agente de Código
+### Ação 3: Fechar os Seus 2 Artefatos da Semana 10 no Agente de Código
 ```text
 Acabei de rodar o Passo 05 no BigQuery consolidando a alocação financeira e os perfis reais para o Redator de CRM:
 """
@@ -447,12 +447,12 @@ Consultando como referência os Slides 5 e 6 de `artefatos_negocios/semana_10_A2
    - Slide 5 (Matriz Prescritiva de Alocação Mensal dentro do orçamento de R$ 40.000/mês, demonstrando o desembolso de R$ 26.441,90 e o Lucro Líquido Incremental de +R$ 207.840,10);
    - Slide 6 (Matriz de Riscos, Kill-Switch de Inatividade, Trava de Orçamento e Plano de Contingência).
 2. No meu arquivo `ARTEFATO_TECH_SEMANA10_A2.md` na minha pasta em `membros/`, preencha a Seção 4.2 com os exemplos reais de mensagens geradas pelo Redator Generativo com Briefing Fechado (Exemplo A no mensal com cupom 30% e Exemplo B no anual com lesão leve e pausa/treino adaptado).
-Revise os meus dois arquivos de `semana_10_A2/` para garantir que estão 100% completos!
+Revise os meus dois arquivos de `semana_10_A2/` para garantir que estão completos.
 ```
 
 ---
 
-### 💡 Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
+### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
 1. **No Agente do BigQuery (Criando Mensagens Personalizadas Direto no Chat do BigQuery):**
    ```text
    Escolha 3 clientes reais da tabela assinaturas que estejam no plano mensal, tenham entre 1 e 3 treinos em setembro ('2026-09' na tabela uso_mensal) e tenham texto preenchido na tabela onboarding. Mostre o nome deles, a meta que escreveram no onboarding e escreva uma sugestão de mensagem curta e empática de WhatsApp oferecendo o Desafio de 6 Semanas conectado ao objetivo de cada um.
@@ -464,7 +464,7 @@ Revise os meus dois arquivos de `semana_10_A2/` para garantir que estão 100% co
 
 ---
 
-## 💾 Como Salvar Seus Artefatos Construídos no GitHub (Sem Conflito!)
+## Como salvar seus artefatos no GitHub
 
 Ao concluir os passos, envie este pedido ao seu Agente de Código (Claude Code / Codex / VS Code):
 

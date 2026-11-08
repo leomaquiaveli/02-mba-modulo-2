@@ -1,10 +1,10 @@
-# 📘 Playbook 1 — Aprendizado Prático e Construção Guiada da Semana 5 (A1)
+# Playbook 1 — Semana 5 (A1)
 
 > **Projeto:** MBA Inteli Módulo 2 — Case Vitaliza (1º Movimento: ENTENDER — Entrega `13/11/2026`)  
 > **Ambiente de Dados:** Google BigQuery ([`thermal-origin-470820-e7.vitaliza_inteli_modulo_2`](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sthermal-origin-470820-e7!2svitaliza_inteli_modulo_2))  
-> **Propósito deste Playbook:** Guiar qualquer integrante do grupo (mesmo sem nenhuma base prévia de programação ou SQL) na **construção completa dos seus próprios entregáveis de Negócios e Tecnologia da Semana 5**, aprendendo na prática como explorar bancos de dados em nuvem, auditar bases sujas, testar hipóteses estatísticas, criar segmentações comportamentais, usar Machine Learning no BigQuery e operar um Agente de Código (**Claude Code / Codex / VS Code**).
+> **Objetivo:** conduzir qualquer integrante do grupo, mesmo sem experiência em programação ou SQL, na **construção completa dos seus próprios entregáveis de Negócios e Tecnologia da Semana 5**, aprendendo na prática como explorar bancos de dados em nuvem, auditar bases sujas, testar hipóteses estatísticas, criar segmentações comportamentais, usar Machine Learning no BigQuery e operar um Agente de Código (**Claude Code / Codex / VS Code**).
 >
-> **Seus Arquivos de Construção (no seu workspace isolado sem conflito de Git):**
+> **Seus arquivos (na sua pasta em `membros/`):**
 > * 📊 Negócios A1: `membros/nome_membro_1/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md`
 > * 💻 Tecnologia A1: `membros/nome_membro_1/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md`
 >
@@ -14,7 +14,7 @@
 
 ---
 
-## 🗺️ Mapa de Coerência 1:1 — O Que Você Aprende e Constrói em Cada Passo
+## O que cada passo produz
 
 | Passo | Habilidade Técnica & de Negócio Desenvolvida | O Que Constrói no Seu `ARTEFATO_NEGOCIOS_SEMANA5_A1.md` | O Que Constrói no Seu `ARTEFATO_TECH_SEMANA5_A1.md` |
 | :--- | :--- | :--- | :--- |
@@ -26,9 +26,9 @@
 
 ---
 
-## 🟢 PASSO 01 — Fotografia Reconciliada da Base (`14.753`), Lojas (`70,22%`), MRR Líquido (`R$ 409.941`) e Saída Contratada (`2.250`)
+## PASSO 01 — Fotografia Reconciliada da Base (`14.753`), Lojas (`70,22%`), MRR Líquido (`R$ 409.941`) e Saída Contratada (`2.250`)
 
-### 🧠 O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
 Em qualquer projeto real de Ciência de Dados e Negócios, o erro mais comum é fazer um `COUNT(*)` simples na tabela de clientes ativos sem verificar:
 1. **Quem realmente paga:** Muitas empresas misturam contas de teste, funcionários e influenciadores (`plano_atual = 'cortesia'`) junto com clientes pagantes. Se você não excluir essas contas antes de calcular o churn ou a receita média, todos os denominadores do projeto ficam errados.
 2. **Receita Bruta vs. Receita Líquida (*Take Rate*):** Um cliente mensal que paga R$ 39,90 na App Store deixa 15% para a Apple (sobram R$ 33,92 para a Vitaliza), enquanto no Pix pelo site a taxa é de apenas 0,99% (sobram R$ 39,50).
@@ -36,7 +36,7 @@ Em qualquer projeto real de Ciência de Dados e Negócios, o erro mais comum é 
 
 ---
 
-### 🔹 Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
 Abra a tabela **`assinaturas`** no [nosso Dataset do BigQuery](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sthermal-origin-470820-e7!2svitaliza_inteli_modulo_2):
 
 * **💬 Prompt Principal para colar no Agente do BigQuery:**
@@ -96,14 +96,14 @@ Abra a tabela **`assinaturas`** no [nosso Dataset do BigQuery](https://console.c
   FROM base
   ORDER BY plano_atual, assinantes_ativos DESC;
   ```
-  > **🔎 Entenda o SQL acima em 30 segundos:**  
+  > **Como ler este SQL:**  
   > * `WHERE status_atual = 'ativa' AND plano_atual IN ('mensal', 'anual')`: É o filtro que barra as 60 cortesias e as contas canceladas.  
   > * `COUNTIF(...)`: Conta apenas as linhas que atendem à condição (quem está com `renovacao_automatica = 0`).  
   > * `SUM(assinantes_ativos) OVER()`: É uma *Window Function* do SQL que soma o total geral (`14.753`) sem perder o agrupamento de cada linha, permitindo calcular a porcentagem exata de cada canal!
 
 ---
 
-### 🔹 Ação 2: Conferir o Output na Tela (Gabarito Oficial)
+### Ação 2: Conferir o Output na Tela (Gabarito Oficial)
 * **Reconciliação:** `14.813` ativas = **`14.753` pagantes ativos** + **`60` cortesias**.
 * **Subtotal Anual:** **`8.478` assinantes (`57,47%`)** $\rightarrow$ `app_store` (`3.047`), `google_play` (`2.928`), `web_cartao` (`1.803`), `web_pix` (`700`) $\rightarrow$ Receita Líquida Mensalizada = **`R$ 187.732,00 / mês`**.
 * **Subtotal Mensal:** **`6.275` assinantes (`42,53%`)** $\rightarrow$ `app_store` (`2.348`), `google_play` (`2.036`), `web_cartao` (`1.191`), `web_pix` (`700`) $\rightarrow$ Receita Líquida Mensalizada = **`R$ 222.209,00 / mês`**.
@@ -112,7 +112,7 @@ Abra a tabela **`assinaturas`** no [nosso Dataset do BigQuery](https://console.c
 
 ---
 
-### 🔹 Ação 3: Montar a Seção no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Montar a Seção no Seu Agente de Código (Claude Code / Codex / VS Code)
 Copie a resposta que o Agente do BigQuery gerou e envie este comando ao seu Agente de Código:
 
 ```text
@@ -131,7 +131,7 @@ Com base nessa resposta:
 
 ---
 
-### 💡 Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
+### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
 Quer aprofundar seu entendimento neste Passo 01 sem precisar mexer em código? Use estes prompts para conversar com o **Agente do BigQuery** ou com o seu **Agente do Repositório (Claude Code / Codex / NotebookLM)**:
 
 1. **No Agente do BigQuery (Descobrindo o "Paradoxo do Início" nos Novatos):**
@@ -145,9 +145,9 @@ Quer aprofundar seu entendimento neste Passo 01 sem precisar mexer em código? U
 
 ---
 
-## 🟢 PASSO 02 — Auditoria das 7 Anomalias Estruturais do Data Room (*Data Hygiene*)
+## PASSO 02 — Auditoria das 7 Anomalias Estruturais do Data Room (*Data Hygiene*)
 
-### 🧠 O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
 Bases de dados reais nunca vêm prontas para Machine Learning. Os professores inseriram **7 armadilhas reais de engenharia de dados** no pacote dos Exhibits para testar se a equipe audita os arquivos antes de modelar:
 * Se você usar registros com data de **outubro/2026 ou 2027** em um corte de `30/09/2026`, você comete **Vazamento Temporal (*Data Leakage*)**.
 * Se você não converter os eventos das lojas terminados em `"Z"` (`UTC`) para o fuso de Brasília (`UTC-3`), todo evento ocorrido entre 21h e 23h59 do dia `30/09` cai no mês de outubro!
@@ -155,7 +155,7 @@ Bases de dados reais nunca vêm prontas para Machine Learning. Os professores in
 
 ---
 
-### 🔹 Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
 * **Tabelas utilizadas no BigQuery:** `usuarios`, `feed_posts`, `amizades`, `eventos_assinatura` e `atividades`
 
 * **💬 Prompt Principal para colar no Agente do BigQuery:**
@@ -204,7 +204,7 @@ Bases de dados reais nunca vêm prontas para Machine Learning. Os professores in
 
 ---
 
-### 🔹 Ação 2: Conferir o Output na Tela (Gabarito das 7 Anomalias)
+### Ação 2: Conferir o Output na Tela (Gabarito das 7 Anomalias)
 1. **Cortesias misturadas às ativas:** `60` linhas em `assinaturas.csv`.
 2. **Registros pós-corte (`> 30/09/2026`):** `119` usuários, `122` posts e `273` amizades.
 3. **Mistura de Fusos (`UTC` vs. `BRT`):** Eventos das lojas em `"Z"` + `34` treinos na 1ª hora de `01/10 UTC` que ocorreram na noite de `30/09 BRT`.
@@ -215,7 +215,7 @@ Bases de dados reais nunca vêm prontas para Machine Learning. Os professores in
 
 ---
 
-### 🔹 Ação 3: Montar a Seção no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Montar a Seção no Seu Agente de Código (Claude Code / Codex / VS Code)
 ```text
 Acabei de rodar o Passo 02 no BigQuery e obtive os números das anomalias estruturais do Data Room:
 """
@@ -229,7 +229,7 @@ Consultando como referência a Seção 2 de `artefatos_tecnologia/semana_5_A1/AR
 
 ---
 
-### 💡 Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
+### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
 1. **No Agente do BigQuery (Qual Modalidade de Treino MaisEngaja os Clientes?):**
    ```text
    Na tabela atividades (unificando corrida com run, caminhada com walk, forca com strength e pedal com ride), mostre o ranking das modalidades mais praticadas na Vitaliza com total de treinos, média de duração em minutos e quantos usuários únicos praticam cada uma.
@@ -241,15 +241,15 @@ Consultando como referência a Seção 2 de `artefatos_tecnologia/semana_5_A1/AR
 
 ---
 
-## 🟢 PASSO 03 — Diagnóstico da Subida do Churn em 2026: Testando as 5 Hipóteses (`H1` a `H5`)
+## PASSO 03 — Diagnóstico da Subida do Churn em 2026: Testando as 5 Hipóteses (`H1` a `H5`)
 
-### 🧠 O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
 Na reunião da diretoria da Vitaliza (descrita no Enunciado), cada diretor tinha um palpite sobre por que o churn subiu de **5,6% (2025) para 6,6% (2026)**: uns culpavam o aumento de preço de março, outros culpavam a falta de engajamento ou falhas técnicas.
 Aqui você aprende a técnica executiva de **Teste Estruturado de Hipóteses (`Dado vs. Hipótese + Limite Metodológico`)**: para cada hipótese, buscamos a prova nos dados, mas também declaramos o que o dado **não** prova sozinho (ex.: `pesquisa_saida.csv` mostra 41% de reclamação de preço, mas só existe no site e sofre de viés de autosseleção).
 
 ---
 
-### 🔹 Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
 * **Tabelas no BigQuery:** `eventos_assinatura`, `assinaturas`, `pesquisa_saida`, `uso_mensal`, `amizades`, `pagamentos` e `tickets_suporte`
 
 * **💬 Prompt Principal para colar no Agente do BigQuery:**
@@ -294,7 +294,7 @@ Aqui você aprende a técnica executiva de **Teste Estruturado de Hipóteses (`D
 
 ---
 
-### 🔹 Ação 2: Conferir o Output na Tela (Gabarito `H1` a `H5`)
+### Ação 2: Conferir o Output na Tela (Gabarito `H1` a `H5`)
 * **H1 (Preço/Reajuste):** Pico de **8,1% em abril/2026** (`1.154` saídas); na `pesquisa_saida.csv`, **`preco` = `41,06%` (`264` de `643` respostas)**.
 * **H2 (Assimetria Lojas):** **`70,22%` (`10.359`)** nas lojas (`app_store` + `google_play`).
 * **H3 (Frequência):** `≥5` treinos = apenas **`1,60%`** de renovação desligada; `1 a 4` treinos = **`15,19%`**; `0` treinos = **`56,98%`**!
@@ -303,7 +303,7 @@ Aqui você aprende a técnica executiva de **Teste Estruturado de Hipóteses (`D
 
 ---
 
-### 🔹 Ação 3: Montar a Seção no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Montar a Seção no Seu Agente de Código (Claude Code / Codex / VS Code)
 ```text
 Acabei de rodar o Passo 03 no BigQuery testando as 5 hipóteses da subida do churn em 2026:
 """
@@ -315,7 +315,7 @@ Consultando como referência a Seção 2 de `artefatos_negocios/semana_5_A1/ARTE
 
 ---
 
-### 💡 Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
+### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
 1. **No Agente do BigQuery (Testando o Conceito de "Gêmeo Demográfico" da Aula 3 de Negócios):**
    ```text
    Cruze usuarios, assinaturas e uso_mensal ('2026-09'). Filtre apenas clientes com a mesma idade (entre 26 e 30 anos) e mesmo gênero. Agora compare a taxa de renovacao_automatica desligada de quem treina 8 ou mais vezes no mês contra quem treina apenas 1 vez no mês. O que isso mostra sobre segmentar por idade versus segmentar por comportamento?
@@ -327,9 +327,9 @@ Consultando como referência a Seção 2 de `artefatos_negocios/semana_5_A1/ARTE
 
 ---
 
-## 🟢 PASSO 04 — Os 4 Segmentos Estratégicos (Pilar 01), Personas de Dados (Pilar 02) e Receita em Risco com `4A` vs. `4B` (Pilar 03)
+## PASSO 04 — Os 4 Segmentos Estratégicos (Pilar 01), Personas de Dados (Pilar 02) e Receita em Risco com `4A` vs. `4B` (Pilar 03)
 
-### 🧠 O Que Você Vai Aprender Neste Passo (O Coração da Nota da Semana 5!)
+### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
 Este passo cobre os **3 Pilares Obrigatórios da Entrega A1 de Negócios** e o **Objetivo 3 de Tecnologia**:
 1. **Regra de Ouro da Clusterização (Sem Vazamento):** Você nunca coloca a coluna `churn` / `renovacao_automatica` dentro das variáveis que formam os grupos. Os grupos são formados exclusivamente pelo **comportamento no produto** (quantas vezes treina, quantos minutos, se treina ao ar livre com GPS ou em casa por vídeo). Só depois que os 4 grupos estão prontos é que olhamos a taxa de saída de cada um!
 2. **Os 5 Critérios de Kotler (Aula 3):** Todo segmento precisa ser *Mensurável, Substancial, Diferenciável, Acessível e Acionável*.
@@ -337,7 +337,7 @@ Este passo cobre os **3 Pilares Obrigatórios da Entrega A1 de Negócios** e o *
 
 ---
 
-### 🔹 Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
 * **Tabelas no BigQuery:** `assinaturas` + `uso_mensal` + `usuarios`
 
 * **💬 Prompt Principal para colar no Agente do BigQuery:**
@@ -401,7 +401,7 @@ Este passo cobre os **3 Pilares Obrigatórios da Entrega A1 de Negócios** e o *
 
 ---
 
-### 🔹 Ação 2: Conferir o Output na Tela (Gabarito)
+### Ação 2: Conferir o Output na Tela (Gabarito)
 * **Cluster 1 (`4.089` | `27,72%`):** `12,4` treinos/mês, `615,4` min, **`1,61%`** renovação desligada, Receita Líquida = **`R$ 113.633 / mês`**.
 * **Cluster 2 (`2.960` | `20,06%`):** `11,9` treinos/mês, `433,5` min, **`1,59%`** renovação desligada, Receita Líquida = **`R$ 82.258 / mês`**.
 * **Cluster 3 (`5.391` | `36,54%`):** `2,2` treinos/mês, `99,3` min, **`15,19%` (`819` clientes)** renovação desligada, Receita Líquida = **`R$ 149.816 / mês`** (Receita em risco direto = **`R$ 22.757/mês` ou `R$ 273.084/ano`**).
@@ -411,7 +411,7 @@ Este passo cobre os **3 Pilares Obrigatórios da Entrega A1 de Negócios** e o *
 
 ---
 
-### 🔹 Ação 3: Montar as Seções no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Montar as Seções no Seu Agente de Código (Claude Code / Codex / VS Code)
 ```text
 Acabei de rodar o Passo 04 no BigQuery e obtive a tabela oficial dos 4 Clusters e a abertura do Valor em Risco (incluindo Cluster 4A e 4B):
 """
@@ -428,7 +428,7 @@ Consultando como referência as Seções 3, 4 e 5.1 de `artefatos_negocios/seman
 
 ---
 
-### 💡 Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
+### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
 1. **No Agente do BigQuery (Conhecendo Histórias Reais Dentro de Cada Persona):**
    ```text
    Cruze assinaturas, usuarios, uso_mensal ('2026-09') e onboarding. Mostre o perfil real de 2 clientes do Cluster 1 (Atletas GPS) e de 2 clientes do Cluster 3 (Entusiastas Oscilantes de 1 a 4 treinos), trazendo o texto_onboarding original que eles escreveram quando entraram na Vitaliza e quantos treinos fizeram em julho, agosto e setembro.
@@ -440,9 +440,9 @@ Consultando como referência as Seções 3, 4 e 5.1 de `artefatos_negocios/seman
 
 ---
 
-## 🟢 PASSO 05 — Feature Store Tabular (`M-1` vs. `M-2`) e Baseline Supervisionado de Regressão Logística (60 Dias)
+## PASSO 05 — Feature Store Tabular (`M-1` vs. `M-2`) e Baseline Supervisionado de Regressão Logística (60 Dias)
 
-### 🧠 O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
 Para prever quem vai sair nos próximos 60 dias (**Objetivo 4**), o modelo não pode olhar apenas para uma fotografia estática: ele precisa capturar **a velocidade da queda de hábito (`delta_treinos = treinos_m1 - treinos_m2`)**.
 Além disso, você aprende as **4 métricas que todo executivo e cientista de dados usa para avaliar um classificador de churn**:
 * **`ROC-AUC` (`0,7522` no nosso Baseline):** Capacidade global de ranquear um cliente que vai sair acima de um cliente que vai ficar (`0,50` = cara ou coroa; `1,00` = perfeito).
@@ -452,7 +452,7 @@ Além disso, você aprende as **4 métricas que todo executivo e cientista de da
 
 ---
 
-### 🔹 Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
 * **Tabelas no BigQuery:** `assinaturas`, `usuarios`, `uso_mensal`, `amizades`, `tickets_suporte` e `pagamentos`
 
 * **💬 Prompt Principal para colar no Agente do BigQuery:**
@@ -509,13 +509,13 @@ Além disso, você aprende as **4 métricas que todo executivo e cientista de da
 
 ---
 
-### 🔹 Ação 2: Conferir o Output e as Métricas do Baseline
+### Ação 2: Conferir o Output e as Métricas do Baseline
 * Desempenho fora da amostra do **Baseline de Regressão Logística (`StandardScaler`, `L2`)** validado no corte histórico `31/07/2026`:
   * **`ROC-AUC = 0,7522`** | **`PR-AUC = 0,5079`** | **`Brier Score = 0,1504`** | **`Lift no Topo 10% (1.500 WhatsApps) = 2,55x`**.
 
 ---
 
-### 🔹 Ação 3: Fechar os Seus 2 Artefatos da Semana 5 no Agente de Código
+### Ação 3: Fechar os Seus 2 Artefatos da Semana 5 no Agente de Código
 ```text
 Acabei de rodar o Passo 05 no BigQuery validando as variáveis da Feature Store Tabular:
 """
@@ -526,12 +526,12 @@ Consultando como referência a Seção 4 de `artefatos_tecnologia/semana_5_A1/AR
 - O protocolo de validação Out-of-Time sem Data Leakage (corte histórico 31/07/2026 medindo saída nos 60 dias seguintes);
 - O conjunto de variáveis explicativas (X);
 - A tabela de desempenho fora da amostra da Regressão Logística (ROC-AUC = 0,7522, PR-AUC = 0,5079, Brier Score = 0,1504 e Lift@10% = 2,55x) e a interpretação dos pesos.
-Por fim, revise os meus dois arquivos de `semana_5_A1/` para garantir que estão 100% completos!
+Por fim, revise os meus dois arquivos de `semana_5_A1/` para garantir que estão completos.
 ```
 
 ---
 
-### 💡 Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
+### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
 1. **No Agente do BigQuery (Encontrando os Clientes em Desaceleração Aguda):**
    ```text
    Cruze assinaturas com uso_mensal comparando agosto ('2026-08') e setembro ('2026-09'). Quantos pagantes ativos treinavam 6 ou mais vezes em agosto e caíram para apenas 1 ou 2 treinos em setembro? Qual é a taxa de renovação desligada desse grupo que sofreu queda brusca de ritmo?
@@ -541,4 +541,4 @@ Por fim, revise os meus dois arquivos de `semana_5_A1/` para garantir que estão
    Leia o arquivo `00_comece_por_aqui/02_trilha_ciencia_de_dados_e_ml/README.md` e a Seção 4 de `artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md`. Me explique como se eu estivesse apresentando para o CFO da Vitaliza o que significa o nosso modelo ter um Lift de 2,55x no topo 10% e por que isso economiza dinheiro na hora de disparar os 1.500 WhatsApps do mês.
    ```
 
-🎉 **Parabéns! Você concluiu toda a jornada da Semana 5 (A1) e construiu os dois relatórios completos no seu workspace!** Agora siga para o [**`02_PLAYBOOK_SEMANA_10_A2.md`**](./02_PLAYBOOK_SEMANA_10_A2.md).
+**Fim do Playbook 1.** Os dois artefatos da Semana 5 estão na sua pasta. Próximo: [**`02_PLAYBOOK_SEMANA_10_A2.md`**](./02_PLAYBOOK_SEMANA_10_A2.md).

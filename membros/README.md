@@ -1,10 +1,10 @@
-# 👥 Espaço de Trabalho Individual da Equipe (`membros/`)
+# Espaço de Trabalho Individual da Equipe (`membros/`)
 
 > **Bem-vindo ao espaço de construção prática da equipe do MBA Inteli — Módulo 2 (Case Vitaliza)!**
 
 ---
 
-## 🎯 1. Por Que Esta Pasta Existe? (Zero Conflito de Git)
+## 1. Para que serve esta pasta
 
 Os entregáveis consolidados de referência do grupo ficam protegidos nas pastas [`artefatos_negocios/`](../artefatos_negocios/) e [`artefatos_tecnologia/`](../artefatos_tecnologia/).
 
@@ -24,7 +24,7 @@ membros/
 
 ---
 
-## 🚀 2. Os 2 Playbooks Passo a Passo (Sem Precisar Programar)
+## 2. Os 2 Playbooks Passo a Passo (Sem Precisar Programar)
 
 1. 📘 [**`01_PLAYBOOK_SEMANA_05_A1.md`**](../01_gerenciamento_de_tarefas/roteiro_execucao_pratica/01_PLAYBOOK_SEMANA_05_A1.md) — Guia em **5 Passos** para construir os seus dois artefatos da **Semana 5 (A1)**.
 2. 📙 [**`02_PLAYBOOK_SEMANA_10_A2.md`**](../01_gerenciamento_de_tarefas/roteiro_execucao_pratica/02_PLAYBOOK_SEMANA_10_A2.md) — Guia em **5 Passos** para construir os seus dois artefatos da **Semana 10 (A2)**.
