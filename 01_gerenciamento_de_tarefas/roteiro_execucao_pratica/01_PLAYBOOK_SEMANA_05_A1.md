@@ -2,13 +2,13 @@
 
 > **Projeto:** MBA Inteli Módulo 2 — Case Vitaliza (1º Movimento: ENTENDER — Entrega `13/11/2026`)  
 > **Ambiente de Dados:** Google BigQuery ([`thermal-origin-470820-e7.vitaliza_inteli_modulo_2`](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sthermal-origin-470820-e7!2svitaliza_inteli_modulo_2))  
-> **Objetivo:** conduzir qualquer integrante do grupo, mesmo sem experiência em programação ou SQL, na **construção completa dos seus próprios entregáveis de Negócios e Tecnologia da Semana 5**, aprendendo na prática como explorar bancos de dados em nuvem, auditar bases sujas, testar hipóteses estatísticas, criar segmentações comportamentais, usar Machine Learning no BigQuery e operar um Agente de Código (**Claude Code / Codex / VS Code**).
+> **Objetivo:** conduzir qualquer integrante do grupo, mesmo sem experiência em programação ou SQL, na **construção completa dos seus próprios entregáveis de Negócios e Tecnologia da Semana 5**, aprendendo na prática como explorar bancos de dados em nuvem, auditar bases sujas, testar hipóteses, criar segmentações comportamentais, entender um modelo de previsão de churn e operar um agente de código (**Claude Code / Codex / VS Code**).
 >
 > **Seus arquivos (na sua pasta em `membros/`):**
-> * 📊 Negócios A1: `membros/nome_membro_1/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md`
-> * 💻 Tecnologia A1: `membros/nome_membro_1/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md`
+> * Negócios A1: `membros/nome_membro_1/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md`
+> * Tecnologia A1: `membros/nome_membro_1/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md`
 >
-> **Gabaritos Oficiais do Grupo (apenas para leitura/referência do seu Agente):**
+> **Artefatos oficiais do grupo (só para a comparação no fim de cada passo; não peça ao agente para lê-los antes disso):**
 > * [`artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md`](../../artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md)
 > * [`artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md`](../../artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md)
 
@@ -16,11 +16,11 @@
 
 ## O que cada passo produz
 
-| Passo | Habilidade Técnica & de Negócio Desenvolvida | O Que Constrói no Seu `ARTEFATO_NEGOCIOS_SEMANA5_A1.md` | O Que Constrói no Seu `ARTEFATO_TECH_SEMANA5_A1.md` |
+| Passo | O que você aprende | O que constrói no `ARTEFATO_NEGOCIOS_SEMANA5_A1.md` | O que constrói no `ARTEFATO_TECH_SEMANA5_A1.md` |
 | :--- | :--- | :--- | :--- |
-| **Passo 01** | Reconciliação de população pagante, cálculo de *Take Rate* / MRR Líquido e detecção de *Churn Diferido* (`renovacao_automatica = 0`). | **Seção 1 & 1.1:** Resumo Executivo, Tabela de Composição (`14.753` pagantes), Assimetria de Lojas (`70,22%`), MRR Líquido (`R$ 409.941/mês`) e Estoque de Saída Contratada (`2.250`). | **Seção 1:** Arquitetura do Pipeline de Engenharia e Reconciliação (`14.813` ativas − `60` cortesias = `14.753` pagantes). |
+| **Passo 01** | Reconciliação de população pagante, cálculo de *Take Rate* / MRR Líquido e detecção de *Churn Diferido* (`renovacao_automatica = 'nao'`). | **Seção 1 & 1.1:** Resumo Executivo, Tabela de Composição (`14.753` pagantes), Assimetria de Lojas (`70,22%`), MRR Líquido (`R$ 409.941/mês`) e Estoque de Saída Contratada (`2.250`). | **Seção 1:** Arquitetura do Pipeline de Engenharia e Reconciliação (`14.813` ativas − `60` cortesias = `14.753` pagantes). |
 | **Passo 02** | Auditoria de Qualidade de Dados (*Data Hygiene*): prevenção de *Data Leakage* pós-corte, normalização de fuso horário `UTC ("Z")` vs. `BRT` e padronização de vocabulário em 1,25M de linhas. | **Seção 5.2 (Parte 1):** Limitações Metodológicas e Anomalias Temporais/Categóricas do Pacote Bruto. | **Seção 2 Completa:** Tabela das **7 Anomalias Estruturais** documentadas com volume exato e regra de tratamento. |
-| **Passo 03** | Análise Exploratória Diagnóstica (EDA): como confrontar hipóteses executivas com dados reais e separar correlação bivariada de causalidade. | **Seção 2 Completa & Seção 5.2 (Parte 2):** Diagnóstico da Subida do Churn em 2026 (`5,6% ➔ 6,6%`, pico `8,1%` em abril) testando as **5 Hipóteses (`H1` a `H5`)**. | **Seção 1 (Complemento EDA):** Validação estatística das hipóteses diagnósticas do Objetivo 2. |
+| **Passo 03** | Análise Exploratória Diagnóstica (EDA): como confrontar as hipóteses da diretoria com dados reais e separar correlação bivariada de causalidade. | **Seção 2 Completa & Seção 5.2 (Parte 2):** Diagnóstico da Subida do Churn em 2026 (`5,6% ➔ 6,6%`, pico `8,1%` em abril) testando as **5 Hipóteses (`H1` a `H5`)**. | **Seção 1 (Complemento EDA):** Validação estatística das hipóteses diagnósticas do Objetivo 2. |
 | **Passo 04** | Clusterização Comportamental sem vazamento de alvo, construção de **Personas com Dados** (vs. personas inventadas) e cálculo de **Receita em Risco** (`Cluster 4A` vs `4B`). | **Seção 3 (Pilar 01):** Os 4 Segmentos Estratégicos;<br>**Seção 4 (Pilar 02):** As 4 Personas de Dados;<br>**Seção 5.1 (Pilar 03):** Valor em Risco Mensal/Anualizado (`4A` [`1.318`] vs `4B` [`995` *Sleeping Dogs*]). | **Seção 3 Completa:** Protocolo Anti-Leakage e Tabela dos 4 Clusters Comportamentais com Centróides (`treinos/mês`, `minutos/mês`) e Taxa de Renovação Desligada *a posteriori*. |
 | **Passo 05** | Engenharia de Variáveis Temporais (`M-1` vs `M-2`, `delta_treinos`), validação *Out-of-Time* e avaliação de **Regressão Logística** (`ROC-AUC`, `PR-AUC`, `Brier Score` e `Lift@10%`). | Revisão de coerência final entre os números de Negócios e Tecnologia. | **Seção 4 Completa:** Conjunto de Variáveis (`X`) sem *Data Leakage* e Métricas do Baseline de **Regressão Logística** (`ROC-AUC = 0,7522`, `PR-AUC = 0,5079`, `Brier = 0,1504`, `Lift@10% = 2,55x`). |
 
@@ -28,11 +28,11 @@
 
 ## PASSO 01 — Fotografia Reconciliada da Base (`14.753`), Lojas (`70,22%`), MRR Líquido (`R$ 409.941`) e Saída Contratada (`2.250`)
 
-### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O que este passo ensina
 Em qualquer projeto real de Ciência de Dados e Negócios, o erro mais comum é fazer um `COUNT(*)` simples na tabela de clientes ativos sem verificar:
 1. **Quem realmente paga:** Muitas empresas misturam contas de teste, funcionários e influenciadores (`plano_atual = 'cortesia'`) junto com clientes pagantes. Se você não excluir essas contas antes de calcular o churn ou a receita média, todos os denominadores do projeto ficam errados.
 2. **Receita Bruta vs. Receita Líquida (*Take Rate*):** Um cliente mensal que paga R$ 39,90 na App Store deixa 15% para a Apple (sobram R$ 33,92 para a Vitaliza), enquanto no Pix pelo site a taxa é de apenas 0,99% (sobram R$ 39,50).
-3. **Churn Diferido (*Já Contratado*):** No modelo de assinatura (especialmente anual), o cliente entra nas configurações do iPhone/Android hoje e **desliga a renovação automática (`renovacao_automatica = 0`)**, mas continua com `status_atual = 'ativa'` até o fim do período já pago. Descobrir quantos ativos já desligaram a renovação revela a "perda invisível" que já está contratada!
+3. **Churn Diferido (*Já Contratado*):** No modelo de assinatura (especialmente anual), o cliente entra nas configurações do iPhone/Android hoje e **desliga a renovação automática (`renovacao_automatica = 'nao'`)**, mas continua com `status_atual = 'ativa'` até o fim do período já pago. Descobrir quantos ativos já desligaram a renovação revela a perda que já está contratada e ainda não aparece no churn.
 
 ---
 
@@ -65,10 +65,10 @@ Em qualquer projeto real de Ciência de Dados e Negócios, o erro mais comum é 
 **Armadilhas comuns:**
 - **Contar todas as linhas de `assinaturas`.** A tabela tem uma linha por assinatura, e a mesma pessoa pode ter várias ao longo do tempo (assina, cancela, volta). Sinal: um total muito acima de `14.813`.
 - **Esquecer as cortesias.** No arquivo, as 60 cortesias estão com renovação desligada. Se ficarem na conta, o total de ativos e a contagem de saída contratada sobem juntos. Sinal: total de `14.813` em vez de `14.753`.
-- **Filtro de renovação que não encontra nada.** No arquivo original, `renovacao_automatica` vem gravada como `sim`/`nao`. A consulta deste passo testa `'0'`, `'false'` e `'False'`. Se a coluna `renovacao_desligada` vier zerada, peça ao agente do BigQuery para incluir `'nao'` no filtro.
+- **Filtro de renovação que não encontra nada.** `renovacao_automatica` é texto, com os valores `'sim'` e `'nao'`. Se o agente do BigQuery filtrar por `0` ou `false`, a contagem de renovação desligada vem zerada. Sinal: zero clientes com renovação desligada.
 - **Somar preço anual com mensal sem mensalizar.** Sinal: a receita do plano anual aparece muito maior que a do mensal.
 - **Usar uma taxa média única para todos os canais.** Sinal: receita total diferente do gabarito mesmo com as contagens corretas.
-- **Arredondamento.** O artefato oficial arredondou a receita unitária para centavos antes de multiplicar (ex.: 39,90 × 0,85 = 33,915, arredondado para R$ 33,92). A consulta só arredonda no final. Por isso a sua receita por linha pode diferir do gabarito em alguns reais. Isso é esperado; declare a regra de arredondamento que você usou.
+- **Arredondamento.** O artefato oficial arredondou a receita unitária para centavos antes de multiplicar (ex.: 39,90 × 0,85 = 33,915, arredondado para R$ 33,92). Se o agente só arredondar no final, a sua receita por linha pode diferir do gabarito em alguns reais. Isso é esperado; declare a regra de arredondamento que você usou.
 - **Tratar os `2.250` como churn já ocorrido.** Eles ainda pagam até o fim do período. No plano anual, a saída pode demorar meses.
 
 **Como conferir sozinho:**
@@ -81,74 +81,26 @@ Em qualquer projeto real de Ciência de Dados e Negócios, o erro mais comum é 
 
 ---
 
-### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Consultar no agente do BigQuery
 Abra a tabela **`assinaturas`** no [nosso Dataset do BigQuery](https://console.cloud.google.com/bigquery?ws=!1m4!1m3!3m2!1sthermal-origin-470820-e7!2svitaliza_inteli_modulo_2):
 
-* **💬 Prompt Principal para colar no Agente do BigQuery:**
+* **Prompt para o agente do BigQuery:**
   ```text
   Na tabela assinaturas, filtre apenas os registros com status_atual igual a 'ativa'.
   1. Primeiro, mostre quantas assinaturas ativas pertencem ao plano_atual = 'cortesia' (canal_cobranca = 'interno') e quantas são assinaturas pagantes reais (planos 'anual' e 'mensal').
   2. Depois, considerando apenas os 14.753 assinantes pagantes ativos (excluindo cortesia), monte uma tabela detalhada agrupada por plano_atual e canal_cobranca contendo:
   - Assinantes Ativos (N)
   - % da Base Pagante (sobre 14.753)
-  - Quantos já desligaram a renovacao_automatica (igual a 0 ou false) e o percentual (%)
+  - Quantos já desligaram a renovação automática (renovacao_automatica = 'nao') e o percentual (%)
   - Preço Bruto (anual = R$ 299,90/ano ou R$ 24,991667/mês; mensal = R$ 39,90/mês)
   - Taxa do Canal (app_store e google_play = 15%; web_cartao = 3,5%; web_pix = 0,99%)
   - Receita Líquida Unitária Mensal e Receita Líquida Mensalizada Total de cada linha.
   Inclua os subtotais do Plano Anual, do Plano Mensal e o Total Geral dos 14.753 pagantes.
   ```
 
-* **💻 Query SQL Equivalente (Para você rodar no Editor e aprender como o SQL calcula):**
-  ```sql
-  -- 1. Reconciliação: 14.813 ativas = 14.753 pagantes + 60 cortesias
-  SELECT
-    plano_atual,
-    canal_cobranca,
-    COUNT(*) AS total_ativas,
-    COUNTIF(CAST(renovacao_automatica AS STRING) IN ('0', 'false', 'False')) AS renovacao_desligada
-  FROM `vitaliza_inteli_modulo_2.assinaturas`
-  WHERE status_atual = 'ativa'
-  GROUP BY 1, 2
-  ORDER BY plano_atual, total_ativas DESC;
-
-  -- 2. Tabela completa da Seção 1.1 (14.753 pagantes ativos)
-  WITH base AS (
-    SELECT
-      plano_atual,
-      canal_cobranca,
-      COUNT(*) AS assinantes_ativos,
-      COUNTIF(CAST(renovacao_automatica AS STRING) IN ('0', 'false', 'False')) AS renovacao_desligada,
-      CASE WHEN plano_atual = 'mensal' THEN 39.90 ELSE 299.90 / 12.0 END AS preco_mensal_bruto,
-      CASE
-        WHEN canal_cobranca IN ('app_store', 'google_play') THEN 0.15
-        WHEN canal_cobranca = 'web_cartao' THEN 0.035
-        WHEN canal_cobranca = 'web_pix' THEN 0.0099
-        ELSE 0.0
-      END AS taxa_canal
-    FROM `vitaliza_inteli_modulo_2.assinaturas`
-    WHERE status_atual = 'ativa' AND plano_atual IN ('mensal', 'anual')
-    GROUP BY 1, 2
-  )
-  SELECT
-    plano_atual,
-    canal_cobranca,
-    assinantes_ativos,
-    ROUND(assinantes_ativos * 100.0 / SUM(assinantes_ativos) OVER(), 2) AS pct_base_pagante,
-    renovacao_desligada,
-    ROUND(taxa_canal * 100, 2) AS taxa_canal_pct,
-    ROUND(preco_mensal_bruto * (1 - taxa_canal), 2) AS receita_liquida_unitaria_mes,
-    ROUND(assinantes_ativos * preco_mensal_bruto * (1 - taxa_canal), 0) AS receita_liquida_mensalizada
-  FROM base
-  ORDER BY plano_atual, assinantes_ativos DESC;
-  ```
-  > **Como ler este SQL:**  
-  > * `WHERE status_atual = 'ativa' AND plano_atual IN ('mensal', 'anual')`: É o filtro que barra as 60 cortesias e as contas canceladas.  
-  > * `COUNTIF(...)`: Conta apenas as linhas que atendem à condição (quem está com `renovacao_automatica = 0`).  
-  > * `SUM(assinantes_ativos) OVER()`: É uma *Window Function* do SQL que soma o total geral (`14.753`) sem perder o agrupamento de cada linha, permitindo calcular a porcentagem exata de cada canal!
-
 ---
 
-### Ação 2: Conferir o Output na Tela (Gabarito Oficial)
+### Ação 2: Conferir o resultado
 * **Reconciliação:** `14.813` ativas = **`14.753` pagantes ativos** + **`60` cortesias**.
 * **Subtotal Anual:** **`8.478` assinantes (`57,47%`)** $\rightarrow$ `app_store` (`3.047`), `google_play` (`2.928`), `web_cartao` (`1.803`), `web_pix` (`700`) $\rightarrow$ Receita Líquida Mensalizada = **`R$ 187.732,00 / mês`**.
 * **Subtotal Mensal:** **`6.275` assinantes (`42,53%`)** $\rightarrow$ `app_store` (`2.348`), `google_play` (`2.036`), `web_cartao` (`1.191`), `web_pix` (`700`) $\rightarrow$ Receita Líquida Mensalizada = **`R$ 222.209,00 / mês`**.
@@ -157,7 +109,7 @@ Abra a tabela **`assinaturas`** no [nosso Dataset do BigQuery](https://console.c
 
 ---
 
-### Ação 3: Montar a Seção no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Escrever a seção com o agente de código
 Nesta ação você escreve a seção a partir do seu próprio resultado. O agente ajuda a explicar, redigir e revisar. O artefato oficial do grupo entra só no final, para comparação.
 
 **Antes de abrir o agente:** escreva em até três frases o que o resultado mostra e o que ele muda para a Vitaliza. Formato sugerido: "A base pagante é de tantos clientes. A maior parte paga por tal canal, o que significa tal limite para a retenção. Já existem tantos clientes com saída decidida."
@@ -185,7 +137,7 @@ Minha leitura do resultado, em minhas palavras:
 """
 
 Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
-1. Explique de volta o resultado em linguagem de executivo: o que cada número significa, de qual tabela, coluna e filtro ele vem, e se a minha leitura está correta. Confira se os subtotais somam o total e se os percentuais somam 100. Aponte qualquer número que não feche.
+1. Explique de volta o resultado: o que cada número significa, de qual tabela, coluna e filtro ele vem, e se a minha leitura está correta. Confira se os subtotais somam o total e se os percentuais somam 100. Aponte qualquer número que não feche.
 2. Redija no meu `ARTEFATO_NEGOCIOS_SEMANA5_A1.md` a Seção 1 (resumo executivo de três a cinco frases) e a Seção 1.1 (tabela plano × canal com subtotais e total, mais um callout sobre os clientes com renovação desligada). Use apenas os números do meu resultado e indique abaixo da tabela a fonte e o filtro usados.
 3. Redija no meu `ARTEFATO_TECH_SEMANA5_A1.md` a Seção 1: um diagrama Mermaid do pipeline em quatro camadas (ingestão das 13 fontes, saneamento, tabela analítica, modelos) e a regra de reconciliação das ativas em pagantes e cortesias.
 4. Só depois, leia `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md` e `artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md` e liste em uma tabela as diferenças entre o meu rascunho e o oficial: números divergentes (com a causa provável), itens que faltam no meu e afirmações do oficial que não têm fonte indicada. Não copie texto do oficial para o meu arquivo. Se eu quiser incorporar algo, eu peço.
@@ -195,14 +147,14 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 
 ---
 
-### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
-Quer aprofundar seu entendimento neste Passo 01 sem precisar mexer em código? Use estes prompts para conversar com o **Agente do BigQuery** ou com o seu **Agente do Repositório (Claude Code / Codex / NotebookLM)**:
+### Ação 4: Prompts extras
+Prompts opcionais para aprofundar o passo, no agente do BigQuery ou no agente do repositório (Claude Code, Codex ou NotebookLM):
 
 1. **No Agente do BigQuery (Descobrindo o "Paradoxo do Início" nos Novatos):**
    ```text
-   Dentro dos 14.753 pagantes ativos da tabela assinaturas, calcule o tempo de casa em meses de cada cliente até '2026-09-30' (usando data_inicio). Compare a taxa de renovacao_automatica desligada entre: (a) Novatos de até 1 mês de casa, (b) Clientes de 2 a 5 meses e (c) Veteranos de 6 meses ou mais. Onde está concentrado o maior risco inicial?
+   Dentro dos 14.753 pagantes ativos da tabela assinaturas, calcule o tempo de casa em meses de cada cliente até '2026-09-30' (usando a coluna inicio). Compare a taxa de renovação desligada (renovacao_automatica = 'nao') entre: (a) Novatos de até 1 mês de casa, (b) Clientes de 2 a 5 meses e (c) Veteranos de 6 meses ou mais. Onde está concentrado o maior risco inicial?
    ```
-2. **No Seu Agente do Repositório / NotebookLM (Debatendo Estratégia como um Executivo):**
+2. **No agente do repositório ou no NotebookLM (o Passo 01 contra o Caminho A):**
    ```text
    Leia o documento `00_comece_por_aqui/01_RESUMO_EXECUTIVO_DO_CASE.md` e o resultado que acabei de encontrar no Passo 01 (70,22% da base nas lojas App Store/Google Play e 2.250 clientes que já desligaram a renovação automática). Me explique por que essa fotografia da base derruba o argumento de criar apenas uma tela de desconto no botão "Cancelar" do site e quais perguntas um conselheiro faria para o CEO da Vitaliza.
    ```
@@ -211,10 +163,10 @@ Quer aprofundar seu entendimento neste Passo 01 sem precisar mexer em código? U
 
 ## PASSO 02 — Auditoria das 7 Anomalias Estruturais do Data Room (*Data Hygiene*)
 
-### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O que este passo ensina
 Bases de dados reais nunca vêm prontas para Machine Learning. Os professores inseriram **7 armadilhas reais de engenharia de dados** no pacote dos Exhibits para testar se a equipe audita os arquivos antes de modelar:
 * Se você usar registros com data de **outubro/2026 ou 2027** em um corte de `30/09/2026`, você comete **Vazamento Temporal (*Data Leakage*)**.
-* Se você não converter os eventos das lojas terminados em `"Z"` (`UTC`) para o fuso de Brasília (`UTC-3`), todo evento ocorrido entre 21h e 23h59 do dia `30/09` cai no mês de outubro!
+* Se você não converter os eventos das lojas terminados em `"Z"` (`UTC`) para o fuso de Brasília (`UTC-3`), todo evento ocorrido entre 21h e 23h59 do dia `30/09` cai no mês de outubro.
 * Se você não padronizar `android`/`Android` ou `corrida`/`run`, qualquer agrupamento ou gráfico divide a mesma categoria ao meio.
 
 ---
@@ -227,11 +179,11 @@ Bases de dados reais nunca vêm prontas para Machine Learning. Os professores in
 
 | Fonte | Campo | Por que é necessário |
 | :--- | :--- | :--- |
-| `usuarios`, `feed_posts`, `amizades` | `data_cadastro`, `data_hora` e a data da relação (`desde` no arquivo original; a consulta usa `data_amizade`) | Encontrar registros com data posterior a `30/09/2026`. |
-| `eventos_assinatura` | `data_hora` | Os eventos das lojas chegam em UTC (horário universal, terminado em `"Z"`); os do site, em horário de Brasília. |
+| `usuarios`, `feed_posts`, `amizades` | `data_cadastro`, `data_hora` e `desde` (data da relação) | Encontrar registros com data posterior a `30/09/2026`. |
+| `eventos_assinatura` | `data_hora`, `canal_cobranca` | Os eventos das lojas chegam em UTC (horário universal, terminado em `"Z"` no CSV); os do site, em horário de Brasília. No BigQuery a coluna virou TIMESTAMP e o `"Z"` não aparece, então as lojas são identificadas pelo canal. |
 | `atividades` | `inicio` | Achar treinos feitos na noite de 30/09 que aparecem como 01/10 em UTC. |
 | `usuarios` | `sistema` | Verificar grafias diferentes do mesmo sistema operacional. |
-| `atividades` | modalidade do treino (`tipo` no dicionário; a consulta usa `modalidade`) | Verificar a mesma modalidade escrita em português e em inglês. |
+| `atividades` | `tipo` (modalidade do treino) | Verificar a mesma modalidade escrita em português e em inglês. |
 | `usuarios` | `relogio_conectado` | Ausência de relógio está gravada como o texto `nenhum`, e não como campo vazio. |
 | `assinaturas` × `eventos_assinatura` | situação atual × histórico de eventos | `assinaturas` guarda só a situação em `01/10/2026`; o histórico está nos eventos. |
 | `00_comece_por_aqui/05_DOSSIE_DICIONARIO_DE_DADOS_M2.md`, seção 2 | Cinco cuidados antes de integrar | Define a regra de fuso, o estado sobrescrito e a proibição de dados pós-corte. |
@@ -252,7 +204,7 @@ Bases de dados reais nunca vêm prontas para Machine Learning. Os professores in
 - **Unificar `IOS` e esquecer `iOS`.** Sinal: a soma de iOS não chega a `29.797`.
 - **Usar `IS NOT NULL` para relógio.** Sinal: quase toda a base aparece com relógio.
 - **Aplicar o filtro de data só em uma tabela.** A regra vale para todas as tabelas antes de qualquer agregação.
-- **Nome de coluna diferente.** As tabelas do BigQuery podem ter os nomes do arquivo original (dicionário) e não os desta consulta. Se aparecer erro de coluna inexistente, peça ao agente do BigQuery para usar o nome correto sem mudar a lógica.
+- **Agente do BigQuery usando coluna que não existe.** O agente também erra. Se aparecer erro de coluna inexistente, peça a ele para listar o esquema da tabela e refazer a consulta com os nomes reais, sem mudar a lógica.
 - **Tratar anomalia como motivo para descartar a fonte.** As sete anomalias pedem uma regra de tratamento. A fonte continua útil.
 
 **Como conferir sozinho:**
@@ -263,56 +215,22 @@ Bases de dados reais nunca vêm prontas para Machine Learning. Os professores in
 
 ---
 
-### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
-* **Tabelas utilizadas no BigQuery:** `usuarios`, `feed_posts`, `amizades`, `eventos_assinatura` e `atividades`
+### Ação 1: Consultar no agente do BigQuery
+* **Tabelas no BigQuery:** `usuarios`, `feed_posts`, `amizades`, `eventos_assinatura` e `atividades`
 
-* **💬 Prompt Principal para colar no Agente do BigQuery:**
+* **Prompt para o agente do BigQuery:**
   ```text
   Faça uma auditoria técnica nas tabelas usuarios, feed_posts, amizades, eventos_assinatura e atividades para documentarmos as anomalias estruturais do Data Room:
-  1. Registros pós-corte (> '2026-09-30'): quantos registros existem após 30/09/2026 em usuarios (data_cadastro), feed_posts (data_hora) e amizades (data_amizade)?
-  2. Fuso horário UTC vs Brasília: quantos eventos existem em eventos_assinatura terminados em 'Z' (UTC das lojas) e quantos treinos na tabela atividades caíram na primeira hora de '2026-10-01' em UTC mas aconteceram na noite de '2026-09-30' no horário de Brasília (America/Sao_Paulo)?
+  1. Registros pós-corte (> '2026-09-30'): quantos registros existem após 30/09/2026 em usuarios (data_cadastro), feed_posts (data_hora) e amizades (desde)?
+  2. Fuso horário UTC vs Brasília: quantos eventos existem em eventos_assinatura vindos das lojas (canal_cobranca app_store ou google_play, gravados em UTC) e quantos treinos na tabela atividades (coluna inicio) caíram na primeira hora de '2026-10-01' em UTC mas aconteceram na noite de '2026-09-30' no horário de Brasília (America/Sao_Paulo)?
   3. Despadronização de Sistema Operacional em usuarios: mostre a contagem de cada grafia bruta na coluna sistema (android, Android, ios, iOS, IOS) e o total unificado para Android e iOS.
-  4. Modalidades bilíngues na tabela atividades (1.254.475 treinos): mostre a contagem de cada modalidade bruta (corrida, run, caminhada, walk, forca, strength, pedal, ride, funcional, yoga, hiit) e a soma unificando Português + Inglês.
+  4. Modalidades bilíngues na tabela atividades (1.254.475 treinos): mostre a contagem de cada valor bruto da coluna tipo (corrida, run, caminhada, walk, forca, strength, pedal, ride, funcional, yoga, hiit) e a soma unificando Português + Inglês.
   5. String 'nenhum' em relogio_conectado na tabela usuarios: mostre quantos usuários têm o texto 'nenhum' versus quantos possuem relógio conectado real.
-  ```
-
-* **💻 Query SQL Equivalente:**
-  ```sql
-  -- 1. Registros posteriores ao corte de 30/09/2026
-  SELECT 'usuarios_pos_corte' AS anomalia, COUNT(*) AS qtd FROM `vitaliza_inteli_modulo_2.usuarios` WHERE DATE(data_cadastro) > '2026-09-30'
-  UNION ALL
-  SELECT 'feed_posts_pos_corte', COUNT(*) FROM `vitaliza_inteli_modulo_2.feed_posts` WHERE TIMESTAMP(data_hora) > '2026-09-30 23:59:59'
-  UNION ALL
-  SELECT 'amizades_pos_corte', COUNT(*) FROM `vitaliza_inteli_modulo_2.amizades` WHERE DATE(data_amizade) > '2026-09-30';
-
-  -- 2. Despadronização de Sistema Operacional em usuarios.csv
-  SELECT
-    sistema AS grafia_bruto,
-    LOWER(TRIM(sistema)) AS sistema_unificado,
-    COUNT(*) AS qtd_linhas
-  FROM `vitaliza_inteli_modulo_2.usuarios`
-  GROUP BY 1, 2
-  ORDER BY sistema_unificado, qtd_linhas DESC;
-
-  -- 3. Modalidades bilíngues (PT/EN) em atividades.parquet (1.254.475 treinos)
-  SELECT
-    modalidade AS modalidade_bruta,
-    CASE
-      WHEN modalidade IN ('corrida', 'run') THEN 'corrida + run'
-      WHEN modalidade IN ('caminhada', 'walk') THEN 'caminhada + walk'
-      WHEN modalidade IN ('forca', 'strength') THEN 'forca + strength'
-      WHEN modalidade IN ('pedal', 'ride') THEN 'pedal + ride'
-      ELSE modalidade
-    END AS modalidade_unificada,
-    COUNT(*) AS qtd_treinos
-  FROM `vitaliza_inteli_modulo_2.atividades`
-  GROUP BY 1, 2
-  ORDER BY modalidade_unificada, qtd_treinos DESC;
   ```
 
 ---
 
-### Ação 2: Conferir o Output na Tela (Gabarito das 7 Anomalias)
+### Ação 2: Conferir o resultado
 1. **Cortesias misturadas às ativas:** `60` linhas em `assinaturas.csv`.
 2. **Registros pós-corte (`> 30/09/2026`):** `119` usuários, `122` posts e `273` amizades.
 3. **Mistura de Fusos (`UTC` vs. `BRT`):** Eventos das lojas em `"Z"` + `34` treinos na 1ª hora de `01/10 UTC` que ocorreram na noite de `30/09 BRT`.
@@ -323,7 +241,7 @@ Bases de dados reais nunca vêm prontas para Machine Learning. Os professores in
 
 ---
 
-### Ação 3: Montar a Seção no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Escrever a seção com o agente de código
 Nesta ação você escreve a seção a partir do seu próprio resultado. O agente ajuda a explicar, redigir e revisar. O artefato oficial entra só no final, para comparação.
 
 **Antes de abrir o agente:** para cada anomalia, escreva uma linha com o que ela estragaria se não fosse tratada. Exemplo: "Sem converter o fuso, eventos de 30/09 caem em outubro e a série mensal de churn fica errada."
@@ -349,7 +267,7 @@ Minha leitura, uma linha por anomalia:
 """
 
 Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
-1. Explique de volta, em linguagem de executivo, o que cada anomalia é, em qual tabela e coluna ela aparece e que erro de decisão ela causaria. Diga se a minha leitura está correta. Confira se as somas das grafias de sistema operacional e das modalidades batem com os totais das tabelas.
+1. Explique de volta o que cada anomalia é, em qual tabela e coluna ela aparece e que erro de decisão ela causaria. Diga se a minha leitura está correta. Confira se as somas das grafias de sistema operacional e das modalidades batem com os totais das tabelas.
 2. Redija a Seção 2 do meu `ARTEFATO_TECH_SEMANA5_A1.md`: uma frase de abertura e uma tabela com número, anomalia, volume afetado e regra de tratamento executável.
 3. Redija a parte 1 da Seção 5.2 (Limitações) do meu `ARTEFATO_NEGOCIOS_SEMANA5_A1.md`: lista numerada dizendo, em linguagem de negócio, o que cada problema dos dados impede de afirmar.
 4. Só depois, leia a Seção 2 de `artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md` e a Seção 5.2 de `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md` e liste em uma tabela as diferenças entre o meu rascunho e o oficial: volumes divergentes, anomalias que faltam no meu e regras que no oficial não estão escritas de forma executável. Não copie texto do oficial para o meu arquivo.
@@ -359,23 +277,23 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 
 ---
 
-### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
-1. **No Agente do BigQuery (Qual Modalidade de Treino MaisEngaja os Clientes?):**
+### Ação 4: Prompts extras
+1. **No agente do BigQuery (qual modalidade engaja mais):**
    ```text
-   Na tabela atividades (unificando corrida com run, caminhada com walk, forca com strength e pedal com ride), mostre o ranking das modalidades mais praticadas na Vitaliza com total de treinos, média de duração em minutos e quantos usuários únicos praticam cada uma.
+   Na tabela atividades, coluna tipo (unificando corrida com run, caminhada com walk, forca com strength e pedal com ride), mostre o ranking das modalidades mais praticadas na Vitaliza com total de treinos, média de duracao_min e quantos usuários únicos praticam cada uma.
    ```
-2. **No Seu Agente do Repositório / NotebookLM (Entendendo o Impacto das "Pegadinhas" no Negócio):**
+2. **No agente do repositório ou no NotebookLM (o impacto das anomalias no negócio):**
    ```text
-   Leia o documento `00_comece_por_aqui/05_DOSSIE_EXHIBITS_M2.md` e o `00_comece_por_aqui/05_DOSSIE_DICIONARIO_DE_DADOS_M2.md`. Me explique de forma executiva (sem termos técnicos pesados) que erro de decisão a diretoria da Vitaliza cometeria se analisasse os arquivos brutos sem filtrar as 60 cortesias, sem corrigir o fuso horário das lojas e sem separar a palavra 'nenhum' na coluna de relógio conectado.
+   Leia o documento `00_comece_por_aqui/05_DOSSIE_EXHIBITS_M2.md` e o `00_comece_por_aqui/05_DOSSIE_DICIONARIO_DE_DADOS_M2.md`. Me explique, sem termos técnicos, que erro de decisão a diretoria da Vitaliza cometeria se analisasse os arquivos brutos sem filtrar as 60 cortesias, sem corrigir o fuso horário das lojas e sem separar a palavra 'nenhum' na coluna de relógio conectado.
    ```
 
 ---
 
 ## PASSO 03 — Diagnóstico da Subida do Churn em 2026: Testando as 5 Hipóteses (`H1` a `H5`)
 
-### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O que este passo ensina
 Na reunião da diretoria da Vitaliza (descrita no Enunciado), cada diretor tinha um palpite sobre por que o churn subiu de **5,6% (2025) para 6,6% (2026)**: uns culpavam o aumento de preço de março, outros culpavam a falta de engajamento ou falhas técnicas.
-Aqui você aprende a técnica executiva de **Teste Estruturado de Hipóteses (`Dado vs. Hipótese + Limite Metodológico`)**: para cada hipótese, buscamos a prova nos dados, mas também declaramos o que o dado **não** prova sozinho (ex.: `pesquisa_saida.csv` mostra 41% de reclamação de preço, mas só existe no site e sofre de viés de autosseleção).
+Aqui você aprende o **teste estruturado de hipóteses (`Dado vs. Hipótese + Limite Metodológico`)**: para cada hipótese, buscamos a prova nos dados, mas também declaramos o que o dado **não** prova sozinho (ex.: `pesquisa_saida.csv` mostra 41% de reclamação de preço, mas só existe no site e sofre de viés de autosseleção).
 
 ---
 
@@ -389,9 +307,9 @@ Aqui você aprende a técnica executiva de **Teste Estruturado de Hipóteses (`D
 | :--- | :--- | :--- | :--- |
 | **H1 (preço)** | `pesquisa_saida.motivo_principal`; `eventos_assinatura` (`evento`, `data_hora`, `plano`) | Motivo declarado de quem cancela e série mensal de saídas por plano. | Reajuste de R$ 34,90 para R$ 39,90 em `01/03/2026` (`01_RESUMO_EXECUTIVO_DO_CASE.md`). |
 | **H2 (canal)** | `assinaturas.canal_cobranca` (resultado do Passo 01) | Mostra quantos clientes cancelam fora do alcance da Vitaliza. | Nas lojas, a Vitaliza recebe só notificações (`01_RESUMO_EXECUTIVO_DO_CASE.md`, seção 2). |
-| **H3 (hábito)** | `uso_mensal` (treinos no mês de `2026-09`) + `assinaturas.renovacao_automatica` | Compara a intenção de saída entre faixas de frequência. | População de `14.753` pagantes (`06_CADERNO_DE_HIPOTESES_ANALITICAS.md`, seção 1). |
+| **H3 (hábito)** | `uso_mensal` (`atividades` no `mes = '2026-09'`) + `assinaturas.renovacao_automatica` | Compara a intenção de saída entre faixas de frequência. | População de `14.753` pagantes (`06_CADERNO_DE_HIPOTESES_ANALITICAS.md`, seção 1). |
 | **H4 (rede e relógio)** | `amizades`; `usuarios.relogio_conectado`; `atividades.treino_com` | Mede vínculo social e produto conectado. | Filtrar relações pós-corte (H-SOCIAL-01 no caderno). |
-| **H5 (fricção)** | `tickets_suporte` (status e data de abertura); `pagamentos` (status `recusado`) | Separa problema técnico e falha de cobrança de decisão voluntária. | Status do ticket é o da exportação (H-SUPPORT-01 no caderno). |
+| **H5 (fricção)** | `tickets_suporte` (`status`, `aberto_em`); `pagamentos` (`status = 'recusado'`) | Separa problema técnico e falha de cobrança de decisão voluntária. | Status do ticket é o da exportação (H-SUPPORT-01 no caderno). |
 
 **Sequência de raciocínio:**
 1. **Escrever cada hipótese como frase testável, com população, exposição e desfecho.** Por quê: "o preço subiu" não se testa. "A saída dos mensais subiu depois de 01/03/2026 mais do que a dos anuais" se testa.
@@ -408,7 +326,6 @@ Aqui você aprende a técnica executiva de **Teste Estruturado de Hipóteses (`D
 - **Ler H3 como causa.** A relação pode ter o sentido inverso: quem já decidiu sair para de treinar.
 - **Ignorar o confundimento em H4** (quando um terceiro fator explica as duas coisas). Relógio e amigos acompanham motivação prévia. Sinal: na própria consulta, o percentual com relógio cresce junto com a faixa de treino.
 - **Contar linhas de `pagamentos` como clientes.** Cada linha é uma tentativa de cobrança; o mesmo cliente pode ter várias recusas.
-- **Nome de coluna diferente.** No arquivo original, `tickets_suporte` usa `aberto_em` e `status`, e `uso_mensal` usa `mes` e `atividades`. Se a consulta falhar por nome, peça ao agente do BigQuery para ajustar sem mudar a lógica.
 
 **Como conferir sozinho:**
 - Os percentuais da pesquisa de saída somam 100; `264` ÷ `643` ≈ `41,06%`.
@@ -418,61 +335,31 @@ Aqui você aprende a técnica executiva de **Teste Estruturado de Hipóteses (`D
 
 ---
 
-### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Consultar no agente do BigQuery
 * **Tabelas no BigQuery:** `eventos_assinatura`, `assinaturas`, `pesquisa_saida`, `uso_mensal`, `amizades`, `pagamentos` e `tickets_suporte`
 
-* **💬 Prompt Principal para colar no Agente do BigQuery:**
+* **Prompt para o agente do BigQuery:**
   ```text
   Precisamos testar as 5 hipóteses de negócio para explicar por que o churn mensal subiu de 5,6% (2025) para 6,6% (2026, com pico de 8,1% em abril):
   - H1 (Reajuste do Mensal em 01/03/2026 para R$ 39,90): na tabela pesquisa_saida (643 respostas), quantas e qual o % citam 'preco' como motivo_principal? E na evolução de eventos_assinatura, como se comportaram as saídas em abril de 2026?
   - H2 (Assimetria de Canal - Lojas): qual o % dos 14.753 pagantes ativos que pagam por app_store ou google_play, onde a tela de cancelamento do site não alcança?
-  - H3 (Queda de Frequência de Treino): cruzando os 14.753 pagantes ativos de assinaturas com uso_mensal em '2026-09', qual é a taxa de renovacao_automatica desligada (%) para quem treinou >= 5 vezes no mês, para quem treinou de 1 a 4 vezes e para quem teve 0 treinos?
-  - H4 (Rede Social e Relógio Conectado): qual o total de vínculos em amizades (até 30/09/2026) e qual a diferença na taxa de renovação desligada entre quem possui relógio conectado (Garmin/Apple Watch) versus quem tem 'nenhum'?
-  - H5 (Churn Involuntário e Suporte Técnico): na tabela tickets_suporte (4.422 chamados até 30/09/2026), qual o % de tickets com status 'resolvido', 'aberto' e 'sem_resposta'? E na tabela pagamentos, quantas cobranças foram recusadas?
-  ```
-
-* **💻 Query SQL Equivalente:**
-  ```sql
-  -- H1: Motivos na pesquisa de saída (643 respostas)
-  SELECT motivo_principal, COUNT(*) AS mencoes, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) AS pct
-  FROM `vitaliza_inteli_modulo_2.pesquisa_saida`
-  GROUP BY 1 ORDER BY mencoes DESC;
-
-  -- H3 e H4: Taxa de renovação desligada por faixa de treino em set/2026 e posse de relógio
-  SELECT
-    CASE
-      WHEN COALESCE(um.treinos_mes, 0) >= 5 THEN '1. 5+ treinos/mes'
-      WHEN COALESCE(um.treinos_mes, 0) BETWEEN 1 AND 4 THEN '2. 1 a 4 treinos/mes'
-      ELSE '3. 0 treinos/mes'
-    END AS faixa_frequencia_set26,
-    COUNT(*) AS pagantes_ativos,
-    ROUND(AVG(CASE WHEN CAST(a.renovacao_automatica AS STRING) IN ('0', 'false', 'False') THEN 100.0 ELSE 0.0 END), 2) AS pct_renovacao_desligada,
-    ROUND(AVG(CASE WHEN LOWER(u.relogio_conectado) NOT IN ('nenhum', '') THEN 100.0 ELSE 0.0 END), 2) AS pct_com_relogio
-  FROM `vitaliza_inteli_modulo_2.assinaturas` a
-  JOIN `vitaliza_inteli_modulo_2.usuarios` u ON a.user_id = u.user_id
-  LEFT JOIN `vitaliza_inteli_modulo_2.uso_mensal` um ON a.user_id = um.user_id AND um.ano_mes = '2026-09'
-  WHERE a.status_atual = 'ativa' AND a.plano_atual IN ('mensal', 'anual')
-  GROUP BY 1 ORDER BY 1;
-
-  -- H5: Status dos 4.422 chamados em tickets_suporte
-  SELECT status_ticket, COUNT(*) AS qtd, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) AS pct
-  FROM `vitaliza_inteli_modulo_2.tickets_suporte`
-  WHERE DATE(TIMESTAMP(data_abertura)) <= '2026-09-30'
-  GROUP BY 1 ORDER BY qtd DESC;
+  - H3 (Queda de Frequência de Treino): cruzando os 14.753 pagantes ativos de assinaturas com uso_mensal (mes = '2026-09', coluna atividades = treinos no mês; quem não tem linha conta como 0), qual é a taxa de renovação desligada (renovacao_automatica = 'nao') para quem treinou >= 5 vezes no mês, para quem treinou de 1 a 4 vezes e para quem teve 0 treinos?
+  - H4 (Rede Social e Relógio Conectado): qual o total de vínculos em amizades (coluna desde até 30/09/2026) e qual a diferença na taxa de renovação desligada entre quem possui relógio conectado (usuarios.relogio_conectado = 'garmin' ou 'apple_watch') versus quem tem 'nenhum'?
+  - H5 (Churn Involuntário e Suporte Técnico): na tabela tickets_suporte (4.422 chamados, coluna aberto_em até 30/09/2026), qual o % de tickets com status 'resolvido', 'aberto' e 'sem_resposta'? E na tabela pagamentos, quantas cobranças têm status 'recusado'?
   ```
 
 ---
 
-### Ação 2: Conferir o Output na Tela (Gabarito `H1` a `H5`)
+### Ação 2: Conferir o resultado
 * **H1 (Preço/Reajuste):** Pico de **8,1% em abril/2026** (`1.154` saídas); na `pesquisa_saida.csv`, **`preco` = `41,06%` (`264` de `643` respostas)**.
 * **H2 (Assimetria Lojas):** **`70,22%` (`10.359`)** nas lojas (`app_store` + `google_play`).
-* **H3 (Frequência):** `≥5` treinos = apenas **`1,60%`** de renovação desligada; `1 a 4` treinos = **`15,19%`**; `0` treinos = **`56,98%`**!
+* **H3 (Frequência):** `≥5` treinos = apenas **`1,60%`** de renovação desligada; `1 a 4` treinos = **`15,19%`**; `0` treinos = **`56,98%`**.
 * **H4 (Social/Relógio):** `113.480` relações em `amizades.csv` e ~40% com relógio conectado protegendo a retenção.
-* **H5 (Suporte/Pagamentos):** Dos `4.422` tickets, **`65,97%` resolvidos**, **`22,18%` abertos** e **`11,85%` sem resposta** (`34,03%` pendentes!).
+* **H5 (Suporte/Pagamentos):** Dos `4.422` tickets, **`65,97%` resolvidos**, **`22,18%` abertos** e **`11,85%` sem resposta** (`34,03%` pendentes).
 
 ---
 
-### Ação 3: Montar a Seção no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Escrever a seção com o agente de código
 Nesta ação você escreve a seção a partir do seu próprio resultado. O agente ajuda a explicar, redigir e revisar. O artefato oficial entra só no final, para comparação.
 
 **Antes de abrir o agente:** para cada hipótese, escreva duas linhas. A primeira diz o que o dado mostra. A segunda diz o que o dado não prova.
@@ -500,7 +387,7 @@ Minha leitura, duas linhas por hipótese (o que mostra / o que não prova):
 """
 
 Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
-1. Explique de volta cada hipótese em linguagem de executivo: qual comparação foi feita, qual população, qual número responde e o que esse número não prova. Diga se a minha leitura está correta. Confira se os percentuais de cada distribuição somam 100 e se as faixas de treino somam 14.753.
+1. Explique de volta cada hipótese: qual comparação foi feita, qual população, qual número responde e o que esse número não prova. Diga se a minha leitura está correta. Confira se os percentuais de cada distribuição somam 100 e se as faixas de treino somam 14.753.
 2. Redija a Seção 2 do meu `ARTEFATO_NEGOCIOS_SEMANA5_A1.md`: frase de abertura, tabela das 5 hipóteses (hipótese / evidência com número, tabela e população / conclusão com limite e papel da hipótese) e um parágrafo de fechamento ligando H2 ao Caminho A e H3 ao Caminho B. Marque como hipótese tudo o que não for medido.
 3. Acrescente na Seção 5.2 do mesmo arquivo as limitações da pesquisa de saída e da leitura causal dos cruzamentos.
 4. Só depois, leia a Seção 2 de `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md` e liste em uma tabela as diferenças entre o meu rascunho e o oficial: números divergentes, hipóteses com conclusão diferente, evidências do oficial que eu não medi (como o resultado da campanha de agosto) e afirmações do oficial sem número. Não copie texto do oficial para o meu arquivo.
@@ -510,25 +397,25 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 
 ---
 
-### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
-1. **No Agente do BigQuery (Testando o Conceito de "Gêmeo Demográfico" da Aula 3 de Negócios):**
+### Ação 4: Prompts extras
+1. **No agente do BigQuery (o "gêmeo demográfico" da Aula 3 de Negócios):**
    ```text
-   Cruze usuarios, assinaturas e uso_mensal ('2026-09'). Filtre apenas clientes com a mesma idade (entre 26 e 30 anos) e mesmo gênero. Agora compare a taxa de renovacao_automatica desligada de quem treina 8 ou mais vezes no mês contra quem treina apenas 1 vez no mês. O que isso mostra sobre segmentar por idade versus segmentar por comportamento?
+   Cruze usuarios, assinaturas e uso_mensal (mes = '2026-09'). Filtre apenas clientes com a mesma faixa de idade (26 a 30 anos, calculada por data_nascimento) e o mesmo sexo. Agora compare a taxa de renovação desligada (renovacao_automatica = 'nao') de quem fez 8 ou mais atividades no mês contra quem fez apenas 1. O que isso mostra sobre segmentar por idade versus segmentar por comportamento?
    ```
-2. **No Seu Agente do Repositório / NotebookLM (Conectando a Aula 1 e a Aula 3 com o Case):**
+2. **No agente do repositório ou no NotebookLM (as Aulas 1 e 3 aplicadas ao case):**
    ```text
-   Leia o arquivo `00_comece_por_aqui/06_CADERNO_DE_HIPOTESES_ANALITICAS.md` e o `00_comece_por_aqui/03_GUIA_AULA_01_NEGOCIOS_E_TECNOLOGIA.md`. Com base nos números que encontramos nas 5 hipóteses (H1 a H5), me ajude a construir um argumento executivo mostrando por que o aumento de preço de março foi o gatilho, mas a falta de hábito (< 5 treinos/mês) é a causa raiz do cancelamento.
+   Leia o arquivo `00_comece_por_aqui/06_CADERNO_DE_HIPOTESES_ANALITICAS.md` e o `00_comece_por_aqui/03_GUIA_AULA_01_NEGOCIOS_E_TECNOLOGIA.md`. Com base nos números que encontramos nas 5 hipóteses (H1 a H5), me ajude a construir um argumento mostrando por que o aumento de preço de março foi o gatilho, mas a falta de hábito (< 5 treinos/mês) é a causa raiz do cancelamento.
    ```
 
 ---
 
 ## PASSO 04 — Os 4 Segmentos Estratégicos (Pilar 01), Personas de Dados (Pilar 02) e Receita em Risco com `4A` vs. `4B` (Pilar 03)
 
-### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O que este passo ensina
 Este passo cobre os **3 Pilares Obrigatórios da Entrega A1 de Negócios** e o **Objetivo 3 de Tecnologia**:
-1. **Regra de Ouro da Clusterização (Sem Vazamento):** Você nunca coloca a coluna `churn` / `renovacao_automatica` dentro das variáveis que formam os grupos. Os grupos são formados exclusivamente pelo **comportamento no produto** (quantas vezes treina, quantos minutos, se treina ao ar livre com GPS ou em casa por vídeo). Só depois que os 4 grupos estão prontos é que olhamos a taxa de saída de cada um!
+1. **Regra de Ouro da Clusterização (Sem Vazamento):** Você nunca coloca a coluna `churn` / `renovacao_automatica` dentro das variáveis que formam os grupos. Os grupos são formados exclusivamente pelo **comportamento no produto** (quantas vezes treina, quantos minutos, se treina ao ar livre com GPS ou em casa por vídeo). Só depois que os 4 grupos estão prontos é que olhamos a taxa de saída de cada um.
 2. **Os 5 Critérios de Kotler (Aula 3):** Todo segmento precisa ser *Mensurável, Substancial, Diferenciável, Acessível e Acionável*.
-3. **A Divisão Crítica do Cluster 4 (`4A` vs. `4B`):** Entre os `2.313` inativos (`0` treinos em setembro), `1.318` (`4A`) já desligaram a renovação automática, mas **`995` (`4B`) ainda estão com a renovação ligada pagando R$ 27.607/mês por esquecimento**. Esses `995` são os **Sleeping Dogs**: se você mandar um WhatsApp dizendo *"Sentimos sua falta!"*, você lembra o cliente de que ele está pagando sem usar e ele cancela na hora!
+3. **A Divisão Crítica do Cluster 4 (`4A` vs. `4B`):** Entre os `2.313` inativos (`0` treinos em setembro), `1.318` (`4A`) já desligaram a renovação automática, mas **`995` (`4B`) ainda estão com a renovação ligada pagando R$ 27.607/mês por esquecimento**. Esses `995` são os **Sleeping Dogs**: se você mandar um WhatsApp dizendo *"Sentimos sua falta!"*, você lembra o cliente de que ele está pagando sem usar, e ele tende a cancelar.
 
 ---
 
@@ -540,7 +427,7 @@ Este passo cobre os **3 Pilares Obrigatórios da Entrega A1 de Negócios** e o *
 
 | Fonte | Campo | Por que é necessário |
 | :--- | :--- | :--- |
-| `uso_mensal` (mês `2026-09`) | treinos no mês (`atividades` no arquivo original; `treinos_mes` na consulta), `atividades_ar_livre`, minutos, `dias_ativos`, `sessoes_app` | Comportamento recente de uso, que forma os grupos. |
+| `uso_mensal` (`mes = '2026-09'`) | `atividades` (treinos no mês), `atividades_ar_livre`, `minutos`, `dias_ativos`, `sessoes_app` | Comportamento recente de uso, que forma os grupos. |
 | `usuarios` | `relogio_conectado` | Produto conectado, uma das variáveis de entrada do protocolo da Seção 3.1 de Tecnologia. |
 | `amizades` | relações até o corte | Grau social, outra variável de entrada do mesmo protocolo. |
 | `assinaturas` | `plano_atual`, `canal_cobranca` | Receita líquida de cada cliente, com as regras do Passo 01. |
@@ -552,7 +439,7 @@ Este passo cobre os **3 Pilares Obrigatórios da Entrega A1 de Negócios** e o *
 **Sequência de raciocínio:**
 1. **Escolher variáveis de comportamento anteriores ao corte.** Por quê: o segmento precisa descrever o que o cliente faz. É isso que produto e CRM conseguem influenciar.
 2. **Deixar a variável de saída fora da formação dos grupos.** Por quê: se a renovação desligada entra no cálculo, os grupos separam o churn por construção, e a taxa observada depois deixa de ser evidência. Isso é vazamento de alvo.
-3. **Formar os grupos e declarar o método.** A consulta deste passo usa regras de corte: 5 ou mais treinos no mês (hábito estabelecido, pouco mais de um treino por semana), 1 a 4 (hábito instável) e zero (sem uso). Dentro do grupo de 5 ou mais, separa quem faz metade ou mais dos treinos ao ar livre. A Seção 3.1 do artefato de Tecnologia descreve uma clusterização com sete variáveis padronizadas (`StandardScaler`, que coloca todas na mesma escala). Por quê: o leitor precisa saber se os grupos vieram de regra ou de algoritmo. Escreva na seção o método que você de fato executou.
+3. **Formar os grupos e declarar o método.** O prompt deste passo usa regras de corte: 5 ou mais treinos no mês (hábito estabelecido, pouco mais de um treino por semana), 1 a 4 (hábito instável) e zero (sem uso). Dentro do grupo de 5 ou mais, separa quem faz metade ou mais dos treinos ao ar livre. A Seção 3.1 do artefato de Tecnologia descreve uma clusterização com sete variáveis padronizadas (`StandardScaler`, que coloca todas na mesma escala). Por quê: o leitor precisa saber se os grupos vieram de regra ou de algoritmo. Escreva na seção o método que você de fato executou.
 4. **Ler os centróides.** Centróide é a média de cada variável dentro do grupo, na unidade original (treinos/mês, minutos/mês). Por quê: é o que permite descrever o grupo em linguagem de negócio.
 5. **Qualificar cada grupo:** tamanho, % da base e receita líquida. Por quê: o Pilar 01 pede essas medidas, e elas respondem aos critérios de Kotler "mensurável" e "substancial".
 6. **Só então cruzar com a renovação desligada.** Por quê: é a validação de negócio. Grupos formados apenas por comportamento que mostram taxas tão diferentes (`1,61%` contra `56,98%`) indicam que a segmentação separa risco.
@@ -582,7 +469,7 @@ Exemplo com o Cluster 3:
 - **Escolher os pontos de corte olhando a taxa de saída.** Se o corte de 5 treinos foi escolhido porque a taxa muda ali, a separação observada depois fica otimista. Justifique o corte por critério de produto ou declare isso como limitação.
 - **Usar `JOIN` em vez de `LEFT JOIN` com `uso_mensal`.** Cliente sem linha em setembro precisa entrar com zero treinos. Sinal: o Cluster 4 encolhe e o total não chega a `14.753`.
 - **Nomes genéricos** ("Cluster 0") ou que prometem efeito sem evidência.
-- **Atributo de persona sem número.** O artefato oficial descreve o Cluster 1 com relógio Garmin ou Apple Watch e rede de amigos, mas a consulta deste passo não traz % com relógio nem média de amigos por cluster. Se você mantiver a frase, rode essa consulta. Se não rodar, retire a frase.
+- **Atributo de persona sem número.** O artefato oficial descreve o Cluster 1 com relógio Garmin ou Apple Watch e rede de amigos, mas o prompt deste passo não pede % com relógio nem média de amigos por cluster. Se você mantiver a frase, rode essa consulta. Se não rodar, retire a frase.
 - **Escrever o motivo de saída como fato.** Ele é hipótese até ser testado.
 - **Tratar o 4B como perda certa.** É um risco condicional ao contato.
 - **Anualizar sem declarar a premissa.** Multiplicar por 12 supõe que o cliente ficaria 12 meses. No anual com renovação desligada, a perda só acontece no fim do ciclo.
@@ -598,71 +485,27 @@ Exemplo com o Cluster 3:
 
 ---
 
-### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Consultar no agente do BigQuery
 * **Tabelas no BigQuery:** `assinaturas` + `uso_mensal` + `usuarios`
 
-* **💬 Prompt Principal para colar no Agente do BigQuery:**
+* **Prompt para o agente do BigQuery:**
   ```text
-  Cruze os 14.753 pagantes ativos da tabela assinaturas (status_atual = 'ativa' e plano_atual IN ('mensal', 'anual')) com a tabela uso_mensal no mês '2026-09' e com a tabela usuarios pelo user_id.
+  Cruze os 14.753 pagantes ativos da tabela assinaturas (status_atual = 'ativa' e plano_atual IN ('mensal', 'anual')) com a tabela uso_mensal (mes = '2026-09', usando LEFT JOIN: quem não tem linha conta com 0 atividades) e com a tabela usuarios pelo user_id.
   1. Primeiro, agrupe os 14.753 pagantes nos 4 Clusters Comportamentais (sem usar a variável de saída na definição dos grupos):
-     - Cluster 1 (Atletas Sociais de Rua & GPS): treinos_mes >= 5 e atividades_ar_livre >= (treinos_mes / 2)
-     - Cluster 2 (Praticantes Regulares Indoor & Vídeo): treinos_mes >= 5 e atividades_ar_livre < (treinos_mes / 2)
-     - Cluster 3 (Entusiastas Oscilantes / Em Risco): treinos_mes entre 1 e 4
-     - Cluster 4 (Pagantes Inertes / 0 treinos): treinos_mes = 0 (ou sem registro em set/26)
-     Mostre para cada Cluster: tamanho (N), % da base, média de treinos_mes, média de minutos_mes, % de renovacao_automatica desligada (observada a posteriori) e Receita Líquida Mensal Total.
+     - Cluster 1 (Atletas Sociais de Rua & GPS): atividades >= 5 e atividades_ar_livre >= (atividades / 2)
+     - Cluster 2 (Praticantes Regulares Indoor & Vídeo): atividades >= 5 e atividades_ar_livre < (atividades / 2)
+     - Cluster 3 (Entusiastas Oscilantes / Em Risco): atividades entre 1 e 4
+     - Cluster 4 (Pagantes Inertes / 0 treinos): atividades = 0 (ou sem registro em set/26)
+     Mostre para cada Cluster: tamanho (N), % da base, média de atividades, média de minutos, % com renovação desligada (renovacao_automatica = 'nao', observada a posteriori) e Receita Líquida Mensal Total (com os preços e taxas do Passo 01).
   2. Depois, para montarmos a Matriz de Valor em Risco (Pilar 03), divida o Cluster 4 (2.313 inativos) em dois subgrupos:
      - Cluster 4A (Inertes que JÁ desligaram a renovação automática = 1.318 clientes)
      - Cluster 4B (Inertes que ainda estão com renovação automática LIGADA pagando por esquecimento = 995 Sleeping Dogs)
      Mostre a Receita Líquida Mensal e Anualizada (12x) em risco de cada grupo.
   ```
 
-* **💻 Query SQL Equivalente:**
-  ```sql
-  WITH base_clusters AS (
-    SELECT
-      a.user_id,
-      CAST(a.renovacao_automatica AS STRING) IN ('0', 'false', 'False') AS desligou_renovacao,
-      COALESCE(um.treinos_mes, 0) AS treinos_mes,
-      COALESCE(um.minutos_mes, 0) AS minutos_mes,
-      (CASE WHEN a.plano_atual = 'mensal' THEN 39.90 ELSE 299.90 / 12.0 END) *
-      (1.0 - CASE
-        WHEN a.canal_cobranca IN ('app_store', 'google_play') THEN 0.15
-        WHEN a.canal_cobranca = 'web_cartao' THEN 0.035
-        WHEN a.canal_cobranca = 'web_pix' THEN 0.0099
-        ELSE 0.0
-      END) AS receita_liquida_mes,
-      CASE
-        WHEN COALESCE(um.treinos_mes, 0) >= 5 AND COALESCE(um.atividades_ar_livre, 0) >= COALESCE(um.treinos_mes, 0) / 2.0
-          THEN '1. Atletas Sociais de Rua & GPS'
-        WHEN COALESCE(um.treinos_mes, 0) >= 5
-          THEN '2. Praticantes Regulares Indoor & Video'
-        WHEN COALESCE(um.treinos_mes, 0) BETWEEN 1 AND 4
-          THEN '3. Entusiastas Oscilantes (1-4 treinos)'
-        ELSE '4. Pagantes Inertes (0 treinos)'
-      END AS cluster_estrategico
-    FROM `vitaliza_inteli_modulo_2.assinaturas` a
-    LEFT JOIN `vitaliza_inteli_modulo_2.uso_mensal` um
-      ON a.user_id = um.user_id AND um.ano_mes = '2026-09'
-    WHERE a.status_atual = 'ativa' AND a.plano_atual IN ('mensal', 'anual')
-  )
-  SELECT
-    cluster_estrategico,
-    COUNT(*) AS tamanho_n,
-    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) AS pct_da_base,
-    ROUND(AVG(treinos_mes), 1) AS treinos_mes_medio,
-    ROUND(AVG(minutos_mes), 1) AS minutos_mes_medio,
-    COUNTIF(desligou_renovacao) AS qtd_renovacao_desligada,
-    ROUND(AVG(CASE WHEN desligou_renovacao THEN 100.0 ELSE 0.0 END), 2) AS pct_renovacao_desligada,
-    ROUND(SUM(receita_liquida_mes), 0) AS receita_liquida_mensal_total,
-    ROUND(SUM(CASE WHEN desligou_renovacao THEN receita_liquida_mes ELSE 0.0 END), 0) AS receita_mensal_em_risco_direto
-  FROM base_clusters
-  GROUP BY 1
-  ORDER BY 1;
-  ```
-
 ---
 
-### Ação 2: Conferir o Output na Tela (Gabarito)
+### Ação 2: Conferir o resultado
 * **Cluster 1 (`4.089` | `27,72%`):** `12,4` treinos/mês, `615,4` min, **`1,61%`** renovação desligada, Receita Líquida = **`R$ 113.633 / mês`**.
 * **Cluster 2 (`2.960` | `20,06%`):** `11,9` treinos/mês, `433,5` min, **`1,59%`** renovação desligada, Receita Líquida = **`R$ 82.258 / mês`**.
 * **Cluster 3 (`5.391` | `36,54%`):** `2,2` treinos/mês, `99,3` min, **`15,19%` (`819` clientes)** renovação desligada, Receita Líquida = **`R$ 149.816 / mês`** (Receita em risco direto = **`R$ 22.757/mês` ou `R$ 273.084/ano`**).
@@ -672,7 +515,7 @@ Exemplo com o Cluster 3:
 
 ---
 
-### Ação 3: Montar as Seções no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Escrever as seções com o agente de código
 Nesta ação você escreve as seções a partir do seu próprio resultado. O agente ajuda a explicar, redigir e revisar. O artefato oficial entra só no final, para comparação.
 
 **Antes de abrir o agente:** para cada cluster, escreva quatro linhas: o comportamento que o diferencia (com o número do centróide), o nome que você daria, o motivo provável de saída (marcado como hipótese) e a ação que você proporia.
@@ -700,7 +543,7 @@ Minha leitura, quatro linhas por cluster (comportamento com número / nome / mot
 """
 
 Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
-1. Explique de volta o resultado em linguagem de executivo: como os grupos foram formados, por que a renovação desligada não entrou na formação, o que cada centróide diz e por que a divisão 4A/4B não é vazamento. Confira se os tamanhos somam 14.753, se a receita soma o total do Passo 01 e se as renovações desligadas somam 2.250. Diga se a minha leitura e os meus nomes estão sustentados pelos números.
+1. Explique de volta o resultado: como os grupos foram formados, por que a renovação desligada não entrou na formação, o que cada centróide diz e por que a divisão 4A/4B não é vazamento. Confira se os tamanhos somam 14.753, se a receita soma o total do Passo 01 e se as renovações desligadas somam 2.250. Diga se a minha leitura e os meus nomes estão sustentados pelos números.
 2. Redija no meu `ARTEFATO_NEGOCIOS_SEMANA5_A1.md` a Seção 3 (método, diagrama e tabela consolidada com total), a Seção 4 (personas de dados: cada atributo com o número e a coluna correspondente, motivo de saída marcado como hipótese, ação proposta) e a Seção 5.1 (valor em risco mensal e anualizado, prioridade, nota sobre a premissa da anualização e callout sobre o 4B). Se alguma frase de persona não tiver número no meu resultado, deixe-a marcada como [A VERIFICAR] em vez de inventar.
 3. Redija no meu `ARTEFATO_TECH_SEMANA5_A1.md` a Seção 3: protocolo contra vazamento e tabela de centróides. Escreva qual método eu executei (regras de corte ou algoritmo de clusterização).
 4. Só depois, leia as Seções 3, 4 e 5.1 de `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md` e a Seção 3 de `artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md`. Liste em uma tabela as diferenças entre o meu rascunho e o oficial: números divergentes, atributos de persona do oficial que não têm número na consulta, diferenças de método e de nome. Não copie texto do oficial para o meu arquivo.
@@ -710,12 +553,12 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 
 ---
 
-### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
-1. **No Agente do BigQuery (Conhecendo Histórias Reais Dentro de Cada Persona):**
+### Ação 4: Prompts extras
+1. **No agente do BigQuery (casos reais dentro de cada persona):**
    ```text
-   Cruze assinaturas, usuarios, uso_mensal ('2026-09') e onboarding. Mostre o perfil real de 2 clientes do Cluster 1 (Atletas GPS) e de 2 clientes do Cluster 3 (Entusiastas Oscilantes de 1 a 4 treinos), trazendo o texto_onboarding original que eles escreveram quando entraram na Vitaliza e quantos treinos fizeram em julho, agosto e setembro.
+   Cruze assinaturas, usuarios, uso_mensal e onboarding. Mostre o perfil real de 2 clientes do Cluster 1 (Atletas GPS) e de 2 clientes do Cluster 3 (Entusiastas Oscilantes de 1 a 4 treinos), trazendo o objetivo_texto que eles escreveram no onboarding e quantas atividades fizeram em julho, agosto e setembro (mes = '2026-07', '2026-08' e '2026-09').
    ```
-2. **No Seu Agente do Repositório / NotebookLM (Avaliando os 4 Segmentos pelos 5 Critérios de Kotler):**
+2. **No agente do repositório ou no NotebookLM (os 4 segmentos pelos 5 critérios de Kotler):**
    ```text
    Leia o arquivo `00_comece_por_aqui/01_trilha_negocios_e_crm/01_DIAGNOSTICO_ESTRATEGICO_A1_SEMANA5.md` e avalie os nossos 4 segmentos (Atletas GPS, Praticantes Vídeo, Entusiastas Oscilantes e Pagantes Inertes) segundo os 5 critérios clássicos de segmentação vistos em aula (Mensurável, Substancial, Diferenciável, Acessível e Acionável). Qual ação concreta de produto ou CRM faz sentido para cada um?
    ```
@@ -724,13 +567,13 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 
 ## PASSO 05 — Feature Store Tabular (`M-1` vs. `M-2`) e Baseline Supervisionado de Regressão Logística (60 Dias)
 
-### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O que este passo ensina
 Para prever quem vai sair nos próximos 60 dias (**Objetivo 4**), o modelo não pode olhar apenas para uma fotografia estática: ele precisa capturar **a velocidade da queda de hábito (`delta_treinos = treinos_m1 - treinos_m2`)**.
-Além disso, você aprende as **4 métricas que todo executivo e cientista de dados usa para avaliar um classificador de churn**:
+Além disso, você aprende as **4 métricas usadas para avaliar um classificador de churn**:
 * **`ROC-AUC` (`0,7522` no nosso Baseline):** Capacidade global de ranquear um cliente que vai sair acima de um cliente que vai ficar (`0,50` = cara ou coroa; `1,00` = perfeito).
 * **`PR-AUC` (`0,5079`):** Foco em precisão e cobertura na classe minoritária (quem realmente sai).
 * **`Brier Score` (`0,1504`):** Mede se a probabilidade prevista (ex.: 30% de chance de sair) é calibrada com a realidade (quanto menor, melhor).
-* **`Lift no Topo 10%` (`2,55x`):** Como só temos **1.500 mensagens de WhatsApp por mês** (~10% dos 14.753 ativos), o `Lift@10% = 2,55x` mostra que abordar o topo 10% do ranking do modelo encontra **2,55 vezes mais cancelamentos reais** do que escolher 1.500 clientes por sorteio!
+* **`Lift no Topo 10%` (`2,55x`):** Como só temos **1.500 mensagens de WhatsApp por mês** (~10% dos 14.753 ativos), o `Lift@10% = 2,55x` mostra que abordar o topo 10% do ranking do modelo encontra **2,55 vezes mais cancelamentos reais** do que escolher 1.500 clientes por sorteio.
 
 ---
 
@@ -769,7 +612,7 @@ Além disso, você aprende as **4 métricas que todo executivo e cientista de da
 - **Ignorar a campanha de agosto.** A janela de 60 dias depois de 31/07 contém a campanha de `10/08/2026`, enviada a toda a base pagante daquele dia. Parte dos clientes recebeu mensagem dentro da janela do alvo. Declare isso como limitação.
 - **Ler `ROC-AUC = 0,75` como "acerta 75%".** A métrica é a probabilidade de o modelo dar nota maior a um cliente que sai do que a um que fica, escolhidos ao acaso.
 - **Comparar `PR-AUC` com 0,5.** A referência de um modelo sem informação é a taxa de saída da base, e não 0,5.
-- **Contar amizades de um lado só.** A consulta usa `user_id_1`; no arquivo original, a relação tem `seguidor_id` e `seguido_id`. Contar só um lado mede "quantas pessoas o cliente segue". Declare qual lado você usou.
+- **Contar amizades de um lado só.** A relação tem `seguidor_id` e `seguido_id`. Contar só por `seguidor_id` mede "quantas pessoas o cliente segue". Declare qual lado você usou.
 - **Ler peso como causa.** Um peso positivo indica associação com a saída, controlada pelas outras variáveis do modelo. Não prova que mudar a variável muda a saída.
 
 **Como conferir sozinho:**
@@ -781,70 +624,27 @@ Além disso, você aprende as **4 métricas que todo executivo e cientista de da
 
 ---
 
-### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Consultar no agente do BigQuery
 * **Tabelas no BigQuery:** `assinaturas`, `usuarios`, `uso_mensal`, `amizades`, `tickets_suporte` e `pagamentos`
 
-* **💬 Prompt Principal para colar no Agente do BigQuery:**
+* **Prompt para o agente do BigQuery:**
   ```text
   Para o Objetivo 4 Inicial (Seção 4 do Artefato de Tecnologia da Semana 5), monte a consulta da Feature Store Tabular sem Data Leakage para os 14.753 pagantes ativos, calculando as variáveis explicativas (X):
   - Contrato e canal: is_mensal (1 se mensal, 0 se anual) e is_loja (1 se app_store/google_play, 0 se site)
-  - Engajamento longitudinal: treinos_m1, minutos_m1, dias_ativos_m1, sessoes_m1 (no mês M-1) e treinos_m2 (no mês M-2), além de delta_treinos = treinos_m1 - treinos_m2 (desaceleração recente de hábito)
-  - Ecossistema e fricção: tem_relogio (Garmin/Apple Watch), n_amigos (em amizades), n_tickets (em tickets_suporte) e n_recusas (em pagamentos).
-  Mostre a média de cada variável comparando o grupo que manteve a renovação automática ligada (target = 0) com o grupo que desligou a renovação (target = 1), comprovando os sinais que alimentam o nosso baseline de Regressão Logística.
-  ```
-
-* **💻 Query SQL Equivalente:**
-  ```sql
-  WITH m1 AS (SELECT user_id, treinos_mes, minutos_mes, dias_ativos, sessoes_app FROM `vitaliza_inteli_modulo_2.uso_mensal` WHERE ano_mes = '2026-09'),
-       m2 AS (SELECT user_id, treinos_mes FROM `vitaliza_inteli_modulo_2.uso_mensal` WHERE ano_mes = '2026-08'),
-       am AS (SELECT user_id_1 AS user_id, COUNT(*) AS n_amigos FROM `vitaliza_inteli_modulo_2.amizades` WHERE DATE(data_amizade) <= '2026-09-30' GROUP BY 1),
-       tk AS (SELECT user_id, COUNT(*) AS n_tickets FROM `vitaliza_inteli_modulo_2.tickets_suporte` WHERE DATE(TIMESTAMP(data_abertura)) <= '2026-09-30' GROUP BY 1),
-       pg AS (SELECT user_id, COUNTIF(status_pagamento = 'recusado') AS n_recusas FROM `vitaliza_inteli_modulo_2.pagamentos` WHERE DATE(data_pagamento) <= '2026-09-30' GROUP BY 1),
-       features AS (
-         SELECT
-           a.user_id,
-           CASE WHEN CAST(a.renovacao_automatica AS STRING) IN ('0', 'false', 'False') THEN 1 ELSE 0 END AS target_saida,
-           CASE WHEN a.plano_atual = 'mensal' THEN 1 ELSE 0 END AS is_mensal,
-           CASE WHEN a.canal_cobranca IN ('app_store', 'google_play') THEN 1 ELSE 0 END AS is_loja,
-           COALESCE(m1.treinos_mes, 0) AS treinos_m1,
-           COALESCE(m2.treinos_mes, 0) AS treinos_m2,
-           COALESCE(m1.treinos_mes, 0) - COALESCE(m2.treinos_mes, 0) AS delta_treinos,
-           CASE WHEN LOWER(u.relogio_conectado) NOT IN ('nenhum', '') THEN 1 ELSE 0 END AS tem_relogio,
-           COALESCE(am.n_amigos, 0) AS n_amigos,
-           COALESCE(tk.n_tickets, 0) AS n_tickets,
-           COALESCE(pg.n_recusas, 0) AS n_recusas
-         FROM `vitaliza_inteli_modulo_2.assinaturas` a
-         JOIN `vitaliza_inteli_modulo_2.usuarios` u ON a.user_id = u.user_id
-         LEFT JOIN m1 ON a.user_id = m1.user_id
-         LEFT JOIN m2 ON a.user_id = m2.user_id
-         LEFT JOIN am ON a.user_id = am.user_id
-         LEFT JOIN tk ON a.user_id = tk.user_id
-         LEFT JOIN pg ON a.user_id = pg.user_id
-         WHERE a.status_atual = 'ativa' AND a.plano_atual IN ('mensal', 'anual')
-       )
-  SELECT
-    target_saida,
-    COUNT(*) AS n_assinantes,
-    ROUND(AVG(treinos_m1), 2) AS media_treinos_m1,
-    ROUND(AVG(delta_treinos), 2) AS media_delta_treinos,
-    ROUND(AVG(tem_relogio) * 100, 1) AS pct_com_relogio,
-    ROUND(AVG(n_amigos), 2) AS media_amigos,
-    ROUND(AVG(n_tickets), 2) AS media_tickets,
-    ROUND(AVG(n_recusas), 2) AS media_recusas
-  FROM features
-  GROUP BY 1
-  ORDER BY 1;
+  - Engajamento longitudinal, a partir de uso_mensal (colunas atividades, minutos, dias_ativos, sessoes_app): treinos_m1, minutos_m1, dias_ativos_m1, sessoes_m1 (mes = '2026-09', M-1) e treinos_m2 (mes = '2026-08', M-2), além de delta_treinos = treinos_m1 - treinos_m2 (desaceleração recente de hábito)
+  - Ecossistema e fricção: tem_relogio (usuarios.relogio_conectado diferente de 'nenhum'), n_amigos (linhas em amizades com seguidor_id = cliente e desde até 30/09/2026), n_tickets (tickets_suporte com aberto_em até 30/09/2026) e n_recusas (pagamentos com status = 'recusado' e data_hora até 30/09/2026).
+  Mostre a média de cada variável comparando o grupo que manteve a renovação automática ligada (renovacao_automatica = 'sim', target = 0) com o grupo que desligou (renovacao_automatica = 'nao', target = 1), comprovando os sinais que alimentam o nosso baseline de Regressão Logística.
   ```
 
 ---
 
-### Ação 2: Conferir o Output e as Métricas do Baseline
+### Ação 2: Conferir o resultado
 * Desempenho fora da amostra do **Baseline de Regressão Logística (`StandardScaler`, `L2`)** validado no corte histórico `31/07/2026`:
   * **`ROC-AUC = 0,7522`** | **`PR-AUC = 0,5079`** | **`Brier Score = 0,1504`** | **`Lift no Topo 10% (1.500 WhatsApps) = 2,55x`**.
 
 ---
 
-### Ação 3: Fechar os Seus 2 Artefatos da Semana 5 no Agente de Código
+### Ação 3: Fechar os dois artefatos da Semana 5 com o agente de código
 Nesta ação você escreve a seção a partir do seu próprio resultado e fecha a revisão dos dois artefatos. O agente ajuda a explicar, redigir e revisar. O artefato oficial entra só no final, para comparação.
 
 **Antes de abrir o agente:** escreva em três frases, sem termos técnicos, o que o modelo faz, o que significa o `Lift@10% = 2,55x` para a cota de WhatsApp e qual é a principal limitação da validação.
@@ -875,7 +675,7 @@ Minha leitura, em três frases:
 """
 
 Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
-1. Explique de volta, em linguagem de executivo: o que a minha consulta mostra e o que ela não mostra (ela não reproduz as métricas), o que cada métrica significa e por que o Lift@10% é a métrica mais ligada à cota de 1.500 WhatsApps. Confira se os grupos da consulta somam 14.753 e se a direção das médias faz sentido. Diga se a minha leitura está correta.
+1. Explique de volta, sem termos técnicos: o que a minha consulta mostra e o que ela não mostra (ela não reproduz as métricas), o que cada métrica significa e por que o Lift@10% é a métrica mais ligada à cota de 1.500 WhatsApps. Confira se os grupos da consulta somam 14.753 e se a direção das médias faz sentido. Diga se a minha leitura está correta.
 2. Redija a Seção 4 do meu `ARTEFATO_TECH_SEMANA5_A1.md`: contrato temporal, Seção 4.1 com cada variável (definição e tabela de origem), Seção 4.2 com a tabela de métricas e uma frase de negócio por métrica, parágrafo sobre os pesos e uma lista de limitações (incluindo a campanha de 10/08/2026 dentro da janela do alvo).
 3. Revise os meus dois arquivos de `semana_5_A1/`: liste todo número que aparece nos dois e aponte qualquer divergência entre eles. Liste também afirmações sem fonte indicada.
 4. Só depois, leia a Seção 4 de `artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md` e liste em uma tabela as diferenças entre o meu rascunho e o oficial: variáveis, definições, leitura dos pesos e limitações que um tem e o outro não. Não copie texto do oficial para o meu arquivo.
@@ -885,12 +685,12 @@ Faça nesta ordem e pare ao final de cada etapa para eu confirmar:
 
 ---
 
-### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
-1. **No Agente do BigQuery (Encontrando os Clientes em Desaceleração Aguda):**
+### Ação 4: Prompts extras
+1. **No agente do BigQuery (clientes em queda brusca de uso):**
    ```text
-   Cruze assinaturas com uso_mensal comparando agosto ('2026-08') e setembro ('2026-09'). Quantos pagantes ativos treinavam 6 ou mais vezes em agosto e caíram para apenas 1 ou 2 treinos em setembro? Qual é a taxa de renovação desligada desse grupo que sofreu queda brusca de ritmo?
+   Cruze assinaturas com uso_mensal comparando agosto (mes = '2026-08') e setembro (mes = '2026-09'). Quantos pagantes ativos tinham 6 ou mais atividades em agosto e caíram para apenas 1 ou 2 em setembro? Qual é a taxa de renovação desligada (renovacao_automatica = 'nao') desse grupo?
    ```
-2. **No Seu Agente do Repositório / NotebookLM (Entendendo o Modelo sem Matemática Pesada):**
+2. **No agente do repositório ou no NotebookLM (o modelo sem matemática):**
    ```text
    Leia o arquivo `00_comece_por_aqui/02_trilha_ciencia_de_dados_e_ml/README.md` e a Seção 4 de `artefatos_tecnologia/semana_5_A1/ARTEFATO_TECH_SEMANA5_A1.md`. Me explique como se eu estivesse apresentando para o CFO da Vitaliza o que significa o nosso modelo ter um Lift de 2,55x no topo 10% e por que isso economiza dinheiro na hora de disparar os 1.500 WhatsApps do mês.
    ```
@@ -926,30 +726,30 @@ Passe por cada item antes de considerar a entrega pronta.
 - [ ] Nada fora da sua pasta foi editado. Rode `git status` e confira que só aparecem arquivos em `membros/<sua_pasta>/`. Se aparecer qualquer arquivo de `artefatos_negocios/` ou `artefatos_tecnologia/`, desfaça a alteração com `git restore <caminho_do_arquivo>`.
 
 **Linguagem**
-- [ ] Um executivo sem formação técnica entende cada parágrafo. Cada termo técnico é explicado na primeira vez em que aparece.
+- [ ] Cada termo técnico é explicado na primeira vez em que aparece.
 
-### Ensaio: explicar o A1 em 3 minutos para um executivo
+### Perguntas dos personagens do case
 
-O objetivo é conseguir explicar o trabalho sem abrir o arquivo. Use esta divisão de tempo:
+Peça ao seu agente para fazer o papel de um personagem do case e questionar o seu trabalho:
 
-| Tempo | Bloco | O que dizer |
-| :--- | :--- | :--- |
-| 0:00 a 0:30 | O problema | O churn mensal subiu de 5,6% para 6,6%, com pico de 8,1% em abril. A base é de `14.753` pagantes, que geram R$ 409.941/mês de receita líquida. `2.250` deles já desligaram a renovação. |
-| 0:30 a 1:15 | O que os dados mostram | `70,22%` pagam pelas lojas, onde a tela de cancelamento do site não chega. A frequência de treino separa o risco: `1,60%` de renovação desligada em quem treina 5 ou mais vezes, `15,19%` de 1 a 4, `56,98%` em quem não treinou. O reajuste de março coincide com o pico de abril. |
-| 1:15 a 2:15 | Quem é quem | Quatro segmentos por comportamento. Onde agir: Cluster 3, com R$ 22.757/mês em risco direto. Quem deixar sem contato: os `995` do 4B, com R$ 27.607/mês que podem ser perdidos se forem lembrados da cobrança. Quem não precisa de desconto: Clusters 1 e 2. |
-| 2:15 a 2:45 | O baseline | Um modelo simples já concentra 2,55 vezes mais saídas nos 10% de maior risco do que a escolha ao acaso, a mesma proporção da cota de 1.500 WhatsApps. |
-| 2:45 a 3:00 | O que falta | Ainda não sabemos quem responde ao contato. Isso será medido no A2 com o experimento de agosto. |
+```text
+Leia os meus dois arquivos em `membros/nome_membro_1/semana_5_A1/`. Faça o papel de Rita Fontes, CFO da Vitaliza, e me faça três perguntas difíceis sobre o A1, uma de cada vez. Espere a minha resposta antes da próxima pergunta. Ao final, diga quais respostas ficaram sem número ou sem fonte.
+```
 
-**Como ensaiar:**
-1. Fale em voz alta com cronômetro. Se passar de 3 minutos, corte detalhes, não números centrais.
-2. Use um número por frase. Arredonde quando falar (por exemplo, "cerca de 410 mil reais por mês").
-3. Peça ao seu agente para fazer o papel de um executivo do case:
+Repita o exercício com Patrícia (Head de CS) e com Marcelo (Head de Produto). Cada um vai questionar a parte que afeta a sua proposta.
 
-   ```text
-   Leia os meus dois arquivos em `membros/nome_membro_1/semana_5_A1/`. Faça o papel de Rita Fontes, CFO da Vitaliza, e me faça três perguntas difíceis sobre o A1, uma de cada vez. Espere a minha resposta antes da próxima pergunta. Ao final, diga quais respostas ficaram sem número ou sem fonte.
-   ```
+### Salvar no GitHub
 
-4. Repita o exercício com Patrícia (Head de CS) e com Marcelo (Head de Produto). Cada um vai questionar a parte que afeta a sua proposta.
+O passo a passo completo (branch, commit, push e pull request) está no [`03_GUIA_GIT.md`](./03_GUIA_GIT.md). O resumo:
+
+```bash
+git status                                         # só devem aparecer arquivos da sua pasta em membros/
+git add membros/<sua_pasta>/semana_5_A1/           # nunca git add . nem git add -A
+git commit -m "docs(membros): constroi artefatos A1 da semana 5 de <seu_nome>"
+git push origin membros/<seu_nome>                 # envia a sua branch, não a develop
+```
+
+Depois do push, abra o pull request da sua branch para a `develop` no GitHub.
 
 ---
 

@@ -5,10 +5,10 @@
 > **Objetivo:** conduzir qualquer integrante do grupo na **construção completa dos seus próprios entregáveis de Negócios (6 Slides do Conselho) e de Tecnologia da Semana 10**, aprendendo na prática como funcionam a **Extração Multimodal com IA Generativa (Texto + Imagens de Mapas de Calor)**, o **Teste de Ablação**, a **Comparação de 4 Algoritmos Supervisionados (Logística, Árvores, Random Forest e Gradient Boosting)**, a **Modelagem Causal de Uplift (Siegel)**, a **Alocação Financeira de Orçamento (Profit Analytics)** e o **Redator Generativo de CRM com Briefing Fechado**.
 >
 > **Seus arquivos (na sua pasta em `membros/`):**
-> * 📊 Negócios A2 (Os 6 Slides do Conselho): `membros/nome_membro_1/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md`
-> * 💻 Tecnologia A2 (Multimodal, 4 Modelos 60d, Uplift & Copywriter): `membros/nome_membro_1/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md`
+> * Negócios A2 (os 6 slides do Conselho): `membros/nome_membro_1/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md`
+> * Tecnologia A2 (multimodal, 4 modelos de 60 dias, uplift e redator de CRM): `membros/nome_membro_1/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md`
 >
-> **Gabaritos Oficiais do Grupo (apenas leitura; use-os para comparar no fim de cada passo, nunca como texto a copiar):**
+> **Artefatos oficiais do grupo (só para a comparação no fim de cada passo; não peça ao agente para lê-los antes disso):**
 > * [`artefatos_negocios/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md`](../../artefatos_negocios/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md)
 > * [`artefatos_tecnologia/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md`](../../artefatos_tecnologia/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md)
 
@@ -16,23 +16,23 @@
 
 ## O que cada passo produz
 
-| Passo | Habilidade Técnica & de Negócio Desenvolvida | O Que Constrói no Seu `ARTEFATO_NEGOCIOS_SEMANA10_A2.md` (6 Slides do Conselho) | O Que Constrói no Seu `ARTEFATO_TECH_SEMANA10_A2.md` (Seções 1 a 4) |
+| Passo | O que você aprende | O que constrói no `ARTEFATO_NEGOCIOS_SEMANA10_A2.md` (6 slides do Conselho) | O que constrói no `ARTEFATO_TECH_SEMANA10_A2.md` (Seções 1 a 4) |
 | :--- | :--- | :--- | :--- |
-| **Passo 01** | Narrativa Executiva C-Level (Série B) e Avaliação de Arquitetura de Produto (*Win-Back* vs. *Forecasting* vs. *Uplift* frente ao Strava). | **Slide 1:** Diagnóstico do Problema e Série B;<br>**Slide 2:** Os 4 Perfis e os 2 Fatos Vitais (`70,22%` Lojas e `995` *Sleeping Dogs*);<br>**Slide 3:** Caminho A vs. Caminho B vs. Nossa Arquitetura Prescritiva. | **Seção 1:** Arquitetura Ponta a Ponta das 5 Peças na Semana 10 (Diagrama Mermaid integrando Tabelas, Textos, Heatmaps, 4 Modelos e Motor de Uplift/CRM). |
+| **Passo 01** | Narrativa para o Conselho (Série B) e avaliação de arquitetura de produto (*Win-Back* vs. *Forecasting* vs. *Uplift* frente ao Strava). | **Slide 1:** Diagnóstico do Problema e Série B;<br>**Slide 2:** Os 4 Perfis e os 2 Fatos Vitais (`70,22%` Lojas e `995` *Sleeping Dogs*);<br>**Slide 3:** Caminho A vs. Caminho B vs. Nossa Arquitetura Prescritiva. | **Seção 1:** Arquitetura Ponta a Ponta das 5 Peças na Semana 10 (Diagrama Mermaid integrando Tabelas, Textos, Heatmaps, 4 Modelos e Motor de Uplift/CRM). |
 | **Passo 02** | Engenharia de IA Generativa & Visão: Extração com Schema JSON tipado, Contagem de Pixels por Cor vs. VLM em `25.473` PNGs, *Tokenomics* e **Teste de Ablação**. | Insumos de personalização e custo de IA (`R$ 420/mês` no orçamento global). | **Seção 2 Completa (Peça 2 / Obj. 5):** Contratos JSON de Extração, Comparação Pixels (R$ 0) vs. VLM em `heatmaps_90d/` e **Teste de Ablação** (`PR-AUC 0,5714 ➔ 0,5986`, `+2,72 p.p.`). |
 | **Passo 03** | Ciência de Dados Supervisionada: comparação *Out-of-Time* entre modelos lineares e ensembles de árvores (**Logística, Árvore, Bagging/RF e Boosting**). | Base preditiva que alimenta a priorização de risco nos Slides 3 e 4. | **Seção 3 Completa (Peça 3 / Obj. 4):** Tabela comparativa das **4 Famílias Supervisionadas (60d)** (`ROC-AUC = 0,7858`, `PR-AUC = 0,5986`, `Lift@10% = 2,96x`). |
-| **Passo 04** | Inferência Causal e **Uplift Modeling (Eric Siegel)**: análise de Teste A/B controlado (`campanha_ago26.csv`), isolando *Persuadíveis* e provando os *Sleeping Dogs*. | **Slide 4 Completo:** Prova Causal do Experimento de `10/08/2026` (`14.120` sorteados) — **Tabela 4.1** (Por Plano) e **Tabela 4.2** (Prova Empírica dos *Sleeping Dogs* `+9,16 p.p.` de churn induzido!). | **Seção 4.1 (Peça 4 / Obj. 6):** Algoritmo da Regra Prescritiva de Contato em 5 Regras determinísticas. |
+| **Passo 04** | Inferência Causal e **Uplift Modeling (Eric Siegel)**: análise de Teste A/B controlado (`campanha_ago26.csv`), isolando *Persuadíveis* e provando os *Sleeping Dogs*. | **Slide 4 Completo:** Prova Causal do Experimento de `10/08/2026` (`14.120` sorteados) — **Tabela 4.1** (Por Plano) e **Tabela 4.2** (Prova Empírica dos *Sleeping Dogs*: `+9,16 p.p.` de churn induzido). | **Seção 4.1 (Peça 4 / Obj. 6):** Algoritmo da Regra Prescritiva de Contato em 5 Regras determinísticas. |
 | **Passo 05** | *Profit-Driven Analytics* (Verbeke et al.) e GenAI com Guardrails: alocação ótima de **R$ 40k/mês** (`300 CS` + `1.500 WA`), DRE de **Lucro Líquido (`+R$ 207,8k`)** e **Copywriting com Briefing Fechado**. | **Slide 5 Completo:** Matriz Prescritiva de Alocação Mensal e ROI (`+686%`);<br>**Slide 6 Completo:** Matriz de Riscos, Gatilhos (*Kill-Switch*) e Contingência. | **Seção 4.2 Completa (Peça 5 / Obj. 8):** Exemplos Reais de Saída do Redator Generativo com Briefing Fechado (Exemplos A e B). |
 
 ---
 
 ## PASSO 01 — Diagnóstico para o Board (Slides 1 e 2) e Comparação Estratégica Caminho A vs. B (Slide 3 + Arquitetura Tech Seção 1)
 
-### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O que este passo ensina
 Na Semana 10, você não está apresentando um relatório acadêmico: você está no papel da **Camila Ferraz (VP de Crescimento e Retenção)** diante do **Conselho de Administração da Vitaliza**, que precisa decidir onde investir para defender o valuation da **Série B** após o anúncio do **Strava Premium** no Brasil.
 Existem duas propostas rivais na mesa da diretoria:
-* **Caminho A (*Win-Back Reativo* — "O Bombeiro"):** Colocar uma oferta automática quando o cliente clica em *"Cancelar"* no site. **Por que falha sozinho?** Porque **70,22% da base (`10.359` clientes)** assina via App Store ou Google Play e cancela nas configurações do celular, sem nunca passar pelo site da Vitaliza!
-* **Caminho B Puro (*Engagement Forecasting* — "O Detector de Fumaça"):** Calcular um score diário de risco de churn e disparar mensagens para todo mundo com risco alto. **Por que é perigoso sozinho?** Porque existem **`995` clientes inativos (`0` treinos) que ainda estão com a renovação ligada pagando `R$ 27,6 mil/mês` por esquecimento (*Sleeping Dogs*)**. Se o Caminho B mandar um alerta para eles, eles se lembram da assinatura e cancelam!
+* **Caminho A (*Win-Back Reativo* — "O Bombeiro"):** Colocar uma oferta automática quando o cliente clica em *"Cancelar"* no site. **Por que falha sozinho?** Porque **70,22% da base (`10.359` clientes)** assina via App Store ou Google Play e cancela nas configurações do celular, sem passar pelo site da Vitaliza.
+* **Caminho B Puro (*Engagement Forecasting* — "O Detector de Fumaça"):** Calcular um score diário de risco de churn e disparar mensagens para todo mundo com risco alto. **Por que é perigoso sozinho?** Porque existem **`995` clientes inativos (`0` treinos) que ainda estão com a renovação ligada pagando `R$ 27,6 mil/mês` por esquecimento (*Sleeping Dogs*)**. Se o Caminho B mandar um alerta para eles, eles se lembram da assinatura e cancelam.
 * **Nossa Recomendação (Arquitetura Prescritiva de Uplift):** Une a capacidade preditiva do Caminho B com o **Filtro Causal de Uplift (Siegel)**, agindo nos **Persuadíveis** e mantendo silêncio absoluto nos **Sleeping Dogs**.
 
 ---
@@ -46,14 +46,14 @@ Existem duas propostas rivais na mesa da diretoria:
 | Fonte | O que usar | Por que é necessária |
 | :--- | :--- | :--- |
 | Tabela `assinaturas` | `status_atual`, `plano_atual`, `canal_cobranca`, `renovacao_automatica` | Define quem é pagante ativo no corte, quanto paga, por onde paga e quem já desligou a renovação. |
-| Tabela `uso_mensal` (mês `2026-09`) | número de treinos no mês | Mede o hábito no último mês antes do corte. Sem ela não é possível separar quem treina de quem só paga. |
+| Tabela `uso_mensal` (`mes = '2026-09'`) | `atividades` (treinos no mês) | Mede o hábito no último mês antes do corte. Sem ela não é possível separar quem treina de quem só paga. |
 | `00_comece_por_aqui/01_RESUMO_EXECUTIVO_DO_CASE.md`, seção 4 | preços, taxas das lojas (15%), do cartão (3,5%) e do Pix (0,99%) | São as regras que transformam preço de tabela em receita líquida, que é o que entra no caixa. |
 | `00_comece_por_aqui/01_RESUMO_EXECUTIVO_DO_CASE.md`, seções 1 e 2 | posições de Patrícia, Marcelo, Diego Almeida (CTO) e Rita Fontes; os dois fatores críticos | Mostra o conflito que o Slide 3 precisa resolver. |
 | `artefatos_negocios/semana_5_A1/ARTEFATO_NEGOCIOS_SEMANA5_A1.md` (e o seu A1) | os 4 clusters e a divisão dos inertes em 1.318 e 995 | Os segmentos do Slide 2 vêm da A1. A A2 não cria segmentos novos; ela reaproveita os da Semana 5. |
 
 **Sequência de raciocínio:**
 
-1. **Fixar a população: 14.753 pagantes ativos em 30/09/2026.** Por quê: as 14.813 assinaturas ativas incluem 60 cortesias, que não pagam. Incluí-las muda todos os percentuais. A query faz isso com `status_atual = 'ativa'` e `plano_atual IN ('mensal', 'anual')`.
+1. **Fixar a população: 14.753 pagantes ativos em 30/09/2026.** Por quê: as 14.813 assinaturas ativas incluem 60 cortesias, que não pagam. Incluí-las muda todos os percentuais. O filtro é `status_atual = 'ativa'` e `plano_atual IN ('mensal', 'anual')`.
 2. **Converter preço em receita líquida mensal.** Por quê: o Conselho decide sobre o dinheiro que fica com a Vitaliza, e a loja retém 15%. O plano anual é dividido por 12 apenas para comparar com o mensal; o caixa do anual entra de uma vez.
 3. **Medir a perda já contratada (renovação desligada).** Por quê: esses 2.250 clientes ainda pagam, mas já decidiram sair ao fim do ciclo. É receita que se perde mesmo que nada mais aconteça.
 4. **Cruzar com os treinos de setembro para formar os 4 segmentos.** Por quê: o cancelamento se concentra onde o hábito cai abaixo de 5 treinos por mês. Perfis diferentes pedem ações diferentes, e essa é a base de tudo o que vem nos Passos 04 e 05.
@@ -66,10 +66,10 @@ Existem duas propostas rivais na mesa da diretoria:
 * **Usar 14.813 em vez de 14.753.** Como notar: os percentuais ficam próximos, mas não iguais aos do gabarito.
 * **Somar o preço bruto (R$ 39,90) como receita.** Como notar: o MRR (receita recorrente mensal) passa de R$ 409.941.
 * **Chamar todo inerte de Sleeping Dog.** Os 2.313 inertes incluem 1.318 que já desligaram a renovação. Só os 995 com renovação ligada são o grupo a proteger com silêncio.
-* **Esquecer a premissa de quem não tem linha em `uso_mensal`.** A query trata ausência de registro como zero treinos (`COALESCE(..., 0)`). Declare essa premissa.
-* **Ignorar o preço de influenciador.** A query usa R$ 299,90 para todo plano anual. Quem entrou pagando R$ 239,90 no primeiro ano paga menos, então o MRR do anual pode estar levemente acima do real. Registre como limitação.
+* **Esquecer a premissa de quem não tem linha em `uso_mensal`.** O prompt pede para tratar ausência de registro como zero treinos. Confira se o agente fez isso (`LEFT JOIN` com `COALESCE(..., 0)`) e declare a premissa.
+* **Ignorar o preço de influenciador.** A conta usa R$ 299,90 para todo plano anual. Quem entrou pagando R$ 239,90 no primeiro ano paga menos, então o MRR do anual pode estar levemente acima do real. Registre como limitação.
 * **Misturar o deck narrativo com o Data Room.** Os números de setembro/2025 da narrativa (27.901 pagantes, churn de 10,2%) não entram nas contas. A regra do case é: em dados e contas, vale o Data Room.
-* **Erro de coluna inexistente no BigQuery.** Os CSVs do Data Room usam nomes como `mes` e `atividades` em `uso_mensal`; as queries deste playbook usam `ano_mes` e `treinos_mes`. Se o BigQuery acusar coluna inexistente, rode `SELECT * FROM` a tabela com `LIMIT 5` e peça ao agente para ajustar apenas o nome da coluna, sem mudar a lógica.
+* **Agente do BigQuery usando coluna que não existe.** O agente também erra. Se aparecer erro de coluna inexistente, peça a ele para listar o esquema da tabela e refazer a consulta com os nomes reais, sem mudar a lógica.
 
 **Como conferir sozinho:**
 
@@ -82,58 +82,27 @@ Existem duas propostas rivais na mesa da diretoria:
 
 ---
 
-### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Consultar no agente do BigQuery
 * **Tabelas no BigQuery:** `assinaturas`, `uso_mensal` e `usuarios`
 
-* **💬 Prompt Principal para colar no Agente do BigQuery:**
+* **Prompt para o agente do BigQuery:**
   ```text
-  Para abrirmos a apresentação ao Conselho de Administração da Vitaliza (Slides 1, 2 e 3 da Semana 10), consolide sobre os 14.753 pagantes ativos em 30/09/2026 (cruzando assinaturas e uso_mensal em '2026-09'):
-  1. Qual é a Receita Líquida Mensal total e Anualizada (12x) da base pagante, e quantos assinantes (N e %) já desligaram a renovacao_automatica no plano anual e no plano mensal?
-  2. Mostre a tabela resumida dos 4 segmentos comportamentais (1. Atletas Sociais de Rua & GPS; 2. Praticantes Regulares Vídeo; 3. Entusiastas Oscilantes 1-4 treinos; 4. Pagantes Inertes 0 treinos) com Volume (N e %), Treinos/Mês e % Renovação Desligada.
-  3. Destaque os 2 Fatos Vitais que inviabilizam o Caminho A puro (Win-Back apenas no botão cancelar do site): (a) quantos pagantes (N e %) estão na App Store e Google Play, e (b) quantos inativos com 0 treinos ainda estão com a renovacao_automatica ligada pagando por inércia (Sleeping Dogs) e qual a receita mensal deles.
-  ```
-
-* **💻 Query SQL Equivalente:**
-  ```sql
-  WITH base AS (
-    SELECT
-      a.user_id,
-      a.plano_atual,
-      a.canal_cobranca,
-      CAST(a.renovacao_automatica AS STRING) IN ('0', 'false', 'False') AS desligou_renovacao,
-      COALESCE(um.treinos_mes, 0) AS treinos_mes,
-      (CASE WHEN a.plano_atual = 'mensal' THEN 39.90 ELSE 299.90 / 12.0 END) *
-      (1.0 - CASE
-        WHEN a.canal_cobranca IN ('app_store', 'google_play') THEN 0.15
-        WHEN a.canal_cobranca = 'web_cartao' THEN 0.035
-        WHEN a.canal_cobranca = 'web_pix' THEN 0.0099
-        ELSE 0.0
-      END) AS mrr_liquido
-    FROM `vitaliza_inteli_modulo_2.assinaturas` a
-    LEFT JOIN `vitaliza_inteli_modulo_2.uso_mensal` um ON a.user_id = um.user_id AND um.ano_mes = '2026-09'
-    WHERE a.status_atual = 'ativa' AND a.plano_atual IN ('mensal', 'anual')
-  )
-  SELECT
-    COUNT(*) AS total_pagantes_ativos,
-    ROUND(SUM(mrr_liquido), 0) AS mrr_liquido_mensal_rs,
-    COUNTIF(desligou_renovacao) AS total_ja_desligaram_renovacao,
-    COUNTIF(canal_cobranca IN ('app_store', 'google_play')) AS pagantes_lojas_n,
-    ROUND(COUNTIF(canal_cobranca IN ('app_store', 'google_play')) * 100.0 / COUNT(*), 2) AS pagantes_lojas_pct,
-    COUNTIF(treinos_mes = 0 AND NOT desligou_renovacao) AS sleeping_dogs_n,
-    ROUND(SUM(CASE WHEN treinos_mes = 0 AND NOT desligou_renovacao THEN mrr_liquido ELSE 0 END), 0) AS sleeping_dogs_mrr_liquido_rs
-  FROM base;
+  Para abrirmos a apresentação ao Conselho de Administração da Vitaliza (Slides 1, 2 e 3 da Semana 10), consolide sobre os 14.753 pagantes ativos em 30/09/2026 (assinaturas com status_atual = 'ativa' e plano_atual IN ('mensal', 'anual'), cruzando com uso_mensal no mes = '2026-09' por LEFT JOIN; quem não tem linha conta com 0 atividades):
+  1. Qual é a Receita Líquida Mensal total e Anualizada (12x) da base pagante, e quantos assinantes (N e %) já desligaram a renovação (renovacao_automatica = 'nao') no plano anual e no plano mensal?
+  2. Mostre a tabela resumida dos 4 segmentos comportamentais (1. Atletas Sociais de Rua & GPS; 2. Praticantes Regulares Vídeo; 3. Entusiastas Oscilantes 1-4 treinos; 4. Pagantes Inertes 0 treinos) com Volume (N e %), média de atividades no mês e % Renovação Desligada. Regras: Cluster 1 = atividades >= 5 e atividades_ar_livre >= atividades / 2; Cluster 2 = atividades >= 5 e o restante; Cluster 3 = 1 a 4 atividades; Cluster 4 = 0.
+  3. Destaque os 2 Fatos Vitais que inviabilizam o Caminho A puro (Win-Back apenas no botão cancelar do site): (a) quantos pagantes (N e %) estão na App Store e Google Play, e (b) quantos inativos com 0 atividades ainda estão com a renovação ligada (renovacao_automatica = 'sim') pagando por inércia (Sleeping Dogs) e qual a receita líquida mensal deles.
   ```
 
 ---
 
-### Ação 2: Conferir o Output na Tela (Gabarito)
+### Ação 2: Conferir o resultado
 * **Estoque de Perda Contratada:** `14.753` pagantes ativos (`R$ 409.941/mês` ou `R$ 4,92 milhões/ano`), com **`2.250` (`15,25%`)** já com renovação desligada (`2.082` no anual e `168` no mensal).
 * **Fato Vital 1 (Cegueira das Lojas):** **`10.359` pagantes (`70,22%`)** estão na App Store ou Google Play (o Caminho A só enxerga os `29,78%` do site).
 * **Fato Vital 2 (*Sleeping Dogs*):** **`995` inativos (`0` treinos)** ainda estão com renovação ligada pagando **`R$ 27,6 mil/mês`** por esquecimento.
 
 ---
 
-### Ação 3: Montar os Slides 1, 2 e 3 + Arquitetura Tech no Seu Agente de Código
+### Ação 3: Escrever os Slides 1, 2 e 3 e a Seção 1 de Tecnologia com o agente de código
 
 Você escreve; o agente ajuda. Antes de abrir o agente, rascunhe em poucas linhas o título e a decisão de cada slide a partir do seu resultado da Ação 1. Compare com o artefato oficial só no final.
 
@@ -167,26 +136,26 @@ Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
 
 ---
 
-### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
-1. **No Agente do BigQuery (Quem São os *Sleeping Dogs* por Plano e Canal?):**
+### Ação 4: Prompts extras
+1. **No agente do BigQuery (os *Sleeping Dogs* por plano e canal):**
    ```text
-   Dentro dos 995 assinantes ativos que tiveram 0 treinos em setembro ('2026-09') mas ainda estão com a renovacao_automatica ligada (os nossos Sleeping Dogs), quantos são do plano anual e quantos são do plano mensal? E qual é a distribuição deles entre App Store, Google Play e Site?
+   Dentro dos 995 assinantes ativos que tiveram 0 atividades em setembro (uso_mensal, mes = '2026-09', ou sem linha nesse mês) mas ainda estão com renovacao_automatica = 'sim' (os nossos Sleeping Dogs), quantos são do plano anual e quantos são do plano mensal? E qual é a distribuição deles entre App Store, Google Play e Site?
    ```
-2. **No Seu Agente do Repositório / NotebookLM (Debatendo Caminho A vs. Caminho B vs. Strava):**
+2. **No agente do repositório ou no NotebookLM (Caminho A, Caminho B e o Strava):**
    ```text
-   Leia o arquivo `00_comece_por_aqui/01_RESUMO_EXECUTIVO_DO_CASE.md` e o Slide 3 de `artefatos_negocios/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md`. Me ajude a montar um argumento executivo de 2 minutos explicando para o Conselho por que o lançamento do Strava Premium no Brasil obriga a Vitaliza a ir além do Win-Back reativo (Caminho A), mas por que o Caminho B puro sem filtro de Uplift daria prejuízo.
+   Leia o arquivo `00_comece_por_aqui/01_RESUMO_EXECUTIVO_DO_CASE.md` e o Slide 3 de `artefatos_negocios/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md`. Me ajude a montar um argumento curto explicando para o Conselho por que o lançamento do Strava Premium no Brasil obriga a Vitaliza a ir além do Win-Back reativo (Caminho A), mas por que o Caminho B puro sem filtro de Uplift daria prejuízo.
    ```
 
 ---
 
 ## PASSO 02 — Peça 2 (Objetivo 5): Extração Multimodal de Texto e Imagem (`heatmaps_90d/`), Tokenomics e Teste de Ablação
 
-### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O que este passo ensina
 O Objetivo 5 do case faz uma pergunta muito prática de engenharia de IA: **"Processar textos livres (`onboarding`, `tickets_suporte`, `feed_posts`) e `25.473` imagens de mapas de calor (`heatmaps_90d/`) melhora a previsão de churn o suficiente para pagar o custo dos tokens?"**
 Aqui você aprende 3 conceitos modernos de IA Generativa aplicada a Ciência de Dados:
-1. **Extração com Schema JSON Fixo (*Structured Outputs*):** Em vez de pedir um resumo aberto ao Gemini, exigimos que ele devolva um JSON tipado com variáveis booleanas e categóricas (`motivacao_onboarding`, `suporte_falha_tecnica_gps`, `feed_mencao_lesao_ou_dor`) que entram direto como colunas na tabela de Machine Learning!
-2. **Sistematização Determinística em Imagens (Pixels vs. VLM):** Como os `25.473` mapas de calor de `heatmaps_90d/` usam cores fixas (`verde` = parque, `azul` = água, `areia` = praia, `amarelo` = avenida), contar a proporção de pixels por cor via Python (`Pillow`/`NumPy`) extrai o ambiente de treino e a variação de intensidade (`30/09` vs `31/07`) a **custo R$ 0,00 de API**!
-3. **Teste de Ablação (*Ablation Study*):** É o experimento onde treinamos exatamente o mesmo algoritmo (**Gradient Boosting**) duas vezes: primeiro **sem** as colunas de texto/imagem (**Modelo A: `PR-AUC = 0,5714`**) e depois **com** as colunas de texto/imagem (**Modelo B: `PR-AUC = 0,5986`**), provando um ganho real de **`+2,72 p.p.`** por apenas **R$ 280/mês** no lote de 14.753 ativos!
+1. **Extração com Schema JSON Fixo (*Structured Outputs*):** Em vez de pedir um resumo aberto ao Gemini, exigimos que ele devolva um JSON tipado com variáveis booleanas e categóricas (`motivacao_onboarding`, `suporte_falha_tecnica_gps`, `feed_mencao_lesao_ou_dor`) que entram direto como colunas na tabela de Machine Learning.
+2. **Sistematização Determinística em Imagens (Pixels vs. VLM):** Como os `25.473` mapas de calor de `heatmaps_90d/` usam cores fixas (`verde` = parque, `azul` = água, `areia` = praia, `amarelo` = avenida), contar a proporção de pixels por cor via Python (`Pillow`/`NumPy`) extrai o ambiente de treino e a variação de intensidade (`30/09` vs `31/07`) a **custo R$ 0,00 de API**.
+3. **Teste de Ablação (*Ablation Study*):** É o experimento onde treinamos exatamente o mesmo algoritmo (**Gradient Boosting**) duas vezes: primeiro **sem** as colunas de texto/imagem (**Modelo A: `PR-AUC = 0,5714`**) e depois **com** as colunas de texto/imagem (**Modelo B: `PR-AUC = 0,5986`**), provando um ganho real de **`+2,72 p.p.`** por **R$ 280/mês** no lote de 14.753 ativos.
 
 ---
 
@@ -198,9 +167,9 @@ Aqui você aprende 3 conceitos modernos de IA Generativa aplicada a Ciência de 
 
 | Fonte | O que usar | Por que é necessária |
 | :--- | :--- | :--- |
-| Tabela `onboarding` | data da resposta e texto do objetivo | Guarda a meta que o cliente declarou ao entrar. Hipótese: quem tem meta clara e prazo permanece mais. |
-| Tabela `tickets_suporte` | data de abertura, status e texto do cliente | Mostra fricção técnica (GPS, sincronização), intenção declarada de cancelar e chamados sem resposta. |
-| Tabela `feed_posts` | data, texto e curtidas | Mostra menções a dor, lesão, pausa ou desânimo antes do corte. |
+| Tabela `onboarding` | `respondido_em`, `objetivo_texto` | Guarda a meta que o cliente declarou ao entrar. Hipótese: quem tem meta clara e prazo permanece mais. |
+| Tabela `tickets_suporte` | `aberto_em`, `status`, `texto_cliente` | Mostra fricção técnica (GPS, sincronização), intenção declarada de cancelar e chamados sem resposta. |
+| Tabela `feed_posts` | `data_hora`, `texto`, `curtidas` | Mostra menções a dor, lesão, pausa ou desânimo antes do corte. |
 | ZIPs de `heatmaps_90d/` em `documentos/exhibits-m2/heatmaps/` | PNGs de 31/07 e de 30/09 | Mostram onde e com que intensidade a pessoa treina (parque, água, praia, avenida). |
 | `src/02_pipeline_gemini_multimodal_crm.py` | funções `extract_heatmap_pixels_from_zip` e `extract_text_signals` | Mostra como o grupo implementou a contagem de pixels (custo R$ 0) e a extração de texto com schema. O script lê uma amostra de 5 PNGs para demonstrar o método. |
 | `relatorios/simulacao_gemini_crm.json` | campos `gemini_api_mode` e `ablation_reference_metrics` | Registra se a execução usou a API do Gemini ou o modo offline e guarda os números da ablação. |
@@ -238,38 +207,21 @@ Aqui você aprende 3 conceitos modernos de IA Generativa aplicada a Ciência de 
 
 ---
 
-### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Consultar no agente do BigQuery
 * **Tabelas no BigQuery:** `onboarding`, `tickets_suporte` e `feed_posts`
 
-* **💬 Prompt Principal para colar no Agente do BigQuery:**
+* **Prompt para o agente do BigQuery:**
   ```text
   Para a Peça 2 (Objetivo 5 — Extração Multimodal de Texto e Imagem), consulte as bases de texto até '2026-09-30':
-  1. Mostre o volume de registros válidos até 30/09/2026 em onboarding, tickets_suporte e feed_posts.
-  2. Em tickets_suporte, quantos chamados mencionam falha de GPS/sincronização ou intenção de cancelamento/preço, e quantos estão 'aberto' ou 'sem_resposta'?
-  3. Em feed_posts, mostre 5 exemplos reais de posts de usuários que mencionam dor, lesão, pausa ou desânimo nos treinos.
-  4. Cruze esses sinais com a tabela assinaturas e mostre como os usuários com ticket pendente ou menção negativa têm maior taxa de saída/desligamento de renovação.
-  ```
-
-* **💻 Query SQL Equivalente:**
-  ```sql
-  -- 1. Volume de textos válidos até o corte de 30/09/2026
-  SELECT 'onboarding_ate_corte' AS fonte, COUNT(*) AS registros FROM `vitaliza_inteli_modulo_2.onboarding` WHERE DATE(data_onboarding) <= '2026-09-30'
-  UNION ALL
-  SELECT 'tickets_suporte_ate_corte', COUNT(*) FROM `vitaliza_inteli_modulo_2.tickets_suporte` WHERE DATE(TIMESTAMP(data_abertura)) <= '2026-09-30'
-  UNION ALL
-  SELECT 'feed_posts_ate_corte', COUNT(*) FROM `vitaliza_inteli_modulo_2.feed_posts` WHERE TIMESTAMP(data_hora) <= '2026-09-30 23:59:59';
-
-  -- 2. Exemplos de menções a lesão, dor ou pausa no feed_posts
-  SELECT user_id, data_hora, texto_post, likes
-  FROM `vitaliza_inteli_modulo_2.feed_posts`
-  WHERE TIMESTAMP(data_hora) <= '2026-09-30 23:59:59'
-    AND REGEXP_CONTAINS(LOWER(texto_post), r'(lesão|lesao|dor|machuquei|ombro|joelho|parado|volto)')
-  LIMIT 10;
+  1. Mostre o volume de registros válidos até 30/09/2026 em onboarding (respondido_em), tickets_suporte (aberto_em) e feed_posts (data_hora).
+  2. Em tickets_suporte, quantos chamados mencionam no texto_cliente falha de GPS/sincronização ou intenção de cancelamento/preço, e quantos têm status 'aberto' ou 'sem_resposta'?
+  3. Em feed_posts, mostre 5 exemplos reais de posts (coluna texto) que mencionam dor, lesão, pausa ou desânimo nos treinos.
+  4. Cruze esses sinais com a tabela assinaturas e compare a taxa de renovação desligada (renovacao_automatica = 'nao') de quem tem ticket pendente ou menção negativa com a de quem não tem.
   ```
 
 ---
 
-### Ação 2: Conferir o Output e a Tabela do Teste de Ablação
+### Ação 2: Conferir o resultado
 * **Volumes até o corte:** `onboarding` (`63.929`), `tickets_suporte` (`4.422`), `feed_posts` (`119.309`) e `heatmaps_90d/` (`12.426` PNGs em `31/07` + `13.047` PNGs em `30/09`).
 * **Resultado do Teste de Ablação (Gradient Boosting 150 árvores):**
   * **Modelo A (Somente Tabelas e Logs):** `ROC-AUC = 0,7798` | `PR-AUC = 0,5714` | `Brier = 0,1352` | Custo = `R$ 0,00`.
@@ -277,7 +229,7 @@ Aqui você aprende 3 conceitos modernos de IA Generativa aplicada a Ciência de 
 
 ---
 
-### Ação 3: Montar a Seção 2 no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Escrever a Seção 2 com o agente de código
 
 Escreva primeiro, com suas palavras, a frase de conclusão da Seção 2 e a lista de campos que você extrairia, com a hipótese de cada um. Depois use o agente para redigir e, por último, para comparar com o artefato oficial.
 
@@ -312,21 +264,21 @@ Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
 
 ---
 
-### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
-1. **No Agente do BigQuery (Lendo o Que os Clientes Escrevem Antes de Sair):**
+### Ação 4: Prompts extras
+1. **No agente do BigQuery (o que os clientes escrevem antes de sair):**
    ```text
-   Cruze assinaturas (clientes com renovacao_automatica desligada) com tickets_suporte e feed_posts. Mostre 5 histórias reais de clientes que desligaram a renovação, exibindo o que eles postaram no feed e o que reclamaram no suporte antes de decidir sair.
+   Cruze assinaturas (clientes com renovacao_automatica = 'nao') com tickets_suporte e feed_posts. Mostre 5 casos reais de clientes que desligaram a renovação, exibindo o que postaram no feed (texto) e o que escreveram no suporte (texto_cliente) até 30/09/2026.
    ```
-2. **No Seu Agente do Repositório / NotebookLM (Entendendo como a IA Analisa Textos e Mapas de Calor):**
+2. **No agente do repositório ou no NotebookLM (como a IA lê textos e mapas de calor):**
    ```text
-   Leia o guia `00_comece_por_aqui/03_trilha_ia_generativa_e_multimodal/README.md` e o relatório já pronto em `relatorios/simulacao_gemini_crm.json`. Me explique em linguagem de negócios como os textos do suporte/onboarding e os mapas de calor ajudam a descobrir o motivo real pelo qual o cliente está parando de treinar, e por que gastar R$ 280/mês com essa leitura de IA se paga com folga.
+   Leia o guia `00_comece_por_aqui/03_trilha_ia_generativa_e_multimodal/README.md` e o relatório já pronto em `relatorios/simulacao_gemini_crm.json`. Me explique em linguagem de negócios como os textos do suporte/onboarding e os mapas de calor ajudam a descobrir o motivo real pelo qual o cliente está parando de treinar, e se o gasto de R$ 280/mês com essa leitura de IA se paga.
    ```
 
 ---
 
 ## PASSO 03 — Peça 3 (Objetivo 4): Comparação das 4 Famílias de Modelos Supervisionados em 60 Dias
 
-### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O que este passo ensina
 No Objetivo 4 completo, o case pede para comparar **4 famílias clássicas de Machine Learning Supervisionado**:
 1. **Regressão Logística (Linear):** Soma pesos lineares para cada variável. É fácil de explicar, mas não captura sozinha quando **duas coisas combinadas** explodem o risco (ex.: ser do *Plano Mensal* **E** cair para *1 treino* **E** ter *ticket sem resposta*).
 2. **Árvore de Decisão (`max_depth=5`):** Cria regras do tipo `SE treinos < 3 E plano = mensal ENTÃO risco = alto`. Concentra muito bem o topo 10% (`Lift = 2,97x`), mas uma árvore sozinha é instável.
@@ -343,8 +295,8 @@ No Objetivo 4 completo, o case pede para comparar **4 famílias clássicas de Ma
 
 | Fonte | O que usar | Por que é necessária |
 | :--- | :--- | :--- |
-| Tabelas `assinaturas`, `uso_mensal` (mês `2026-09`) e `tickets_suporte` | plano, treinos no mês, status do chamado, renovação | São as variáveis da query de interação desta Ação 1. Mostram se o risco de uma combinação é maior do que a soma das partes. |
-| Tabela `pagamentos` | status e tentativa de cobrança | Falha de cobrança é causa de saída sem decisão do cliente; entra no Modelo A e na Ação 4. |
+| Tabelas `assinaturas`, `uso_mensal` (`mes = '2026-09'`) e `tickets_suporte` | `plano_atual`, `atividades`, `status` do chamado, `renovacao_automatica` | São as variáveis da query de interação desta Ação 1. Mostram se o risco de uma combinação é maior do que a soma das partes. |
+| Tabela `pagamentos` | `status` e `tentativa` da cobrança | Falha de cobrança é causa de saída sem decisão do cliente; entra no Modelo A e na Ação 4. |
 | `00_comece_por_aqui/04_contexto_extra/01_VISAO_DETALHADA_SEMANA5_VS_SEMANA10.md`, seção 4, item 2 | definição de saída em 60 dias | O alvo do modelo: renovação desligada ou sem assinatura vigente em 29/11/2026. |
 | `00_comece_por_aqui/02_trilha_ciencia_de_dados_e_ml/02_CLUSTERIZACAO_E_CHURN_SUPERVISIONADO.md`, seções 9, 10 e 20 | contrato do alvo, divisão temporal com embargo, critérios para promover o campeão | Explica como comparar modelos sem trapaça temporal e por que o campeão não é escolhido só pela maior nota. |
 | Seção 3 de `artefatos_tecnologia/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md` | hiperparâmetros e métricas | Registra a configuração de cada família (por exemplo, `max_depth=5` na árvore). Leia só na comparação final. |
@@ -378,44 +330,18 @@ No Objetivo 4 completo, o case pede para comparar **4 famílias clássicas de Ma
 
 ---
 
-### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Consultar no agente do BigQuery
 * **Tabelas no BigQuery:** `assinaturas`, `uso_mensal` e `tickets_suporte`
 
-* **💬 Prompt Principal para colar no Agente do BigQuery:**
+* **Prompt para o agente do BigQuery:**
   ```text
   Para o Objetivo 4 (Classificação Supervisionada de Churn em 60 dias), extraia no BigQuery as regras de negócio não-lineares que diferenciam uma Árvore de Decisão / Gradient Boosting de uma Regressão Logística simples:
-  Cruze assinaturas (14.753 pagantes ativos) com uso_mensal ('2026-09') e tickets_suporte. Compare a taxa de desligamento de renovação combinando simultaneamente: Plano (mensal vs anual) x Faixa de Treinos (0, 1-4, 5+) x Presença de Ticket Pendente no Suporte. Mostre como a interação entre essas variáveis concentra o risco no topo 10% da base (cota de 1.500 WhatsApps).
-  ```
-
-* **💻 Query SQL Equivalente:**
-  ```sql
-  WITH suporte AS (
-    SELECT user_id, MAX(CASE WHEN status_ticket IN ('aberto', 'sem_resposta') THEN 1 ELSE 0 END) AS ticket_pendente
-    FROM `vitaliza_inteli_modulo_2.tickets_suporte`
-    WHERE DATE(TIMESTAMP(data_abertura)) <= '2026-09-30'
-    GROUP BY 1
-  )
-  SELECT
-    a.plano_atual,
-    CASE
-      WHEN COALESCE(um.treinos_mes, 0) = 0 THEN '0_treinos'
-      WHEN COALESCE(um.treinos_mes, 0) BETWEEN 1 AND 4 THEN '1_a_4_treinos'
-      ELSE '5+_treinos'
-    END AS faixa_treinos,
-    COALESCE(s.ticket_pendente, 0) AS ticket_pendente,
-    COUNT(*) AS n_clientes,
-    ROUND(AVG(CASE WHEN CAST(a.renovacao_automatica AS STRING) IN ('0', 'false', 'False') THEN 100.0 ELSE 0.0 END), 2) AS pct_saida_desligamento
-  FROM `vitaliza_inteli_modulo_2.assinaturas` a
-  LEFT JOIN `vitaliza_inteli_modulo_2.uso_mensal` um ON a.user_id = um.user_id AND um.ano_mes = '2026-09'
-  LEFT JOIN suporte s ON a.user_id = s.user_id
-  WHERE a.status_atual = 'ativa' AND a.plano_atual IN ('mensal', 'anual')
-  GROUP BY 1, 2, 3
-  ORDER BY pct_saida_desligamento DESC;
+  Cruze assinaturas (14.753 pagantes ativos) com uso_mensal (mes = '2026-09', coluna atividades; sem linha conta como 0) e tickets_suporte. Compare a taxa de renovação desligada (renovacao_automatica = 'nao') combinando simultaneamente: Plano (mensal vs anual) x Faixa de atividades (0, 1-4, 5+) x Presença de ticket pendente (status 'aberto' ou 'sem_resposta', aberto_em até 30/09/2026). Mostre n_clientes em cada combinação. Mostre como a interação entre essas variáveis concentra o risco no topo 10% da base (cota de 1.500 WhatsApps).
   ```
 
 ---
 
-### Ação 2: Conferir as Métricas Auditadas das 4 Famílias Supervisionadas
+### Ação 2: Conferir o resultado
 | Família Supervisionada | ROC-AUC | PR-AUC | Brier Score | Lift @ Topo 10% (`1.500` WA) | Papel |
 | :--- | ---: | ---: | ---: | ---: | :--- |
 | **1. Regressão Logística (Baseline)** | `0,7522` | `0,5079` | `0,1504` | `2,55x` | Referência linear interpretável. |
@@ -425,7 +351,7 @@ No Objetivo 4 completo, o case pede para comparar **4 famílias clássicas de Ma
 
 ---
 
-### Ação 3: Montar a Seção 3 no Seu Agente de Código (Claude Code / Codex / VS Code)
+### Ação 3: Escrever a Seção 3 com o agente de código
 
 Antes do agente, escreva em duas ou três frases qual modelo você escolheria e por quê, olhando a tabela da Ação 2 e a query de interação. Inclua o ponto em que o campeão perde para outro modelo.
 
@@ -461,12 +387,12 @@ Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
 
 ---
 
-### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
-1. **No Agente do BigQuery (Encontrando o Perfil de Maior Risco da Base Inteira):**
+### Ação 4: Prompts extras
+1. **No agente do BigQuery (o perfil de maior risco da base):**
    ```text
-   Cruze assinaturas (14.753 pagantes ativos) com uso_mensal ('2026-09'), pagamentos e tickets_suporte. Quais combinações de plano_atual, faixa de treino e problemas de pagamento/suporte têm mais de 40% de renovacao_automatica desligada?
+   Cruze assinaturas (14.753 pagantes ativos) com uso_mensal (mes = '2026-09'), pagamentos (status = 'recusado') e tickets_suporte (status 'aberto' ou 'sem_resposta'). Quais combinações de plano_atual, faixa de atividades e problemas de pagamento ou suporte têm mais de 40% de renovacao_automatica = 'nao'?
    ```
-2. **No Seu Agente do Repositório / NotebookLM (Traduzindo os 4 Algoritmos para Linguagem Executiva):**
+2. **No agente do repositório ou no NotebookLM (os 4 algoritmos sem jargão):**
    ```text
    Leia o guia `00_comece_por_aqui/02_trilha_ciencia_de_dados_e_ml/02_CLUSTERIZACAO_E_CHURN_SUPERVISIONADO.md` e a Seção 3 de `artefatos_tecnologia/semana_10_A2/ARTEFATO_TECH_SEMANA10_A2.md`. Me explique sem jargão matemático a diferença prática entre Regressão Logística, Árvore de Decisão, Random Forest e Gradient Boosting, e por que usamos o critério de lucro líquido em reais (e não só AUC) para escolher o modelo vencedor.
    ```
@@ -475,12 +401,12 @@ Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
 
 ## PASSO 04 — Peça 4 (Objetivo 6): O Experimento de `10/08/2026` (`campanha_ago26`) e a Prova dos *Sleeping Dogs* vs. *Persuadíveis*
 
-### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O que este passo ensina
 Este é o ponto alto da teoria de **Uplift Modeling (Eric Siegel)**:
-* Prever que alguém tem **alto risco de sair** não significa que mandar uma mensagem vai salvar essa pessoa!
+* Prever que alguém tem **alto risco de sair** não significa que mandar uma mensagem vai salvar essa pessoa.
 * Em `10/08/2026`, a Vitaliza sorteou **`14.120` pagantes** em 4 grupos (`controle`, `desafio`, `cupom`, `conteudo`). Quando cruzamos esse experimento no BigQuery com a frequência de treino no mês anterior ao sorteio (**julho/2026**), descobrimos **a prova matemática dos 4 Quadrantes de Siegel**:
-  1. **Nos Inativos (`0` treinos em julho — `N = 2.685`):** Quem ficou no **Controle (sem receber mensagem)** teve **`51,86%`** de saída/desligamento. Mas quem recebeu **Desafio subiu para `61,02%` (`+9,16 p.p.` a mais de cancelamento!)**, quem recebeu **Conteúdo subiu para `60,39%` (`+8,53 p.p.` pior)** e quem recebeu **Cupom subiu para `57,95%` (`+6,09 p.p.` pior)**! Ou seja: **mandar mensagem para quem tem 0 treinos acorda o *Sleeping Dog* e faz a Vitaliza perder dinheiro!**
-  2. **Nos Oscilantes (`1 a 4` treinos em julho — `N = 5.241`):** O tratamento reduz a saída de `25,19%` (Controle) para **`20,37%` no Desafio (`+4,82 p.p.` de retenção ganha!)** e **`21,45%` no Cupom (`+3,74 p.p.` ganho)** — e no plano mensal o **Cupom reduz a saída de `17,99%` para `10,63%` (`+7,36 p.p.` de Uplift!)**. Esses são os verdadeiros **Persuadíveis**!
+  1. **Nos Inativos (`0` treinos em julho — `N = 2.685`):** Quem ficou no **Controle (sem receber mensagem)** teve **`51,86%`** de saída/desligamento. Mas quem recebeu **Desafio subiu para `61,02%` (`+9,16 p.p.` a mais de cancelamento)**, quem recebeu **Conteúdo subiu para `60,39%` (`+8,53 p.p.` pior)** e quem recebeu **Cupom subiu para `57,95%` (`+6,09 p.p.` pior)**. Ou seja: **mandar mensagem para quem tem 0 treinos acorda o *Sleeping Dog* e faz a Vitaliza perder dinheiro.**
+  2. **Nos Oscilantes (`1 a 4` treinos em julho — `N = 5.241`):** O tratamento reduz a saída de `25,19%` (Controle) para **`20,37%` no Desafio (`+4,82 p.p.` de retenção ganha)** e **`21,45%` no Cupom (`+3,74 p.p.` ganho)** — e no plano mensal o **Cupom reduz a saída de `17,99%` para `10,63%` (`+7,36 p.p.` de Uplift)**. Esses são os **Persuadíveis**.
 
 ---
 
@@ -494,7 +420,7 @@ Este é o ponto alto da teoria de **Uplift Modeling (Eric Siegel)**:
 | :--- | :--- | :--- |
 | Tabela `campanha_ago26` | `user_id`, `grupo`, `canal`, `oferta`, `abriu_push`, `abriu_email`, `clicou` | É o sorteio de 10/08/2026. É o único lugar do Data Room com comparação justa entre contatar e não contatar. |
 | Tabela `assinaturas` | `status_atual`, `renovacao_automatica`, `plano_atual` | Dá o desfecho de cada sorteado no corte de 30/09/2026. |
-| Tabela `uso_mensal` (mês `2026-07`) | treinos no mês | Mede o uso antes do sorteio, para dividir os sorteados em faixas sem contaminação pela campanha. |
+| Tabela `uso_mensal` (`mes = '2026-07'`) | `atividades` (treinos no mês) | Mede o uso antes do sorteio, para dividir os sorteados em faixas sem contaminação pela campanha. |
 | `00_comece_por_aqui/01_trilha_negocios_e_crm/02_ESTRATEGIA_UPLIFT_E_ROI_A2_SEMANA10.md`, seções 4 e 5 | pergunta causal, intenção de tratar, gates de validade, quadrantes, extrapolação de canal | É o protocolo que diz como ler o experimento sem tirar conclusões indevidas. |
 | `src/02_pipeline_gemini_multimodal_crm.py`, função `apply_prescriptive_uplift_policy` | as regras em código | Mostra a Seção 4.1 aplicada a um cliente, com o motivo de cada decisão. |
 
@@ -529,73 +455,36 @@ Este é o ponto alto da teoria de **Uplift Modeling (Eric Siegel)**:
 
 ---
 
-### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Consultar no agente do BigQuery
 * **Tabelas no BigQuery:** `campanha_ago26`, `assinaturas` e `uso_mensal`
 
-* **💬 Prompt Principal para colar no Agente do BigQuery:**
+* **Prompt para o agente do BigQuery:**
   ```text
   Precisamos gerar as duas tabelas oficiais do Slide 4 sobre o experimento controlado de 10/08/2026 (tabela campanha_ago26 com 14.120 sorteados):
-  1. Tabela 4.1 (Efeito Causal por Plano — Mensal vs Anual): cruze campanha_ago26 com assinaturas pelo user_id. Para o Plano Mensal (5.779 sorteados) e para o Plano Anual (8.341 sorteados), mostre por grupo (controle, cupom, desafio, conteudo): total de sorteados, taxa de clique (%), churn efetivo até o corte (status_atual != 'ativa') e taxa combinada de saída + renovação desligada, calculando o Uplift em pontos percentuais contra o grupo Controle.
-  2. Tabela 4.2 (Prova Empírica dos Sleeping Dogs vs Persuadíveis por Uso Prévio em Julho/2026): cruze campanha_ago26 com assinaturas e com uso_mensal no mês '2026-07' (pré-campanha). Separe os 14.120 sorteados em 3 faixas de treino em julho:
+  1. Tabela 4.1 (Efeito Causal por Plano — Mensal vs Anual): cruze campanha_ago26 com assinaturas pelo user_id. Para o Plano Mensal (5.779 sorteados) e para o Plano Anual (8.341 sorteados), mostre por grupo (controle, cupom, desafio, conteudo): total de sorteados, taxa de clique (clicou = TRUE), churn efetivo até o corte (status_atual != 'ativa') e taxa combinada de saída + renovação desligada (status_atual != 'ativa' ou renovacao_automatica = 'nao'), calculando o Uplift em pontos percentuais contra o grupo Controle.
+  2. Tabela 4.2 (Prova Empírica dos Sleeping Dogs vs Persuadíveis por Uso Prévio em Julho/2026): cruze campanha_ago26 com assinaturas e com uso_mensal no mes = '2026-07' (pré-campanha, coluna atividades; sem linha conta como 0). Separe os 14.120 sorteados em 3 faixas de treino em julho:
      - '0 treinos no mês' (N = 2.685 — Sleeping Dogs)
      - '1 a 4 treinos no mês' (N = 5.241 — Persuadíveis)
      - '>= 5 treinos no mês' (N = 6.194 — Garantidos)
-     Mostre a taxa de saída/desligamento de cada faixa nos grupos Controle, Desafio, Cupom e Conteúdo!
-  ```
-
-* **💻 Query SQL Equivalente:**
-  ```sql
-  -- 1. Tabela 4.1: Efeito causal por plano (Mensal vs Anual)
-  SELECT
-    a.plano_atual,
-    c.grupo,
-    COUNT(*) AS assinantes_sorteados,
-    ROUND(AVG(CAST(c.clicou AS FLOAT64)) * 100, 2) AS taxa_clique_pct,
-    ROUND(AVG(CASE WHEN a.status_atual != 'ativa' THEN 100.0 ELSE 0.0 END), 2) AS churn_efetivo_pct,
-    ROUND(AVG(CASE WHEN a.status_atual != 'ativa' OR CAST(a.renovacao_automatica AS STRING) IN ('0', 'false', 'False') THEN 100.0 ELSE 0.0 END), 2) AS saida_mais_renov_desligada_pct
-  FROM `vitaliza_inteli_modulo_2.campanha_ago26` c
-  JOIN `vitaliza_inteli_modulo_2.assinaturas` a ON c.user_id = a.user_id
-  GROUP BY 1, 2
-  ORDER BY 1, saida_mais_renov_desligada_pct ASC;
-
-  -- 2. Tabela 4.2: Prova dos Sleeping Dogs vs Persuadíveis (corte por uso em julho/2026)
-  WITH uso_julho AS (
-    SELECT user_id, treinos_mes
-    FROM `vitaliza_inteli_modulo_2.uso_mensal`
-    WHERE ano_mes = '2026-07'
-  )
-  SELECT
-    CASE
-      WHEN COALESCE(u.treinos_mes, 0) = 0 THEN '1. 0 treinos em jul/26 (Sleeping Dogs)'
-      WHEN u.treinos_mes BETWEEN 1 AND 4 THEN '2. 1 a 4 treinos em jul/26 (Persuadiveis)'
-      ELSE '3. >= 5 treinos em jul/26 (Garantidos)'
-    END AS faixa_engajamento_julho,
-    c.grupo,
-    COUNT(*) AS n_sorteados,
-    ROUND(AVG(CASE WHEN a.status_atual != 'ativa' OR CAST(a.renovacao_automatica AS STRING) IN ('0', 'false', 'False') THEN 100.0 ELSE 0.0 END), 2) AS pct_saida_ou_desligamento
-  FROM `vitaliza_inteli_modulo_2.campanha_ago26` c
-  JOIN `vitaliza_inteli_modulo_2.assinaturas` a ON c.user_id = a.user_id
-  LEFT JOIN uso_julho u ON c.user_id = u.user_id
-  GROUP BY 1, 2
-  ORDER BY 1, 2;
+     Mostre a taxa de saída/desligamento de cada faixa nos grupos Controle, Desafio, Cupom e Conteúdo.
   ```
 
 ---
 
-### Ação 2: Conferir o Output na Tela (Gabarito Slide 4)
+### Ação 2: Conferir o resultado
 * **Tabela 4.1 (No Plano Mensal):**
   * `Controle` (`1.440`): `14,58%` churn efetivo | `17,99%` saída + desligamento.
-  * `Cupom` (`1.420`): **`8,94%` churn efetivo | `10,63%` saída + desligamento (`+7,36 p.p.` de Uplift!)**.
-  * `Desafio` (`1.456`): **`11,13%` churn efetivo | `12,98%` saída + desligamento (`+5,01 p.p.` de Uplift a custo R$ 0!)**.
+  * `Cupom` (`1.420`): **`8,94%` churn efetivo | `10,63%` saída + desligamento (`+7,36 p.p.` de Uplift)**.
+  * `Desafio` (`1.456`): **`11,13%` churn efetivo | `12,98%` saída + desligamento (`+5,01 p.p.` de Uplift a custo R$ 0)**.
   * `Conteúdo` (`1.463`): `13,53%` churn efetivo | `15,79%` saída + desligamento (`+2,20 p.p.`).
 * **Tabela 4.2 (Por Uso em Julho/2026 — A Prova dos 4 Quadrantes de Siegel):**
-  * **`0` treinos (`N = 2.685` — *Sleeping Dogs*):** `51,86%` no Controle vs. **`61,02%` no Desafio (`+9,16 p.p.` pior!)**, **`57,95%` no Cupom (`+6,09 p.p.` pior)** e **`60,39%` no Conteúdo (`+8,53 p.p.` pior)**!
+  * **`0` treinos (`N = 2.685` — *Sleeping Dogs*):** `51,86%` no Controle vs. **`61,02%` no Desafio (`+9,16 p.p.` pior)**, **`57,95%` no Cupom (`+6,09 p.p.` pior)** e **`60,39%` no Conteúdo (`+8,53 p.p.` pior)**.
   * **`1 a 4` treinos (`N = 5.241` — *Persuadíveis*):** Caiu de `25,19%` (Controle) para **`20,37%` no Desafio (`+4,82 p.p.` ganho)** e **`21,45%` no Cupom (`+3,74 p.p.` ganho)**.
   * **`≥ 5` treinos (`N = 6.194` — *Garantidos*):** Caiu de `14,38%` para **`9,70%` no Desafio (`+4,68 p.p.` ganho a custo R$ 0)**.
 
 ---
 
-### Ação 3: Montar o Slide 4 e a Seção 4.1 no Seu Agente de Código
+### Ação 3: Escrever o Slide 4 e a Seção 4.1 com o agente de código
 
 Antes do agente, escreva com suas palavras a frase que resume o experimento e as 5 regras de contato, uma linha cada, citando o número da Tabela 4.2 que justifica cada regra.
 
@@ -630,12 +519,12 @@ Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
 
 ---
 
-### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
-1. **No Agente do BigQuery (Clicar na Mensagem Significa Ficar na Vitaliza?):**
+### Ação 4: Prompts extras
+1. **No agente do BigQuery (clicar significa ficar?):**
    ```text
-   Na tabela campanha_ago26 cruzada com assinaturas, compare a taxa de clique (clicou = 1) com a taxa real de retenção nos grupos Cupom e Desafio. Por que olhar apenas para a taxa de clique da campanha enganaria a diretoria de marketing?
+   Na tabela campanha_ago26 cruzada com assinaturas, compare a taxa de clique (clicou = TRUE) com a taxa real de retenção (status_atual = 'ativa' e renovacao_automatica = 'sim') nos grupos Cupom e Desafio. Por que olhar apenas para a taxa de clique da campanha enganaria a diretoria de marketing?
    ```
-2. **No Seu Agente do Repositório / NotebookLM (Dominando os 4 Quadrantes de Siegel):**
+2. **No agente do repositório ou no NotebookLM (os 4 quadrantes de Siegel):**
    ```text
    Leia o arquivo `00_comece_por_aqui/01_trilha_negocios_e_crm/02_ESTRATEGIA_UPLIFT_E_ROI_A2_SEMANA10.md` e os resultados do Passo 04. Me explique com exemplos práticos da Vitaliza a diferença entre Persuadíveis, Garantidos, Perdidos e Sleeping Dogs, e como essa matriz resolve o conflito entre quem quer contatar todos os clientes de risco alto (Patrícia, Head de CS, no Caminho A, e Marcelo, Head de Produto, no Caminho B) e a CFO Rita Fontes, que exige retorno comprovado dentro de R$ 40.000/mês.
    ```
@@ -644,10 +533,10 @@ Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
 
 ## PASSO 05 — Peças 4 e 5 (Objetivos 7 e 8): Alocação do Orçamento de R$ 40k (`300 CS` + `1.500 WA`), Lucro Líquido (`+R$ 207,8k`), Copywriter CRM e Contingência
 
-### O Que Você Vai Aprender Neste Passo (Por Que Isso Importa)
+### O que este passo ensina
 No último passo do módulo, você conecta a decisão matemática ao mundo real das operações de Growth e CRM:
-1. **Otimização sob Restrições Físicas e Financeiras (Objetivo 7):** Temos no máximo **300 atendimentos humanos de CS** (R$ 18/un = R$ 5.400), **1.500 mensagens de WhatsApp** (R$ 0,40/un = R$ 600), E-mail (R$ 0,01) e Push (R$ 0,00), e a soma de tudo (incluindo os descontos de R$ 35,91 no mensal e R$ 25,00 no anual + R$ 420 de tokens de IA) não pode passar de **R$ 40.000/mês**. Nossa regra gasta **R$ 26.441,90/mês** e gera **+R$ 207.840,10 de Lucro Líquido Incremental**!
-2. **Copywriting Generativo com Briefing Fechado (Objetivo 8):** O modelo de linguagem (Gemini) **nunca decide se o cliente ganha desconto**. Quem decide o canal e a oferta é a regra determinística da Peça 4. O Gemini recebe um briefing fechado com o nome real do cliente, a meta que ele escreveu no `onboarding.csv`, a modalidade favorita e a oferta exata autorizada, redigindo a mensagem individual sem risco de alucinar promoções!
+1. **Otimização sob Restrições Físicas e Financeiras (Objetivo 7):** Temos no máximo **300 atendimentos humanos de CS** (R$ 18/un = R$ 5.400), **1.500 mensagens de WhatsApp** (R$ 0,40/un = R$ 600), E-mail (R$ 0,01) e Push (R$ 0,00), e a soma de tudo (incluindo os descontos de R$ 35,91 no mensal e R$ 25,00 no anual + R$ 420 de tokens de IA) não pode passar de **R$ 40.000/mês**. Nossa regra gasta **R$ 26.441,90/mês** e gera **+R$ 207.840,10 de Lucro Líquido Incremental**.
+2. **Copywriting Generativo com Briefing Fechado (Objetivo 8):** O modelo de linguagem (Gemini) **nunca decide se o cliente ganha desconto**. Quem decide o canal e a oferta é a regra determinística da Peça 4. O Gemini recebe um briefing fechado com o contexto do cliente (a meta que ele escreveu no `onboarding.csv`, a modalidade favorita) e a oferta exata autorizada, e redige a mensagem individual sem poder inventar promoções.
 
 ---
 
@@ -687,7 +576,7 @@ No último passo do módulo, você conecta a decisão matemática ao mundo real 
 * **Apresentar receita retida como receita realizada.** É projeção e precisa de horizonte declarado (a coluna do Slide 5 indica "Ciclo 6m / Anual").
 * **Deixar o modelo de linguagem escolher a oferta** ou mencionar o score de risco. O script bloqueia termos como "score de churn", "risco de sair" e "sleeping dog".
 * **Expor dado sensível na mensagem.** O guia de IA pede personalização proporcional. Mencionar lesão ou saúde exige cuidado; prefira oferecer opções (treino adaptado, pausa) em vez de diagnosticar.
-* **Publicar dados pessoais.** A query traz o nome do cliente. No artefato, use apenas o que o artefato oficial já usa ou um identificador pseudônimo.
+* **Publicar dados pessoais.** A tabela `usuarios` traz e-mail, cidade e data de nascimento. No artefato, identifique o cliente só pelo `user_id`, como o artefato oficial faz.
 
 **Como conferir sozinho:**
 
@@ -705,43 +594,22 @@ No último passo do módulo, você conecta a decisão matemática ao mundo real 
 
 ---
 
-### Ação 1: Executar no Google BigQuery (Agente Conversacional ou SQL)
+### Ação 1: Consultar no agente do BigQuery
 * **Tabelas no BigQuery:** `assinaturas`, `uso_mensal`, `usuarios`, `onboarding`, `tickets_suporte` e `feed_posts`
 
-* **💬 Prompt Principal para colar no Agente do BigQuery:**
+* **Prompt para o agente do BigQuery:**
   ```text
   Para fecharmos o Slide 5 (Alocação de Orçamento R$ 40.000/mês e Lucro Líquido) e a Seção 4.2 (Redator Generativo de CRM), consulte os 14.753 pagantes ativos em 30/09/2026:
   1. Mostre a divisão exata dos 14.753 pagantes ativos nos públicos da nossa Matriz Prescritiva de Alocação:
-     - Persuadíveis (1 a 4 treinos em set/26 = 5.391 clientes): sendo 300 no Time de CS (R$ 18/un = R$ 5.400), 750 no WhatsApp com Cupom 30% off 3 meses (R$ 0,40/un + descontos R$ 16.159,50), 750 no WhatsApp com Desafio 6 Semanas (R$ 0,40/un, desconto R$ 0) e o restante em E-mail + Push (R$ 0,01/un)
-     - Garantidos (>= 5 treinos = 7.049 clientes): Push Semanal + E-mail com Desafio 6 Semanas (R$ 70,49, proibido cupom)
-     - Sleeping Dogs (0 treinos com renovação ligada = 995 clientes): Silêncio Absoluto (R$ 0, evitando +9,16 p.p. de churn induzido).
-  2. Extraia também o perfil real do assinante user_id = 'u_2722f848' (e de mais 2 assinantes persuadíveis de 1 a 4 treinos) juntando usuarios, assinaturas, uso_mensal, onboarding e feed_posts para gerarmos os exemplos reais de mensagens personalizadas com briefing fechado!
-  ```
-
-* **💻 Query SQL Equivalente:**
-  ```sql
-  -- Extrair contexto real dos clientes para o Redator Generativo de CRM (Objetivo 8)
-  SELECT
-    a.user_id,
-    u.nome,
-    a.plano_atual,
-    a.canal_cobranca,
-    um.treinos_mes AS treinos_set26,
-    ob.texto_onboarding,
-    fp.texto_post AS ultimo_post_feed
-  FROM `vitaliza_inteli_modulo_2.assinaturas` a
-  JOIN `vitaliza_inteli_modulo_2.usuarios` u ON a.user_id = u.user_id
-  LEFT JOIN `vitaliza_inteli_modulo_2.uso_mensal` um ON a.user_id = um.user_id AND um.ano_mes = '2026-09'
-  LEFT JOIN `vitaliza_inteli_modulo_2.onboarding` ob ON a.user_id = ob.user_id
-  LEFT JOIN `vitaliza_inteli_modulo_2.feed_posts` fp ON a.user_id = fp.user_id
-  WHERE a.user_id = 'u_2722f848'
-     OR (a.status_atual = 'ativa' AND a.plano_atual = 'mensal' AND um.treinos_mes BETWEEN 1 AND 3)
-  LIMIT 5;
+     - Persuadíveis (1 a 4 atividades em uso_mensal, mes = '2026-09' = 5.391 clientes): sendo 300 no Time de CS (R$ 18/un = R$ 5.400), 750 no WhatsApp com Cupom 30% off 3 meses (R$ 0,40/un + descontos R$ 16.159,50), 750 no WhatsApp com Desafio 6 Semanas (R$ 0,40/un, desconto R$ 0) e o restante em E-mail + Push (R$ 0,01/un)
+     - Garantidos (>= 5 atividades = 7.049 clientes): Push Semanal + E-mail com Desafio 6 Semanas (R$ 70,49, proibido cupom)
+     - Sleeping Dogs (0 atividades com renovacao_automatica = 'sim' = 995 clientes): Silêncio Absoluto (R$ 0, evitando +9,16 p.p. de churn induzido).
+  2. Extraia também o perfil real do assinante user_id = 'u_2722f848' (e de mais 2 assinantes persuadíveis de 1 a 4 treinos) juntando usuarios, assinaturas, uso_mensal, onboarding (objetivo_texto) e feed_posts (texto) para gerarmos os exemplos de mensagens personalizadas com briefing fechado. Não traga e-mail.
   ```
 
 ---
 
-### Ação 2: Conferir os Números Finais (Slide 5 e Seção 4.2)
+### Ação 2: Conferir o resultado
 * **Custo de Canais + IA:** `R$ 6.532,40` (`R$ 5.400` de 300 CS + `R$ 600` de 1.500 WhatsApps + `R$ 112,40` E-mail/Push + `R$ 420` Tokens LLM).
 * **Custo de Descontos Concedidos:** `R$ 19.909,50` (`R$ 3.750` anual + `R$ 16.159,50` mensal).
 * **Desembolso Mensal Total:** **`R$ 26.441,90 / mês`** (respeitando com folga o teto de **`R$ 40.000,00 / mês`**).
@@ -749,7 +617,7 @@ No último passo do módulo, você conecta a decisão matemática ao mundo real 
 
 ---
 
-### Ação 3: Fechar os Seus 2 Artefatos da Semana 10 no Agente de Código
+### Ação 3: Fechar os dois artefatos da Semana 10 com o agente de código
 
 Antes do agente, monte você mesmo a conta do Slide 5 numa folha ou planilha: cada público, volume, canal, oferta, custo e clientes salvos. Faça as conferências do bloco "Como conferir sozinho" e anote o que não fechou. Para o Slide 6, escreva um risco por linha com o gatilho em número. Para a Seção 4.2, escolha os dois perfis da sua consulta e escreva o briefing de cada um antes de pedir a mensagem.
 
@@ -784,12 +652,12 @@ Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
 
 ---
 
-### Ação 4 (Prompts Extras para Explorar Insights e Conversar com o Agente):
-1. **No Agente do BigQuery (Criando Mensagens Personalizadas Direto no Chat do BigQuery):**
+### Ação 4: Prompts extras
+1. **No agente do BigQuery (mensagens personalizadas):**
    ```text
-   Escolha 3 clientes reais da tabela assinaturas que estejam no plano mensal, tenham entre 1 e 3 treinos em setembro ('2026-09' na tabela uso_mensal) e tenham texto preenchido na tabela onboarding. Mostre o nome deles, a meta que escreveram no onboarding e escreva uma sugestão de mensagem curta e empática de WhatsApp oferecendo o Desafio de 6 Semanas conectado ao objetivo de cada um.
+   Escolha 3 clientes reais da tabela assinaturas que estejam no plano mensal, tenham entre 1 e 3 atividades em setembro (uso_mensal, mes = '2026-09') e tenham objetivo_texto preenchido na tabela onboarding. Mostre o user_id deles, a meta que escreveram no onboarding e escreva uma sugestão de mensagem curta e empática de WhatsApp oferecendo o Desafio de 6 Semanas conectado ao objetivo de cada um.
    ```
-2. **No Seu Agente do Repositório / NotebookLM (Simulando a Sabatina do Conselho de Administração):**
+2. **No agente do repositório ou no NotebookLM (perguntas do Conselho):**
    ```text
    Leia o documento `artefatos_negocios/semana_10_A2/ARTEFATO_NEGOCIOS_SEMANA10_A2.md` e o guia `00_comece_por_aqui/01_trilha_negocios_e_crm/02_ESTRATEGIA_UPLIFT_E_ROI_A2_SEMANA10.md`. Simule comigo 3 perguntas difíceis que a CFO Rita Fontes e o CTO Diego Almeida fariam na apresentação final ao Conselho sobre o nosso plano de R$ 26.441,90/mês e me mostre como responder cada uma usando os números que encontramos nos dados.
    ```
@@ -798,7 +666,7 @@ Trabalhe em três etapas e pare ao final de cada uma para eu confirmar:
 
 ## Fechamento da Semana 10
 
-Ao final dos cinco passos, você tem dois arquivos na sua pasta. Antes de salvar, revise a qualidade, ensaie a apresentação e só então envie ao GitHub.
+Ao final dos cinco passos, você tem dois arquivos na sua pasta. Antes de salvar, revise a qualidade, prepare a apresentação e só então envie ao GitHub.
 
 ### 1. Checklist de qualidade dos dois artefatos
 
@@ -811,7 +679,7 @@ Ao final dos cinco passos, você tem dois arquivos na sua pasta. Antes de salvar
 
 **Rastreabilidade**
 
-- [ ] Cada afirmação tem origem identificável: uma query deste playbook, um script em `src/`, um relatório em `relatorios/` ou um documento do case. Uma nota de fonte abaixo de cada tabela resolve isso.
+- [ ] Cada afirmação tem origem identificável: uma consulta que você rodou no BigQuery, um script em `src/`, um relatório em `relatorios/` ou um documento do case. Uma nota de fonte abaixo de cada tabela resolve isso.
 - [ ] Projeções estão marcadas como estimativas: clientes salvos, receita retida, lucro, ROI, uplift de WhatsApp e de CS.
 - [ ] As limitações estão escritas: janela de cerca de sete semanas no experimento; canal testado foi push + e-mail; ablação com texto e pixels juntos; modo de execução do script; ausência de intervalos de confiança.
 
@@ -832,7 +700,7 @@ Ao final dos cinco passos, você tem dois arquivos na sua pasta. Antes de salvar
 - [ ] Nada fora da sua pasta em `membros/` foi editado (confira no item 3 abaixo).
 - [ ] Não há dado pessoal além do necessário.
 
-### 2. Ensaiar a apresentação ao Conselho
+### 2. Preparar a apresentação ao Conselho
 
 **2.1 A história em seis frases.** Leia em sequência. Se uma frase não decorre da anterior, falta um elo no deck.
 
@@ -855,62 +723,15 @@ Ao final dos cinco passos, você tem dois arquivos na sua pasta. Antes de salvar
 
 Para ensaiar, use o prompt 2 da Ação 4 do Passo 05 e peça ao agente que faça também estas cinco perguntas, uma de cada vez, avaliando a sua resposta.
 
-### 3. Salvar no GitHub, passo a passo
+### 3. Salvar no GitHub
 
-Faça estes comandos no terminal, na raiz do repositório, ou peça ao agente de código com o prompt do item 3.2.
+O passo a passo completo (branch, commit, push e pull request) está no [`03_GUIA_GIT.md`](./03_GUIA_GIT.md). O resumo para este fechamento:
 
-**3.1 Comandos e o que observar**
-
-1. **Ver o que mudou:**
-   ```bash
-   git status
-   ```
-   O que procurar: só devem aparecer arquivos dentro de `membros/nome_membro_1/semana_10_A2/` (com o nome da sua pasta). Se aparecer um arquivo fora da sua pasta como modificado, não o inclua no commit. Se você não pretendia alterá-lo, descarte a alteração com `git restore caminho/do/arquivo`. Esse comando apaga a mudança local naquele arquivo; use só em arquivos que não são seus.
-2. **Revisar o conteúdo:**
-   ```bash
-   git diff --stat
-   git diff membros/nome_membro_1/semana_10_A2/
-   ```
-   O que procurar: o texto que você escreveu, sem trechos inteiros copiados do artefato oficial e sem dados pessoais.
-3. **Adicionar apenas a sua pasta:**
-   ```bash
-   git add membros/nome_membro_1/semana_10_A2/
-   git status
-   ```
-   O que procurar: em "Changes to be committed" só aparecem os seus dois arquivos. Não use `git add .` nem `git add -A`, que incluem tudo o que mudou no repositório.
-4. **Registrar o commit (padrão Conventional Commits, `tipo(escopo): resumo`):**
-   ```bash
-   git commit -m "docs(membros): constroi artefatos A2 da semana 10 de nome_membro_1" \
-     -m "- slides 1 a 6 do artefato de negocios" \
-     -m "- secoes 1 a 4 do artefato de tecnologia" \
-     -m "- conferencias de soma, orcamento e capacidade registradas"
-   ```
-5. **Trazer as mudanças dos colegas antes de enviar:**
-   ```bash
-   git pull --rebase origin develop
-   ```
-   O `--rebase` coloca o seu commit depois dos commits que os colegas já enviaram, sem criar um commit de mistura.
-6. **Enviar:**
-   ```bash
-   git push origin develop
-   ```
-   Se o push for recusado porque alguém enviou algo nesse intervalo, repita o passo 5 e depois o passo 6.
-
-**O que fazer em caso de conflito.** O Git mostra `CONFLICT` e lista os arquivos em `git status`.
-
-* **Conflito em arquivo da sua pasta:** abra o arquivo, escolha o texto correto entre as marcas `<<<<<<<`, `=======` e `>>>>>>>`, apague as marcas, salve e rode `git add caminho/do/arquivo` e `git rebase --continue`.
-* **Conflito em arquivo fora da sua pasta:** isso indica que você alterou algo que não devia. Rode `git rebase --abort`, volte ao passo 1 e avise o grupo antes de tentar de novo.
-* **Nunca use `git push --force`.** Ele apaga do servidor o trabalho dos colegas.
-
-**3.2 Prompt para o agente de código**
-
-```text
-Salve no GitHub apenas os arquivos construídos dentro da minha pasta `membros/nome_membro_1/semana_10_A2/` (troque pelo nome da minha pasta). Siga estes passos e pare para me mostrar o resultado de cada um:
-1. Rode `git status` e me mostre a lista. Se houver qualquer arquivo modificado ou novo fora da minha pasta em `membros/`, NÃO o inclua e me pergunte o que fazer antes de seguir.
-2. Rode `git diff --stat` e um resumo do `git diff` da minha pasta. Me avise se houver trecho copiado literalmente de `artefatos_negocios/` ou `artefatos_tecnologia/`, ou dado pessoal de cliente além do que já consta no artefato oficial.
-3. Adicione apenas a minha pasta (`git add membros/<minha_pasta>/semana_10_A2/`), nunca `git add .`, e mostre o `git status` de novo.
-4. Faça um commit no padrão Conventional Commits, por exemplo `docs(membros): constroi artefatos A2 da semana 10 de <meu_nome>`, listando no corpo o que foi feito (slides, seções técnicas, conferências).
-5. Rode `git pull --rebase origin develop`. Se houver conflito em arquivo da minha pasta, me mostre as duas versões e me deixe escolher. Se houver conflito fora da minha pasta, rode `git rebase --abort` e pare.
-6. Rode `git push origin develop`. Se for recusado, repita o passo 5 uma vez. Nunca use `git push --force`.
-7. Ao final, me mostre o hash do commit e confirme que `git status` está limpo.
+```bash
+git status                                         # só devem aparecer arquivos da sua pasta em membros/
+git add membros/<sua_pasta>/semana_10_A2/          # nunca git add . nem git add -A
+git commit -m "docs(membros): constroi artefatos A2 da semana 10 de <seu_nome>"
+git push origin membros/<seu_nome>                 # envia a sua branch, não a develop
 ```
+
+Depois do push, abra o pull request da sua branch para a `develop` no GitHub. Se aparecer arquivo fora da sua pasta no `git status`, não o inclua no commit e veja a seção "Quando algo dá errado" do guia.
