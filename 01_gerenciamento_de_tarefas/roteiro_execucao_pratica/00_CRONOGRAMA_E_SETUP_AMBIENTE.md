@@ -37,6 +37,60 @@ flowchart TD
     Ciclo --> MeuWorkspace
 ```
 
+### 1.1 O case em cinco minutos
+
+Leia esta parte antes de abrir qualquer tabela. Sem ela, os números dos passos não têm a quem responder.
+
+* **A empresa:** a Vitaliza é um aplicativo brasileiro de assinatura para quem treina (corrida, caminhada e pedal com GPS, aulas em vídeo e rede social com relógios Garmin e Apple Watch). Modelo *freemium*: o uso básico é gratuito e o Premium é pago, no plano **Mensal (R$ 39,90, reajustado em 01/03/2026 a partir de R$ 34,90)** ou **Anual (R$ 299,90)**.
+* **O problema:** o churn mensal médio (percentual de assinantes que cancelam em um mês) subiu de **5,6% em 2025 para 6,6% em jan–set de 2026**, com pico de **8,1% em abril de 2026**.
+* **A pressão:** a empresa está perto de captar a **Série B** (rodada de investimento) e o concorrente **Strava Premium** anunciou modelos de previsão de desengajamento no Brasil.
+* **A data de corte:** todo o Data Room retrata a base em **30/09/2026**. Qualquer registro posterior é vazamento (informação do futuro) e precisa ser excluído.
+* **A regra entre as duas fontes do case:** cálculos, modelos e contas financeiras usam o **Data Room** (`documentos/exhibits-m2/` e BigQuery). A narrativa executiva responde ao dilema da diretoria descrito no deck de negócios. O deck traz números ilustrativos de 2025 que **não** devem ser misturados com os do Data Room.
+* **Os dois movimentos do módulo:**
+
+| Movimento | Pergunta que responde | Entregáveis | Datas |
+| :--- | :--- | :--- | :--- |
+| **A1 — Entender** (Semana 5) | Quem são os assinantes, quem está saindo, por quê e quanto isso custa? | Relatório de segmentação de clientes (Negócios) e relatório de engenharia de dados e modelo baseline (Tecnologia) | Entrega `13/11/2026` |
+| **A2 — Agir** (Semana 10) | Em quem a Vitaliza deve investir os R$ 40.000/mês de retenção, com qual ação, e quanto lucro isso gera? | 6 slides ao Conselho (Negócios) e relatório de modelos, extração multimodal e uplift (Tecnologia) | Previsão 60 dias `08/12`, revelação `10/12`, entrega `18/12/2026` |
+
+A2 depende de A1: os segmentos, as personas e o modelo baseline da Semana 5 são a base das decisões da Semana 10. Por isso os números precisam ser idênticos entre os dois.
+
+### 1.2 Quem lê os artefatos: os personagens do case
+
+Dois tipos de persona aparecem neste módulo e não devem ser confundidos:
+
+1. **Personagens do case:** os executivos da Vitaliza que leem e julgam a recomendação. Eles definem o que cada seção precisa responder.
+2. **Personas de dados:** perfis de assinantes construídos a partir dos clusters no Passo 04 do Playbook 1. Eles descrevem clientes, não executivos.
+
+| Personagem | Cargo | Posição no dilema | Pergunta que fará ao grupo | Onde a resposta é construída |
+| :--- | :--- | :--- | :--- | :--- |
+| **Camila Ferraz** | VP de Crescimento e Retenção | Precisa levar uma recomendação única ao Conselho | Qual é o plano, por que ele é melhor que as alternativas e quanto ele rende? | Playbook 2, todos os passos (ela apresenta os 6 slides) |
+| **Patrícia** | Head de CS | Defende o **Caminho A**: oferta de retenção (*win-back*) no momento em que o cliente clica em "Cancelar" | A oferta na tela de cancelamento resolve? | Playbook 1, Passo 01 (70,22% pagam pelas lojas e cancelam fora do app); Playbook 2, Passo 01 |
+| **Marcelo** | Head de Produto | Defende o **Caminho B**: score preditivo diário de queda de engajamento | Prever quem vai sair é suficiente para decidir quem acionar? | Playbook 1, Passo 05 (baseline); Playbook 2, Passos 03 e 04 (modelos e uplift) |
+| **Diego Almeida** | CTO | Alerta para o esforço de engenharia em 13 fontes desconectadas e com fusos diferentes | Os dados são confiáveis e quanto custa integrá-los? | Playbook 1, Passo 02 (7 anomalias); Playbook 2, Passo 02 (custo de IA) |
+| **Rita Fontes** | CFO | Exige retorno financeiro comprovado dentro do orçamento | O plano cabe em R$ 40.000/mês, 1.500 WhatsApps e 300 atendimentos de CS, e qual é o lucro incremental? | Playbook 2, Passo 05 |
+| **Conselho** | Investidores e conselheiros | Decide antes da Série B | Por que este plano, quais os riscos e como interromper se der errado? | Playbook 2, Passo 05 (riscos e *kill-switch*) |
+
+Ao escrever qualquer seção, pergunte: **qual destes personagens vai ler isto e que decisão ele toma com esta informação?** Se a resposta não estiver clara, a seção ainda não está pronta.
+
+### 1.3 Como cada passo foi construído
+
+Os artefatos oficiais foram feitos seguindo sempre a mesma sequência. Os playbooks reproduzem essa sequência em cada passo, no bloco **Raciocínio do passo** e nas Ações 1 a 4:
+
+| # | Etapa | O que fazer | Onde está no playbook |
+| :-: | :--- | :--- | :--- |
+| 1 | **Pergunta de negócio** | Escrever em uma frase o que se quer saber e quem pergunta | Raciocínio do passo |
+| 2 | **Onde olhar** | Identificar as tabelas, as colunas e o documento do case que define a regra (preço, taxa, data de corte) | Raciocínio do passo |
+| 3 | **Raciocínio** | Decidir, em ordem, o que filtrar, o que excluir, como agrupar e o que calcular, sabendo o porquê de cada decisão | Raciocínio do passo e Ação 1 |
+| 4 | **Conferir** | Verificar se os totais fecham, se os percentuais somam 100% e se o número bate com o de outros passos | Ação 2 |
+| 5 | **Escrever** | Montar a seção com título em forma de conclusão, o número principal, a tabela de apoio e a implicação para a decisão | Ação 3 |
+| 6 | **Comparar** | Só então abrir o artefato oficial, listar as diferenças e entender a origem de cada uma | Ação 3 (final) |
+
+Duas regras valem para todos os passos:
+
+* **Um número só entra no artefato se você souber de qual consulta ou documento ele veio.** O agente de código ajuda a redigir, mas a origem do número é responsabilidade de quem escreve.
+* **O artefato oficial é para comparar, não para copiar.** Se o seu resultado for diferente, a diferença é a parte mais útil do exercício: geralmente revela um filtro esquecido ou uma regra do case lida de outra forma.
+
 ---
 
 ## 2. Ferramentas
