@@ -24,7 +24,9 @@ membros/
 
 ---
 
-## 2. Os 2 Playbooks Passo a Passo (Sem Precisar Programar)
+## 2. O roteiro: visão geral, 2 playbooks e guia de Git
 
-1. 📘 [**`01_PLAYBOOK_SEMANA_05_A1.md`**](../01_gerenciamento_de_tarefas/roteiro_execucao_pratica/01_PLAYBOOK_SEMANA_05_A1.md) — Guia em **5 Passos** para construir os seus dois artefatos da **Semana 5 (A1)**.
-2. 📙 [**`02_PLAYBOOK_SEMANA_10_A2.md`**](../01_gerenciamento_de_tarefas/roteiro_execucao_pratica/02_PLAYBOOK_SEMANA_10_A2.md) — Guia em **5 Passos** para construir os seus dois artefatos da **Semana 10 (A2)**.
+0. [**`00_VISAO_GERAL_E_FERRAMENTAS.md`**](../01_gerenciamento_de_tarefas/roteiro_execucao_pratica/00_VISAO_GERAL_E_FERRAMENTAS.md) — Leia antes: resumo do case, ferramentas e como preparar a sua pasta.
+1. [**`01_PLAYBOOK_SEMANA_05_A1.md`**](../01_gerenciamento_de_tarefas/roteiro_execucao_pratica/01_PLAYBOOK_SEMANA_05_A1.md) — Guia em **5 Passos** para construir os seus dois artefatos da **Semana 5 (A1)**.
+2. [**`02_PLAYBOOK_SEMANA_10_A2.md`**](../01_gerenciamento_de_tarefas/roteiro_execucao_pratica/02_PLAYBOOK_SEMANA_10_A2.md) — Guia em **5 Passos** para construir os seus dois artefatos da **Semana 10 (A2)**.
+3. [**`03_GUIA_GIT.md`**](../01_gerenciamento_de_tarefas/roteiro_execucao_pratica/03_GUIA_GIT.md) — Como criar a sua branch, fazer commits no padrão do grupo e abrir o pull request.
