@@ -33,7 +33,7 @@ A segmentação comportamental dos `14.753` pagantes ativos e a auditoria do Dat
 | **4. Pagantes Inertes (*Sleeping Dogs*)**| `2.313` (`15,68%`) | `0,0` | **`56,98%`** | Abandonaram o uso: `1.318` já cancelaram a renovação e `995` continuam pagando apenas por esquecimento/inércia. |
 
 1. **Fato Vital 1 — Cegueira de 70,22% nas Lojas:** `10.359` pagantes (`70,22%`) assinam via **App Store (`36,57%`) ou Google Play (`33,65%`)** e cancelam nas configurações do celular, fora do app da Vitaliza. Qualquer ação restrita à tela de cancelamento do site ignora 7 em cada 10 clientes.
-2. **Fato Vital 2 — O Perigo Real dos *Sleeping Dogs*:** Existem `995` clientes inativos que ainda estão com a renovação automática ligada pagando por inércia (**R$ 27,6 mil/mês**). Acioná-los sem filtro lembra-os da cobrança e dispara o cancelamento imediato.
+2. **Fato Vital 2 — O Perigo Real dos *Sleeping Dogs*:** Existem `995` clientes inativos que ainda estão com a renovação automática ligada pagando por inércia (**R$ 24,0 mil/mês**). Acioná-los sem filtro lembra-os da cobrança e dispara o cancelamento imediato.
 
 ---
 
@@ -93,7 +93,7 @@ Para novembro e dezembro de 2026, alocamos os recursos respeitando rigorosamente
 
 > **🏆 Fechamento Financeiro (Objetivo 7):**  
 > * **Desembolso Total da Política Prescritiva:** **R$ 26.441,90 / mês** (bem abaixo do teto de **R$ 40.000,00 / mês**, mantendo **R$ 13.558,10** de margem de segurança para variações na taxa de adesão aos cupons).  
-> * **Lucro Líquido Incremental Gerado (vs. Não Fazer Nada):** **`+ R$ 207.840,10`** no horizonte de retenção dos coortes salvos (ROI de **+686%** sobre o orçamento investido, equivalente a evitar **R$ 43.778,00** em CAC de reposição imediata a R$ 118/cliente).
+> * **Lucro Líquido Incremental Gerado (vs. Não Fazer Nada):** **`+ R$ 207.840,10`** no horizonte de retenção dos coortes salvos (ROI de **+786%** sobre o orçamento investido, equivalente a evitar **R$ 43.778,00** em CAC de reposição imediata a R$ 118/cliente).
 
 ---
 

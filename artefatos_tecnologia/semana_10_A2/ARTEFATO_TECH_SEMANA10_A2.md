@@ -18,7 +18,7 @@
 flowchart TD
     subgraph Entrada ["1. FONTES TABULARES, LOGS E CONTEÚDO NÃO-ESTRUTURADO (CORTE 30/09/2026)"]
         Tab["Tabelas + Logs Reconciliados<br/>14.753 pagantes ativos"]
-        Txt["Textos Livres (Até o Corte):<br/>onboarding (63.929) | suporte (4.422) | feed (119.309)"]
+        Txt["Textos Livres (Até o Corte):<br/>onboarding (63.929) | suporte (4.422) | feed (119.187)"]
         Img["Mapas de Calor (heatmaps_90d/):<br/>12.426 PNGs (31/07) + 13.047 PNGs (30/09)"]
     end
 
