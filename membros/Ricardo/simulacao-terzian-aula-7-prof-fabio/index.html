@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulação Terzian — Aula 7 — Prof. Fabio</title>
+<style>
+:root{color-scheme:light;--background:#fff;--foreground:#142530;--muted-foreground:#506572;--font-size-base:16px;--viz-series-1:#06a9a0}
+body{margin:0 auto;max-width:920px;padding:2rem 1rem 4rem;color:var(--foreground);font:16px/1.55 system-ui,sans-serif}
+header{padding-bottom:1rem;border-bottom:3px solid #088a84} h1,h2,h3{line-height:1.2}
+section{margin-block:2rem} table{width:100%;border-collapse:collapse} th,td{padding:.45rem;text-align:left;border-bottom:1px solid #dce5e8}
+.table-responsive{overflow-x:auto}.text-small{font-size:.88rem}.viz-grid,.viz-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.viz-grid section{margin:0}.form-range{width:100%} a{color:#075e7b}
+@media(max-width:580px){.viz-grid,.viz-controls{grid-template-columns:1fr}}
+</style>
+<header>
+<p>Vitaliza · Artefato 2 · 24 de novembro de 2026</p>
+<h1>Simulação Terzian — Aula 7 — Prof. Fabio</h1>
+<p>Estudo de churn e proposta de piloto de retenção para o Conselho.</p>
+</header>
+<main>
+<section>
+<h2>1. Proposta ao Conselho</h2>
+<p>Aprovar um piloto de reengajamento para assinantes mensais de baixa frequência, com grupo controle e teto de R$ 10 por contato. O cruzamento de julho encontrou 134 saídas entre 366 assinantes mensais com até dois treinos e queda de pelo menos dois treinos, ou 36,6% de churn.</p>
+</section>
+<section>
+<h2>2. Avaliação e limpeza dos dados</h2>
+<ol>
+<li>Cruzar assinaturas, eventos de assinatura e uso mensal. Cada observação representa um assinante ativo no início do mês. A saída é o fim da assinatura durante o mês.</li>
+<li>Verificar duplicatas por assinante no cadastro e por assinante e mês no uso. A verificação não encontrou duplicatas pelas chaves usadas nem datas de fim anteriores ao início.</li>
+<li>Dos 14.119 ativos no início de julho, excluir 60 cortesias e manter dois casos sem plano confirmado na auditoria. A comparação de planos abrange 14.057 assinantes.</li>
+<li>Manter 2.562 assinantes com menos de 90 dias, 393 sem registro de uso recente, 2.060 com zero treinos registrados e 57 saídas por falha de pagamento. Os recortes podem se sobrepor.</li>
+</ol>
+</section>
+<section>
+<h2>3. Plano, treinos e variação de treinos explicam melhor a ordenação de risco</h2>
+<p>Foram testados dez trios e dez pares de cinco variáveis: plano, treinos, variação de treinos, tempo de assinatura e sessões no app. As taxas por cruzamento foram estimadas de fevereiro a maio, selecionadas por precisão média (AP) em junho e verificadas em julho.</p>
+<table><thead><tr><th>Cruzamento</th><th>AP em junho</th><th>AP em julho</th></tr></thead><tbody>
+<tr><td>Plano + treinos + variação</td><td>17,6%</td><td>17,0%</td></tr>
+<tr><td>Plano + variação + sessões</td><td>16,8%</td><td>16,1%</td></tr>
+<tr><td>Plano + tempo de assinatura + variação</td><td>14,7%</td><td>14,1%</td></tr>
+<tr><td>Plano + variação (melhor par)</td><td>13,8%</td><td>13,1%</td></tr>
+<tr><td>Taxa de churn de referência</td><td>6,1%</td><td>6,7%</td></tr>
+</tbody></table>
+<p>O trio ganhou 3,9 pontos de AP sobre o melhor par no teste. O resultado mede capacidade de ordenar risco.</p>
+<div id="vitaliza-cruzamentos">
+  <h3>Churn observado em julho de 2026</h3>
+  <p class="text-small">Cor mais intensa indica churn maior. Abaixo de cada taxa está o número de assinantes.</p>
+  <div class="table-responsive">
+  <table class="table table-sm">
+    <thead><tr><th scope="col">Plano e treinos no mês anterior</th><th scope="col">Queda de 2 ou mais</th><th scope="col">Sem queda de 2 ou mais</th><th scope="col">Variação indisponível</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Mensal · 0–2 treinos</th><td data-risk="36.6">36,6%<br>366</td><td data-risk="11.6">11,6%<br>1.142</td><td data-risk="14.6">14,6%<br>157</td></tr>
+      <tr><th scope="row">Mensal · 3+ treinos</th><td data-risk="12.8">12,8%<br>1.497</td><td data-risk="6.2">6,2%<br>2.385</td><td data-risk="15.3">15,3%<br>268</td></tr>
+      <tr><th scope="row">Mensal · sem registro</th><td>—</td><td>—</td><td data-risk="36.7">36,7%<br>30</td></tr>
+      <tr><th scope="row">Anual · 0–2 treinos</th><td data-risk="3.1">3,1%<br>768</td><td data-risk="6.2">6,2%<br>2.809</td><td data-risk="7">7,0%<br>271</td></tr>
+      <tr><th scope="row">Anual · 3+ treinos</th><td data-risk="0.8">0,8%<br>1.462</td><td data-risk="0.6">0,6%<br>2.398</td><td data-risk="0">0,0%<br>141</td></tr>
+      <tr><th scope="row">Anual · sem registro</th><td>—</td><td>—</td><td data-risk="6.9">6,9%<br>363</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+<style>
+#vitaliza-cruzamentos td { text-align: center; font-variant-numeric: tabular-nums; }
+#vitaliza-cruzamentos td[data-risk] { background: color-mix(in srgb, var(--viz-series-1, var(--blue)) var(--heat), var(--background)); color: var(--foreground); }
+</style>
+<script>
+{
+  const grid = document.getElementById('vitaliza-cruzamentos');
+  grid.querySelectorAll('[data-risk]').forEach(cell => {
+    cell.style.setProperty('--heat', (4 + 43 * Number(cell.dataset.risk) / 37) + '%');
+  });
+}
+</script>
+
+</section>
+<section>
+<h2>4. Personas em julho de 2026</h2>
+<div class="table-responsive"><table><thead><tr><th>Grupo</th><th>Clientes</th><th>Saídas</th><th>Churn</th></tr></thead><tbody>
+<tr><td>Mensais, 0–2 treinos e queda de pelo menos 2</td><td>366</td><td>134</td><td>36,6%</td></tr>
+<tr><td>Mensais, 0–2 treinos, sem queda de pelo menos 2 ou sem histórico comparável</td><td>1.299</td><td>155</td><td>11,9%</td></tr>
+<tr><td>Mensais, 3+ treinos</td><td>4.150</td><td>381</td><td>9,2%</td></tr>
+<tr><td>Anuais, 0–2 treinos</td><td>3.848</td><td>216</td><td>5,6%</td></tr>
+<tr><td>Anuais, 3+ treinos</td><td>4.001</td><td>26</td><td>0,6%</td></tr>
+<tr><td>Sem registro de uso recente</td><td>393</td><td>36</td><td>9,2%</td></tr>
+<tr><th>Total</th><td>14.057</td><td>948</td><td>6,7%</td></tr>
+</tbody></table></div>
+<p>Para o piloto, a árvore usa o recorte mensal de até dois treinos, 90 dias ou mais de assinatura e score de pelo menos 0,12. Ela sinalizou 690 clientes em julho e identificou 166 das 207 saídas do recorte (80,2% de recall e 24,1% de precisão).</p>
+</section>
+<section>
+<h2>5. Evolução da coorte e efeito simulado</h2>
+<p>Sortear os elegíveis entre uma ação de reengajamento por push ou e-mail e um grupo controle com atendimento habitual. Entre as 166 saídas observadas, 160 foram por renovação desligada e seis por falha de pagamento. A premissa de reversão de 25% aplica-se às 160 saídas por renovação desligada.</p>
+<div id="vitaliza-fluxo">
+  <h3>Trajetória dos 690 assinantes sinalizados</h3>
+  <div class="viz-controls">
+    <label class="form-label" for="vitaliza-dia">Dias desde o início de julho <output id="vitaliza-dia-out">31</output>
+      <input class="form-range" id="vitaliza-dia" type="range" min="0" max="5" value="5" step="1">
+    </label>
+    <label class="form-label" for="vitaliza-reversao">Reversão das saídas por renovação desligada <output id="vitaliza-reversao-out">25%</output>
+      <input class="form-range" id="vitaliza-reversao" type="range" min="0" max="50" value="25" step="5">
+    </label>
+  </div>
+  <div class="viz-grid" aria-live="polite">
+    <section aria-labelledby="vitaliza-historico">
+      <h3 id="vitaliza-historico">Histórico de julho</h3>
+      <ol class="v-flow">
+        <li>690 ativos no início</li>
+        <li>Comportamento observado</li>
+        <li id="vitaliza-observado"></li>
+      </ol>
+    </section>
+    <section aria-labelledby="vitaliza-piloto">
+      <h3 id="vitaliza-piloto">Com intervenção · simulação</h3>
+      <ol class="v-flow">
+        <li>690 ativos no início</li>
+        <li>Ação de reengajamento</li>
+        <li id="vitaliza-projetado"></li>
+      </ol>
+    </section>
+  </div>
+  <p id="vitaliza-saldo" class="text-small" aria-live="polite"></p>
+</div>
+<style>
+#vitaliza-fluxo .v-flow { padding: 0; list-style: none; }
+#vitaliza-fluxo .v-flow li { padding: calc(var(--font-size-base) * .4) 0; }
+#vitaliza-fluxo .v-flow li + li::before { content: "↓"; display: block; color: var(--muted-foreground); }
+</style>
+<script>
+{
+  const root = document.getElementById('vitaliza-fluxo');
+  const byId = name => root.querySelector('#vitaliza-' + name);
+  const days = [0, 7, 14, 21, 28, 31];
+  const exits = [0, 61, 93, 120, 154, 166];
+  const billing = [0, 1, 2, 2, 6, 6];
+  const size = 690;
+  const count = new Intl.NumberFormat('pt-BR', {maximumFractionDigits: 1});
+  const money = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'});
+  function draw() {
+    const index = Number(byId('dia').value);
+    const rate = Number(byId('reversao').value);
+    const avoided = (exits[index] - billing[index]) * rate / 100;
+    const projected = exits[index] - avoided;
+    byId('dia-out').textContent = days[index];
+    byId('reversao-out').textContent = rate + '%';
+    byId('observado').textContent = count.format(size - exits[index]) + ' retidos · ' + count.format(exits[index]) + ' saídas';
+    byId('projetado').textContent = count.format(size - projected) + ' retidos · ' + count.format(projected) + ' saídas esperadas';
+    byId('saldo').textContent = count.format(avoided) + ' saídas evitadas em expectativa · saldo até o dia ' + days[index] + ' de ' + money.format(avoided * 287 - size * 10) + ' com o custo integral dos contatos';
+  }
+  byId('dia').addEventListener('input', draw);
+  byId('reversao').addEventListener('input', draw);
+  draw();
+}
+</script>
+
+<p>A projeção para os 690 sinalizados é de 40 saídas evitadas e queda de 24,1% para 18,3% no churn. A R$ 287 por saída evitada, seriam R$ 11.480 preservados. Com custo de R$ 10 por contato, o saldo estimado é de R$ 4.580 antes de custos fixos. A R$ 50 por contato, seria de −R$ 23.020.</p>
+</section>
+<section>
+<h2>6. Implantação, custos e decisão de escala</h2>
+<ul>
+<li><strong>Semanas 1–2.</strong> Validar seleção, sorteio, medição e custo. Lançar se o custo respeitar o teto de R$ 10 por contato.</li>
+<li><strong>Semanas 3–7.</strong> Executar o piloto e observar churn por pelo menos 30 dias. Acompanhar entrega, custo, descadastros e reclamações. Pausar novos disparos se surgirem problemas de medição, custo acima do teto ou sinal de dano.</li>
+<li><strong>Semanas 8–10.</strong> Revisar a diferença de churn entre grupos, sua incerteza e o custo por saída evitada. Parar ou redesenhar se houver dano ou se a evidência descartar retorno suficiente. Se a leitura for inconclusiva, continuar a validação.</li>
+<li><strong>Expansão.</strong> Avançar em etapas na base elegível quando o limite inferior do efeito superar o ponto de equilíbrio com o custo real e o valor da persona. Testar outros perfis antes de expandir para toda a base.</li>
+</ul>
+<p>O cenário central prevê queda de 5,8 pontos percentuais. O equilíbrio requer cerca de 3,5 pontos a R$ 10 por contato e R$ 287 por saída evitada, antes dos custos fixos. A primeira rodada com cerca de 345 clientes por grupo custaria até R$ 3.450 em contatos. Para confirmar a superação do ponto de equilíbrio sob essas premissas, a estimativa é de 3.837 clientes únicos por grupo e R$ 38.370 em contatos no grupo tratado, mais custos fixos. Com 690 novos elegíveis por mês, são cerca de 12 coortes mensais, mais o acompanhamento da última.</p>
+</section>
+<p><a href="https://github.com/leomaquiaveli/02-mba-modulo-2/tree/main/documentos/exhibits-m2">Dados do case Vitaliza</a></p>
+</main>
+</html>
