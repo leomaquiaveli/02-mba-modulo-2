@@ -11,6 +11,16 @@ section{margin-block:2rem} table{width:100%;border-collapse:collapse} th,td{padd
 .table-responsive{overflow-x:auto}.text-small{font-size:.88rem}.viz-grid,.viz-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 .viz-grid section{margin:0}.form-range{width:100%} a{color:#075e7b}
 @media(max-width:580px){.viz-grid,.viz-controls{grid-template-columns:1fr}}
+
+body{box-sizing:border-box;max-width:1120px;padding:clamp(1rem,4vw,3rem) clamp(1rem,5vw,4rem) 6rem}
+header p{margin:.35rem 0} header h1{margin:.35rem 0;font-size:clamp(1.4rem,3vw,2.5rem)}
+main>section{margin:1.5rem 0} main>section>h2{font-size:clamp(1.35rem,3vw,2.3rem);margin-top:0}
+.deck-nav{position:fixed;z-index:2;bottom:0;left:0;right:0;display:flex;gap:.45rem;align-items:center;justify-content:center;flex-wrap:wrap;padding:.55rem;background:#fff;border-top:1px solid #dce5e8}
+.deck-nav button{padding:.5rem .7rem;font:inherit;color:#142530;background:#eef5f5;border:1px solid #b7d6d4;border-radius:.4rem}
+.deck-nav button:disabled{opacity:.45}
+.deck-nav button:focus-visible{outline:2px solid #087b76;outline-offset:2px}
+#deck-position{min-width:4em;text-align:center;font-variant-numeric:tabular-nums}
+@media print{.deck-nav{display:none!important} main>section[hidden]{display:block!important} main>section{break-after:page}}
 </style>
 <header>
 <p>Vitaliza · Artefato 2 · 24 de novembro de 2026</p>
@@ -165,4 +175,59 @@ section{margin-block:2rem} table{width:100%;border-collapse:collapse} th,td{padd
 </section>
 <p><a href="https://github.com/leomaquiaveli/02-mba-modulo-2/tree/main/documentos/exhibits-m2">Dados do case Vitaliza</a></p>
 </main>
+<nav class="deck-nav" aria-label="Navegação da apresentação" hidden>
+  <button type="button" id="deck-prev">← Anterior</button>
+  <span id="deck-position" aria-live="polite"></span>
+  <button type="button" id="deck-next">Próximo →</button>
+  <button type="button" id="deck-full" hidden>Tela cheia</button>
+</nav>
+<style>.deck-nav[hidden],#deck-full[hidden]{display:none}</style>
+<script>
+{
+  const slides = Array.from(document.querySelectorAll('main > section'));
+  const nav = document.querySelector('.deck-nav');
+  const previous = document.getElementById('deck-prev');
+  const next = document.getElementById('deck-next');
+  const position = document.getElementById('deck-position');
+  const fullscreen = document.getElementById('deck-full');
+  let current = 0;
+  function show(index, focusHeading = false) {
+    current = Math.max(0, Math.min(slides.length - 1, index));
+    slides.forEach((slide, i) => { slide.hidden = i !== current; });
+    position.textContent = (current + 1) + ' / ' + slides.length;
+    previous.disabled = current === 0;
+    next.disabled = current === slides.length - 1;
+    if (focusHeading) {
+      const heading = slides[current].querySelector('h2');
+      heading.tabIndex = -1;
+      heading.focus({preventScroll:true});
+    }
+    window.scrollTo(0, 0);
+  }
+  previous.addEventListener('click', () => show(current - 1, true));
+  next.addEventListener('click', () => show(current + 1, true));
+  document.addEventListener('keydown', event => {
+    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey ||
+        event.target.closest?.('input, select, textarea, [contenteditable]')) return;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      show(current + (event.key === 'ArrowLeft' ? -1 : 1), true);
+    }
+  });
+  if (document.fullscreenEnabled && document.documentElement.requestFullscreen) {
+    fullscreen.hidden = false;
+    fullscreen.addEventListener('click', async () => {
+      try {
+        if (document.fullscreenElement) await document.exitFullscreen();
+        else await document.documentElement.requestFullscreen();
+      } catch { fullscreen.hidden = true; }
+    });
+    document.addEventListener('fullscreenchange', () => {
+      fullscreen.textContent = document.fullscreenElement ? 'Sair da tela cheia' : 'Tela cheia';
+    });
+  }
+  nav.hidden = false;
+  show(0);
+}
+</script>
 </html>
